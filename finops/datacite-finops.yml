@@ -1,0 +1,151 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+provider: DataCite
+providerId: datacite
+created: '2026-06-12'
+modified: '2026-06-12'
+
+description: >
+  DataCite operates a membership-based non-profit financial model. Cost drivers are annual
+  membership fees, shared infrastructure fees (scaled by organization type and socioeconomic
+  context), and tiered DOI volume fees above 100,000 registrations per year. Public API
+  read access carries no direct charge. FinOps practitioners should track DOI registration
+  volume against the 100,000 annual threshold to anticipate overage fees and plan consortium
+  participation to optimize per-unit cost.
+
+billingModel:
+  type: subscription_plus_consumption
+  period: annual
+  currency: EUR
+  invoicingCycle: annual
+  invoicingNote: >
+    Invoiced at the beginning of each calendar year. New members receive pro-rated first-year
+    invoices in the month after joining, adjusted quarterly. Payment due within 30 days via
+    bank transfer, check, or credit card.
+
+focusColumns:
+  - ChargeCategory: Recurring
+    ChargeSubcategory: Membership Fee
+    ServiceName: DataCite DOI Registration
+    ServiceCategory: Data & Analytics
+    BilledCurrency: EUR
+    PricingUnit: organization/year
+
+  - ChargeCategory: Recurring
+    ChargeSubcategory: Shared Infrastructure Fee
+    ServiceName: DataCite DOI Registration
+    ServiceCategory: Data & Analytics
+    BilledCurrency: EUR
+    PricingUnit: organization/year
+
+  - ChargeCategory: Usage
+    ChargeSubcategory: High-Volume DOI Overage
+    ServiceName: DataCite DOI Registration
+    ServiceCategory: Data & Analytics
+    BilledCurrency: EUR
+    PricingUnit: DOI/year
+
+meters:
+  - name: DOI Registrations
+    description: Number of DOIs minted or updated per calendar year
+    unit: dois
+    threshold: 100000
+    overageApplies: true
+    overageTiers:
+      - from: 100001
+        to: 250000
+        price: 3500
+        currency: EUR
+        period: annual
+      - from: 250001
+        to: 1000000
+        price: 8500
+        currency: EUR
+        period: annual
+      - from: 1000001
+        to: 2000000
+        price: 13000
+        currency: EUR
+        period: annual
+      - from: 2000001
+        to: 5000000
+        price: 18500
+        currency: EUR
+        period: annual
+      - from: 5000001
+        to: 10000000
+        price: 25500
+        currency: EUR
+        period: annual
+      - from: 10000001
+        to: 20000000
+        price: 32500
+        currency: EUR
+        period: annual
+
+  - name: API Requests (Public Read)
+    description: Public REST/GraphQL read requests — no direct charge; rate limits apply
+    unit: http_requests
+    charged: false
+    rateLimited: true
+
+  - name: API Requests (Authenticated Write)
+    description: Authenticated DOI creation/update requests — included in membership; rate limits apply
+    unit: http_requests
+    charged: false
+    rateLimited: true
+
+fixedCosts:
+  - name: Institutional Direct / Consortium Lead Membership Fee
+    amount: 2000
+    currency: EUR
+    period: annual
+    applicableTo:
+      - Institutional Direct Member
+      - Consortium Lead Member
+
+  - name: Shared Infrastructure Fee (Non-Profit, base)
+    range:
+      min: 200
+      max: 700
+    currency: EUR
+    period: annual
+    applicableTo:
+      - All Member Types (non-profit)
+
+  - name: Shared Infrastructure Fee (For-Profit)
+    description: Revenue-based tiered fee for commercial organizations
+    range:
+      min: 1000
+      max: 10000
+    currency: EUR
+    period: annual
+    applicableTo:
+      - For-Profit Members
+
+principles:
+  - name: Visibility
+    description: >
+      Monitor annual DOI registration counts via the Fabrica dashboard and Usage Reports API
+      to track consumption against the 100,000 DOI threshold. Set alerts when approaching
+      80% of the annual quota to allow budget planning for potential overage fees.
+
+  - name: Optimization
+    description: >
+      Joining via a consortium rather than as a direct member eliminates the EUR 2,000
+      membership fee. Organizations with <100,000 annual DOIs can minimize costs by
+      choosing the consortium path and selecting the appropriate socioeconomic infrastructure
+      fee tier. Use batch registration and metadata management APIs to reduce operational
+      overhead.
+
+  - name: Accountability
+    description: >
+      Allocate DataCite costs to research data management budgets or per-project cost
+      centers tracking DOI volume per repository or dataset collection. Use the Event Data
+      API and Usage Reports API to demonstrate ROI from DOI adoption.
+
+references:
+  - name: DataCite Fees Page
+    url: https://datacite.org/fees/
+  - name: DataCite Fee Wizard
+    url: https://fees.datacite.org/

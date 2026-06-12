@@ -1,0 +1,189 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+provider: DataCite
+providerId: datacite
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+
+description: >
+  DataCite operates a membership-based model. Public metadata retrieval is free and open to
+  everyone without authentication. DOI registration and metadata management (write access)
+  require institutional membership. Fees cover annual membership participation plus a shared
+  infrastructure fee adjusted for socioeconomic context. High-volume DOI registration incurs
+  additional tiered fees above 100,000 DOIs per year.
+
+type: freemium
+
+plans:
+  - name: Public Access (Unauthenticated)
+    description: >
+      Free, open access to all DataCite REST API and GraphQL API read endpoints. No authentication
+      required. Enables querying and retrieving DOI metadata records and the research data graph.
+    type: free
+    quotas:
+      - metric: api_requests
+        limit: 500
+        timeFrame: 5m
+        scope: per_ip
+        type: metered
+    features:
+      - Read-only access to all DOI metadata
+      - GraphQL query access
+      - OAI-PMH harvesting
+      - Content negotiation
+      - Event Data API access
+
+  - name: Identified Access
+    description: >
+      Free access with identification via User-Agent email header or mailto= query parameter.
+      Higher rate limits than anonymous access. No membership fee required.
+    type: free
+    quotas:
+      - metric: api_requests
+        limit: 1000
+        timeFrame: 5m
+        scope: per_ip
+        type: metered
+    features:
+      - All Public Access features
+      - Higher rate limits with email identification
+
+  - name: Consortium Organization Member
+    description: >
+      Organizations joining DataCite via a consortium lead. No annual membership fee but
+      pays the shared infrastructure fee. Full DOI registration access up to 100,000 DOIs/year.
+    type: paid
+    pricing:
+      membershipFee:
+        amount: 0
+        currency: EUR
+        period: annual
+      sharedInfrastructureFee:
+        description: Non-profit fee, varies by socioeconomic context
+        range:
+          min: 200
+          max: 700
+        currency: EUR
+        period: annual
+    quotas:
+      - metric: dois_registered
+        limit: 100000
+        timeFrame: annual
+        scope: per_organization
+        type: quota
+      - metric: api_requests
+        limit: 3000
+        timeFrame: 5m
+        scope: per_ip
+        type: metered
+    features:
+      - Full DOI registration via REST API and Fabrica UI
+      - MDS API access (legacy)
+      - Metadata management
+      - Usage Reports API
+      - Member dashboard access
+
+  - name: Institutional Direct Member
+    description: >
+      Direct institutional membership for organizations joining DataCite independently (not via
+      consortium). Includes annual membership fee plus shared infrastructure fee.
+    type: paid
+    pricing:
+      membershipFee:
+        amount: 2000
+        currency: EUR
+        period: annual
+      sharedInfrastructureFee:
+        description: Non-profit fee, varies by socioeconomic context
+        range:
+          min: 200
+          max: 700
+        currency: EUR
+        period: annual
+      forProfitInfrastructureFee:
+        description: For-profit organizations, based on annual revenue
+        tiers:
+          - revenue_up_to: 500000
+            amount: 1000
+            currency: EUR
+          - revenue_up_to: 2000000
+            amount: 2500
+            currency: EUR
+          - revenue_up_to: 50000000
+            amount: 5000
+            currency: EUR
+          - revenue_up_to: 1000000000
+            amount: 7500
+            currency: EUR
+          - revenue_above: 1000000000
+            amount: 10000
+            currency: EUR
+    quotas:
+      - metric: dois_registered
+        limit: 100000
+        timeFrame: annual
+        scope: per_organization
+        type: quota
+      - metric: api_requests
+        limit: 3000
+        timeFrame: 5m
+        scope: per_ip
+        type: metered
+    features:
+      - All Consortium Organization Member features
+      - DataCite governance participation
+      - Priority support
+
+  - name: Consortium Lead Member
+    description: >
+      Organizations that act as lead for a consortium of DataCite members. Annual membership fee
+      plus shared infrastructure fee. Manages sub-members and their DOI allocations.
+    type: paid
+    pricing:
+      membershipFee:
+        amount: 2000
+        currency: EUR
+        period: annual
+      sharedInfrastructureFee:
+        description: Non-profit fee, varies by socioeconomic context
+        range:
+          min: 200
+          max: 700
+        currency: EUR
+        period: annual
+    features:
+      - All Institutional Direct Member features
+      - Consortium management via Fabrica
+      - Sub-member provisioning
+
+  - name: High-Volume DOI Add-on
+    description: >
+      Additional fees for organizations exceeding 100,000 DOI registrations per calendar year.
+    type: paid
+    pricing:
+      tiers:
+        - label: 100,001 – 250,000 DOIs
+          amount: 3500
+          currency: EUR
+          period: annual
+        - label: 250,001 – 1,000,000 DOIs
+          amount: 8500
+          currency: EUR
+          period: annual
+        - label: 1,000,001 – 2,000,000 DOIs
+          amount: 13000
+          currency: EUR
+          period: annual
+        - label: 2,000,001 – 5,000,000 DOIs
+          amount: 18500
+          currency: EUR
+          period: annual
+        - label: 5,000,001 – 10,000,000 DOIs
+          amount: 25500
+          currency: EUR
+          period: annual
+        - label: 10,000,001 – 20,000,000 DOIs
+          amount: 32500
+          currency: EUR
+          period: annual

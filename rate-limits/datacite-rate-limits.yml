@@ -1,0 +1,100 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+provider: DataCite
+providerId: datacite
+created: '2026-06-12'
+modified: '2026-06-12'
+
+description: >
+  DataCite enforces rate limits on all API requests to ensure system performance and stability.
+  Limits are tiered by authentication status. The firewall enforces limits per IP address on a
+  5-minute rolling window. When the rate limit is exceeded the API returns HTTP 429. For large-scale
+  bulk operations (100,000+ POST/PUT requests to /dois in a single day), DataCite recommends
+  staying within 300-500 requests per 5-minute window and contacting support in advance.
+
+retryAfter:
+  header: Retry-After
+  description: Returned in 429 response indicating when requests may resume
+
+throttled:
+  httpStatus: 429
+  description: Too Many Requests — the client has exceeded the rate limit for their tier
+
+limits:
+  - name: Authenticated Requests
+    scope: per_ip
+    metric: http_requests
+    limit: 3000
+    timeFrame: 5m
+    description: >
+      Requests sent with a valid Authorization header (username/password or token).
+      Applies to all DataCite REST and MDS API endpoints.
+    authentication: required
+    authMethod: BasicAuth or BearerToken
+
+  - name: Identified Requests
+    scope: per_ip
+    metric: http_requests
+    limit: 1000
+    timeFrame: 5m
+    description: >
+      Requests that include a User-Agent header containing an email address OR include
+      the query parameter mailto= with a valid email. No login credentials required.
+    authentication: optional
+    headers:
+      - name: User-Agent
+        description: Must contain a valid email address
+
+  - name: Unidentified Requests (Public)
+    scope: per_ip
+    metric: http_requests
+    limit: 500
+    timeFrame: 5m
+    description: >
+      Anonymous requests with no Authorization header and no email identification.
+      Default rate for public metadata queries.
+    authentication: none
+
+  - name: Content Negotiation (doi.org)
+    scope: per_ip
+    metric: http_requests
+    limit: 1000
+    timeFrame: 5m
+    description: >
+      Requests made via doi.org Content Negotiation endpoint for retrieving DOI metadata
+      in various formats (JSON, XML, citation styles).
+
+  - name: Test System
+    scope: per_ip
+    metric: http_requests
+    limit: 750
+    timeFrame: 5m
+    description: >
+      Rate limit applied to the DataCite test environment (test.datacite.org).
+      More restrictive than production to protect shared test infrastructure.
+
+recommendations:
+  - name: Large-Scale Bulk Operations
+    description: >
+      For bulk DOI registrations or updates totaling 100,000+ POST/PUT requests to /dois
+      in a single day, DataCite recommends maintaining 300-500 requests per 5-minute window
+      and contacting support@datacite.org prior to the operation.
+    recommendedLimit: 300-500
+    timeFrame: 5m
+    contactEmail: support@datacite.org
+
+  - name: Exponential Backoff
+    description: >
+      Integrators should implement exponential backoff strategies for failed requests,
+      particularly when receiving 429 responses.
+
+errorHandling:
+  - statusCode: 429
+    message: Too Many Requests
+    action: Implement exponential backoff; check Retry-After header if present
+
+references:
+  - name: Rate Limit Documentation
+    url: https://support.datacite.org/docs/rate-limit
+  - name: Best Practices for Integrators
+    url: https://support.datacite.org/docs/best-practices-for-integrators
