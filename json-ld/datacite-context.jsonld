@@ -1,0 +1,80 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "datacite": "https://purl.org/spar/datacite/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "DOI": "datacite:doi",
+    "ResourceType": "datacite:ResourceType",
+    "Publisher": {
+      "@id": "schema:publisher",
+      "@type": "@id"
+    },
+    "Creator": {
+      "@id": "dcterms:creator",
+      "@type": "@id"
+    },
+    "Contributor": {
+      "@id": "dcterms:contributor",
+      "@type": "@id"
+    },
+    "Title": "dcterms:title",
+    "AlternateTitle": "dcterms:alternative",
+    "Subject": "dcterms:subject",
+    "Description": "dcterms:description",
+    "PublicationYear": {
+      "@id": "dcterms:issued",
+      "@type": "xsd:gYear"
+    },
+    "Rights": "dcterms:rights",
+    "RightsURI": {
+      "@id": "dcterms:license",
+      "@type": "@id"
+    },
+    "RelatedIdentifier": {
+      "@id": "dcterms:relation",
+      "@type": "@id"
+    },
+    "RelationType": "datacite:relationType",
+    "AlternateIdentifier": "datacite:alternateIdentifier",
+    "Size": "dcterms:extent",
+    "Format": "dcterms:format",
+    "Version": "schema:version",
+    "Language": "dcterms:language",
+    "GeoLocation": {
+      "@id": "dcat:spatialResolutionInMeters",
+      "@type": "@id"
+    },
+    "FundingReference": {
+      "@id": "schema:funding",
+      "@type": "@id"
+    },
+    "NameIdentifier": "datacite:NameIdentifier",
+    "NameIdentifierScheme": "datacite:NameIdentifierScheme",
+    "SchemeURI": {
+      "@id": "datacite:schemeURI",
+      "@type": "@id"
+    },
+    "affiliation": "schema:affiliation",
+    "givenName": "schema:givenName",
+    "familyName": "schema:familyName",
+    "name": "schema:name",
+    "nameType": "datacite:nameType",
+    "creatorName": "datacite:creatorName",
+    "contributorName": "datacite:contributorName",
+    "contributorType": "datacite:contributorType",
+    "funderName": "schema:funderName",
+    "funderIdentifier": "schema:funder",
+    "awardNumber": "schema:grantNumber",
+    "awardTitle": "schema:name",
+    "geoLocationPoint": "schema:geo",
+    "geoLocationBox": "schema:geo",
+    "geoLocationPlace": "schema:locationCreated",
+    "pointLongitude": "schema:longitude",
+    "pointLatitude": "schema:latitude"
+  }
+}

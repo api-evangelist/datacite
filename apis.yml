@@ -42,6 +42,8 @@ apis:
         url: https://support.datacite.org/docs/api
       - type: OpenAPI
         url: https://raw.githubusercontent.com/datacite/lupo/master/openapi.yaml
+      - type: OpenAPI
+        url: openapi/datacite-rest-api-openapi.yml
       - type: PostmanCollection
         url: https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
       - type: RateLimits
@@ -116,6 +118,8 @@ apis:
         url: https://support.datacite.org/docs/usage-reports-api-guide
       - type: OpenAPI
         url: https://github.com/datacite/sashimi/blob/master/openapi.yaml
+      - type: OpenAPI
+        url: openapi/datacite-usage-reports-api-openapi.yml
 
 common:
   - type: Website
@@ -138,6 +142,8 @@ common:
     url: https://support.datacite.org/docs/best-practices-for-integrators
   - type: UpcomingChanges
     url: https://support.datacite.org/docs/upcoming-changes
+  - type: JSONLDContext
+    url: json-ld/datacite-context.jsonld
   - type: Plans
     url: plans/datacite-plans-pricing.yml
   - type: RateLimits
