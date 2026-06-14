@@ -1,0 +1,3549 @@
+# DataCite GraphQL Schema
+# Generated via introspection from https://api.datacite.org/graphql
+# Total types: 172
+
+# Built-in scalars: String, Int, Float, Boolean, ID
+
+"""
+The connection type for ActorItem.
+"""
+type ActorConnection {
+  edges: [ActorEdge]
+  nodes: [ActorItem]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type ActorEdge {
+  cursor: String!
+  node: ActorItem
+}
+
+"""
+Information about people, research organizations and funders
+"""
+interface ActorItem {
+  alternateName: [Unknown]
+  id: ID!
+  name: String
+  type: String!
+}
+
+"""
+Information about addresses
+"""
+type Address {
+  country: String
+  locality: String
+  postalCode: String
+  region: String
+  streetAddress: String
+  type: String
+}
+
+"""
+Information about affiliations
+"""
+type Affiliation {
+  id: ID
+  name: String
+}
+
+type Audiovisual {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Audiovisual.
+"""
+type AudiovisualConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [AudiovisualEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Audiovisual]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type AudiovisualEdge {
+  cursor: String!
+  node: Audiovisual
+}
+
+type Book {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+type BookChapter {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for BookChapter.
+"""
+type BookChapterConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [BookChapterEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [BookChapter]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type BookChapterEdge {
+  cursor: String!
+  node: BookChapter
+}
+
+"""
+The connection type for Book.
+"""
+type BookConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [BookEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Book]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type BookEdge {
+  cursor: String!
+  node: Book
+}
+
+"""
+Citation formats
+"""
+enum CitationFormat {
+  # enum values
+}
+
+"""
+A claim.
+"""
+type Claim {
+  claimAction: String!
+  claimed: ISO8601DateTime
+  errorMessages: [Unknown]
+  id: ID!
+  sourceId: String!
+  state: String!
+  type: String!
+}
+
+type Collection {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Collection.
+"""
+type CollectionConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [CollectionEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Collection]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type CollectionEdge {
+  cursor: String!
+  node: Collection
+}
+
+type ConferencePaper {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for ConferencePaper.
+"""
+type ConferencePaperConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [ConferencePaperEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [ConferencePaper]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type ConferencePaperEdge {
+  cursor: String!
+  node: ConferencePaper
+}
+
+"""
+Information about containers for content.
+"""
+type Container {
+  firstPage: String
+  identifier: String
+  identifierType: String
+  issue: String
+  lastPage: String
+  title: String
+  type: String
+  volume: String
+}
+
+"""
+A contributor.
+"""
+type Contributor {
+  affiliation: [Unknown]
+  contributorType: String!
+  familyName: String
+  givenName: String
+  id: ID
+  name: String
+  type: String!
+}
+
+"""
+Information about countries
+"""
+type Country {
+  id: ID
+  name: String
+}
+
+"""
+Autogenerated return type of CreateClaim.
+"""
+type CreateClaimPayload {
+  claim: Claim
+  errors: Unknown!
+}
+
+"""
+A creator.
+"""
+type Creator {
+  affiliation: [Unknown]
+  familyName: String
+  givenName: String
+  id: ID
+  name: String
+  type: String!
+}
+
+"""
+A collection of datasets.
+"""
+type DataCatalog {
+  alternateName: [Unknown]
+  certificates: [Unknown]
+  citationCount: Int
+  contacts: [Unknown]
+  dataAccesses: [Unknown]
+  dataUploads: [Unknown]
+  datasets: DatasetConnectionWithTotal
+  description: String
+  downloadCount: Int
+  id: ID!
+  identifier: [Unknown]
+  inLanguage: [Unknown]
+  keywords: String
+  name: String
+  pidSystems: [Unknown]
+  providerTypes: [Unknown]
+  softwareApplication: [Unknown]
+  subjects: [Unknown]
+  type: String!
+  url: String
+  viewCount: Int
+}
+
+"""
+The connection type for DataCatalog.
+"""
+type DataCatalogConnectionWithTotal {
+  datasetConnectionCount: Int!
+  edges: [DataCatalogEdge]
+  nodes: [DataCatalog]
+  pageInfo: PageInfo!
+  totalCount: Int
+}
+
+"""
+An edge in a connection.
+"""
+type DataCatalogEdge {
+  cursor: String!
+  node: DataCatalog
+}
+
+type DataManagementPlan {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for DataManagementPlan.
+"""
+type DataManagementPlanConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [DataManagementPlanEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [DataManagementPlan]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type DataManagementPlanEdge {
+  cursor: String!
+  node: DataManagementPlan
+}
+
+type DataPaper {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for DataPaper.
+"""
+type DataPaperConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [DataPaperEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [DataPaper]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type DataPaperEdge {
+  cursor: String!
+  node: DataPaper
+}
+
+type Dataset {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  usageReports: DatasetUsageReportConnectionWithTotal!
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Dataset.
+"""
+type DatasetConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  datasetConnectionCount: Int!
+  edges: [DatasetEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funderConnectionCount: Int!
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Dataset]
+  openLicenseResourceTypes: [Unknown]
+  organizationConnectionCount: Int!
+  pageInfo: PageInfo!
+  personConnectionCount: Int!
+  personToWorkTypesMultilevel: [Unknown]
+  publicationConnectionCount: Int!
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  softwareConnectionCount: Int!
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type DatasetEdge {
+  cursor: String!
+  node: Dataset
+}
+
+"""
+The connection type for EventData.
+"""
+type DatasetUsageReportConnectionWithTotal {
+  edges: [EventDataEdge]
+  nodes: [EventData]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+"""
+Information about dates
+"""
+type Date {
+  date: String!
+  dateType: String
+}
+
+"""
+A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc.
+"""
+type DefinedTerm {
+  description: String
+  inDefinedTermSet: String
+  name: String
+  termCode: String
+}
+
+"""
+Autogenerated return type of DeleteClaim.
+"""
+type DeleteClaimPayload {
+  claim: Claim
+  errors: Unknown!
+}
+
+"""
+Information about descriptions
+"""
+type Description {
+  description: String
+  descriptionType: String
+  lang: ID
+}
+
+type Dissertation {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Dissertation.
+"""
+type DissertationConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [DissertationEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Dissertation]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type DissertationEdge {
+  cursor: String!
+  node: Dissertation
+}
+
+"""
+Information about DOIs
+"""
+interface DoiItem {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+Information about employments
+"""
+type Employment {
+  endDate: ISO8601DateTime
+  organizationId: String
+  organizationName: String!
+  roleTitle: String
+  startDate: ISO8601DateTime
+}
+
+"""
+Information about errors
+"""
+type Error {
+  source: String
+  status: Int
+  title: String!
+}
+
+type Event {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Event.
+"""
+type EventConnectionWithTotal {
+  affiliations: [Unknown]
+  edges: [EventEdge]
+  fieldsOfScience: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Event]
+  pageInfo: PageInfo!
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  totalCount: Int!
+}
+
+type EventData {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+An edge in a connection.
+"""
+type EventDataEdge {
+  cursor: String!
+  node: EventData
+  relationType: String
+  source: String
+  sourceId: String
+  targetId: String
+  total: Int
+}
+
+"""
+An edge in a connection.
+"""
+type EventEdge {
+  cursor: String!
+  node: Event
+}
+
+"""
+Summary information
+"""
+type Facet {
+  count: Int
+  id: String
+  title: String
+}
+
+"""
+Information about OECD Fields of Science
+"""
+type FieldOfScience {
+  id: ID
+  name: String
+}
+
+"""
+Information about funders
+"""
+type Funder {
+  address: Address
+  alternateName: [Unknown]
+  citationCount: Int
+  dataManagementPlans: DataManagementPlanConnectionWithTotal
+  datasets: DatasetConnectionWithTotal
+  downloadCount: Int
+  id: ID!
+  name: String
+  publications: PublicationConnectionWithTotal
+  softwares: SoftwareConnectionWithTotal
+  type: String!
+  viewCount: Int
+  works: WorkConnectionWithTotal
+}
+
+"""
+The connection type for Funder.
+"""
+type FunderConnectionWithTotal {
+  datasetConnectionCount: Int!
+  edges: [FunderEdge]
+  nodes: [Funder]
+  pageInfo: PageInfo!
+  publicationConnectionCount: Int!
+  softwareConnectionCount: Int!
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type FunderEdge {
+  cursor: String!
+  node: Funder
+}
+
+"""
+Information about funding
+"""
+type Funding {
+  awardNumber: String
+  awardTitle: String
+  awardUri: String
+  funderIdentifier: String
+  funderIdentifierType: String
+  funderName: String
+}
+
+"""
+Spatial region or named place where the data was gathered or about which the data is focused.
+"""
+type Geolocation {
+  geolocationBox: GeolocationBox
+  geolocationPlace: String
+  geolocationPoint: GeolocationPoint
+}
+
+"""
+A box is defined by two geographic points. Left low corner and right upper corner.
+"""
+type GeolocationBox {
+  eastBoundLongitude: Float!
+  northBoundLatitude: Float!
+  southBoundLatitude: Float!
+  westBoundLongitude: Float!
+}
+
+"""
+A point contains a single longitude-latitude pair.
+"""
+type GeolocationPoint {
+  pointLatitude: Float
+  pointLongitude: Float
+}
+
+"""
+Information about identifiers
+"""
+type Identifier {
+  identifier: String
+  identifierType: String
+  identifierUrl: String
+}
+
+type Image {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Image.
+"""
+type ImageConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [ImageEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Image]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type ImageEdge {
+  cursor: String!
+  node: Image
+}
+
+type Instrument {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Instrument.
+"""
+type InstrumentConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [InstrumentEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Instrument]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type InstrumentEdge {
+  cursor: String!
+  node: Instrument
+}
+
+type InteractiveResource {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for InteractiveResource.
+"""
+type InteractiveResourceConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [InteractiveResourceEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [InteractiveResource]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type InteractiveResourceEdge {
+  cursor: String!
+  node: InteractiveResource
+}
+
+"""
+An ISO 8601-encoded date
+"""
+scalar ISO8601Date
+
+"""
+An ISO 8601-encoded datetime
+"""
+scalar ISO8601DateTime
+
+type JournalArticle {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for JournalArticle.
+"""
+type JournalArticleConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [JournalArticleEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [JournalArticle]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type JournalArticleEdge {
+  cursor: String!
+  node: JournalArticle
+}
+
+"""
+Represents untyped JSON
+"""
+scalar JSON
+
+"""
+Information about languages
+"""
+type Language {
+  id: ID
+  name: String
+}
+
+"""
+Information about links
+"""
+type Link {
+  name: String
+  url: Url
+}
+
+"""
+Information about the logged-in user
+"""
+type Me {
+  betaTester: Boolean!
+  id: ID!
+  name: String!
+  type: String!
+}
+
+"""
+Information about members
+"""
+type Member {
+  citationCount: Int
+  country: Country
+  dataManagementPlans: DataManagementPlanConnectionWithTotal
+  datasets: DatasetConnectionWithTotal
+  description: String
+  displayName: String!
+  downloadCount: Int
+  focusArea: String
+  id: ID!
+  joined: ISO8601Date
+  logoUrl: Url
+  memberRole: MemberRole
+  name: String!
+  organizationType: String
+  prefixes: MemberPrefixConnectionWithTotal
+  publications: PublicationConnectionWithTotal
+  region: String
+  repositories: RepositoryConnectionWithTotal
+  rorId: ID
+  softwares: SoftwareConnectionWithTotal
+  type: String!
+  viewCount: Int
+  website: Url
+  works: WorkConnectionWithTotal
+}
+
+"""
+The connection type for Member.
+"""
+type MemberConnectionWithTotal {
+  edges: [MemberEdge]
+  focusAreas: [Unknown]
+  hasRequiredContacts: [Unknown]
+  memberTypes: [Unknown]
+  nodes: [Member]
+  nonProfitStatuses: [Unknown]
+  organizationTypes: [Unknown]
+  pageInfo: PageInfo!
+  regions: [Unknown]
+  totalCount: Int!
+  years: [Unknown]
+}
+
+"""
+An edge in a connection.
+"""
+type MemberEdge {
+  cursor: String!
+  node: Member
+}
+
+"""
+Information about member prefixes
+"""
+type MemberPrefix {
+  id: ID!
+  name: String!
+  type: String!
+}
+
+"""
+The connection type for MemberPrefix.
+"""
+type MemberPrefixConnectionWithTotal {
+  edges: [MemberPrefixEdge]
+  nodes: [MemberPrefix]
+  pageInfo: PageInfo!
+  states: Unknown!
+  totalCount: Int!
+  years: Unknown!
+}
+
+"""
+An edge in a connection.
+"""
+type MemberPrefixEdge {
+  cursor: String!
+  node: MemberPrefix
+}
+
+"""
+Information about the membership role.
+"""
+type MemberRole {
+  id: ID
+  name: String
+}
+
+type Model {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Model.
+"""
+type ModelConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [ModelEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Model]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type ModelEdge {
+  cursor: String!
+  node: Model
+}
+
+"""
+Multi-level Facets
+"""
+type MultiFacet {
+  count: Int
+  id: String
+  inner: [Unknown]
+  title: String
+}
+
+type Mutation {
+  createClaim: CreateClaimPayload!
+  deleteClaim: DeleteClaimPayload!
+  updateUserProfile: UpdateUserProfilePayload!
+}
+
+"""
+Information about organizations
+"""
+type Organization {
+  alternateName: [Unknown]
+  citationCount: Int
+  country: Country
+  dataManagementPlans: DataManagementPlanConnectionWithTotal
+  datasets: DatasetConnectionWithTotal
+  downloadCount: Int
+  geolocation: GeolocationPoint
+  id: ID!
+  identifiers: [Unknown]
+  inceptionYear: Int
+  memberId: ID
+  memberRoleId: String
+  memberRoleName: String
+  name: String
+  people: PersonConnectionWithTotal
+  publications: PublicationConnectionWithTotal
+  softwares: SoftwareConnectionWithTotal
+  twitter: String
+  type: String!
+  types: [Unknown]
+  url: [Unknown]
+  viewCount: Int
+  wikipediaUrl: Url
+  works: WorkConnectionWithTotal
+}
+
+"""
+The connection type for Organization.
+"""
+type OrganizationConnectionWithTotal {
+  countries: [Unknown]
+  edges: [OrganizationEdge]
+  nodes: [Organization]
+  pageInfo: PageInfo!
+  personConnectionCount: Int!
+  totalCount: Int!
+  types: [Unknown]
+  years: [Unknown]
+}
+
+"""
+An edge in a connection.
+"""
+type OrganizationEdge {
+  cursor: String!
+  node: Organization
+}
+
+type Other {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Other.
+"""
+type OtherConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [OtherEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Other]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type OtherEdge {
+  cursor: String!
+  node: Other
+}
+
+"""
+Information about pagination in a connection.
+"""
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+type PeerReview {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for PeerReview.
+"""
+type PeerReviewConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [PeerReviewEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [PeerReview]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type PeerReviewEdge {
+  cursor: String!
+  node: PeerReview
+}
+
+"""
+A person.
+"""
+type Person {
+  alternateName: [Unknown]
+  citationCount: Int
+  country: Country
+  datasets: DatasetConnectionWithTotal
+  description: String
+  downloadCount: Int
+  employment: [Unknown]
+  familyName: String
+  givenName: String
+  id: ID!
+  identifiers: [Unknown]
+  links: [Unknown]
+  name: String
+  publications: PublicationConnectionWithTotal
+  softwares: SoftwareConnectionWithTotal
+  type: String!
+  viewCount: Int
+  works: WorkConnectionWithTotal
+}
+
+"""
+The connection type for Person.
+"""
+type PersonConnectionWithTotal {
+  datasetConnectionCount: Int!
+  edges: [PersonEdge]
+  nodes: [Person]
+  organizationConnectionCount: Int!
+  pageInfo: PageInfo!
+  publicationConnectionCount: Int!
+  softwareConnectionCount: Int!
+  totalCount: Int!
+  years: [Unknown]
+}
+
+"""
+An edge in a connection.
+"""
+type PersonEdge {
+  cursor: String!
+  node: Person
+}
+
+type PhysicalObject {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for PhysicalObject.
+"""
+type PhysicalObjectConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [PhysicalObjectEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [PhysicalObject]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type PhysicalObjectEdge {
+  cursor: String!
+  node: PhysicalObject
+}
+
+"""
+Information about prefixes
+"""
+type Prefix {
+  id: ID!
+  type: String!
+}
+
+"""
+The connection type for Prefix.
+"""
+type PrefixConnectionWithTotal {
+  edges: [PrefixEdge]
+  nodes: [Prefix]
+  pageInfo: PageInfo!
+  states: Unknown!
+  totalCount: Int!
+  years: Unknown!
+}
+
+"""
+An edge in a connection.
+"""
+type PrefixEdge {
+  cursor: String!
+  node: Prefix
+}
+
+type Preprint {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Preprint.
+"""
+type PreprintConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [PreprintEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Preprint]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type PreprintEdge {
+  cursor: String!
+  node: Preprint
+}
+
+type Publication {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Publication.
+"""
+type PublicationConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  datasetConnectionCount: Int!
+  edges: [PublicationEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funderConnectionCount: Int!
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Publication]
+  openLicenseResourceTypes: [Unknown]
+  organizationConnectionCount: Int!
+  pageInfo: PageInfo!
+  personConnectionCount: Int!
+  personToWorkTypesMultilevel: [Unknown]
+  publicationConnectionCount: Int!
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  softwareConnectionCount: Int!
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type PublicationEdge {
+  cursor: String!
+  node: Publication
+}
+
+"""
+Publisher information
+"""
+type Publisher {
+  lang: String
+  name: String
+  publisherIdentifier: String
+  publisherIdentifierScheme: String
+  schemeUri: String
+}
+
+type Query {
+  actor: ActorItem!
+  actors: ActorConnection!
+  audiovisual: Audiovisual!
+  audiovisuals: AudiovisualConnectionWithTotal!
+  book: Book!
+  bookChapter: BookChapter!
+  bookChapters: BookChapterConnectionWithTotal!
+  books: BookConnectionWithTotal!
+  collection: Collection!
+  collections: CollectionConnectionWithTotal!
+  conferencePaper: ConferencePaper!
+  conferencePapers: ConferencePaperConnectionWithTotal!
+  dataCatalog: DataCatalog!
+  dataCatalogs: DataCatalogConnectionWithTotal!
+  dataManagementPlan: DataManagementPlan!
+  dataManagementPlans: DataManagementPlanConnectionWithTotal!
+  dataPaper: DataPaper!
+  dataPapers: DataPaperConnectionWithTotal!
+  dataset: Dataset!
+  datasets: DatasetConnectionWithTotal!
+  dissertation: Dissertation!
+  dissertations: DissertationConnectionWithTotal!
+  event: Event!
+  events: EventConnectionWithTotal!
+  funder: Funder!
+  funders: FunderConnectionWithTotal!
+  image: Image!
+  images: ImageConnectionWithTotal!
+  instrument: Instrument!
+  instruments: InstrumentConnectionWithTotal!
+  interactiveResource: InteractiveResource!
+  interactiveResources: InteractiveResourceConnectionWithTotal!
+  journalArticle: JournalArticle!
+  journalArticles: JournalArticleConnectionWithTotal!
+  me: Me
+  member: Member!
+  members: MemberConnectionWithTotal!
+  model: Model!
+  models: ModelConnectionWithTotal!
+  organization: Organization!
+  organizations: OrganizationConnectionWithTotal!
+  other: Other!
+  others: OtherConnectionWithTotal!
+  peerReview: PeerReview!
+  peerReviews: PeerReviewConnectionWithTotal!
+  people: PersonConnectionWithTotal!
+  person: Person!
+  physicalObject: PhysicalObject!
+  physicalObjects: PhysicalObjectConnectionWithTotal!
+  prefix: Prefix!
+  prefixes: PrefixConnectionWithTotal!
+  preprint: Preprint!
+  preprints: PreprintConnectionWithTotal!
+  publication: Publication!
+  publications: PublicationConnectionWithTotal!
+  repositories: RepositoryConnectionWithTotal!
+  repository: Repository!
+  service: Service!
+  services: ServiceConnectionWithTotal!
+  software: Software!
+  softwares: SoftwareConnectionWithTotal!
+  sound: Sound!
+  sounds: SoundConnectionWithTotal!
+  usageReport: UsageReport!
+  usageReports: UsageReportConnectionWithTotal!
+  work: Work!
+  workflow: Workflow!
+  workflows: WorkflowConnectionWithTotal!
+  works: WorkConnectionWithTotal!
+}
+
+"""
+Information about DOI registration agencies
+"""
+type RegistrationAgency {
+  id: ID
+  name: String
+}
+
+"""
+Information about related identifiers
+"""
+type RelatedIdentifier {
+  relatedIdentifier: String!
+  relatedIdentifierType: String!
+  relatedMetadataScheme: String
+  relationType: String!
+  resourceTypeGeneral: String
+  schemeType: String
+  schemeUri: String
+}
+
+"""
+Information about related items
+"""
+type RelatedItem {
+  contributors: [Unknown]
+  creators: [Unknown]
+  edition: String
+  firstPage: String
+  issue: String
+  lastPage: String
+  number: String
+  numberType: String
+  publicationYear: String
+  publisher: String
+  relatedItemIdentifier: RelatedItemIdentifier
+  relatedItemType: String!
+  relationType: String!
+  titles: Unknown!
+  volume: String
+}
+
+"""
+A contributor to a related item
+"""
+type RelatedItemContributor {
+  contributorType: String
+  familyName: String
+  givenName: String
+  name: String!
+}
+
+"""
+A creator of a related item
+"""
+type RelatedItemCreator {
+  familyName: String
+  givenName: String
+  name: String!
+  nameType: String
+}
+
+"""
+Information about the related item identifier
+"""
+type RelatedItemIdentifier {
+  relatedItemIdentifier: String!
+  relatedItemIdentifierType: String
+  relatedMetadataScheme: String
+  schemeType: String
+  schemeUri: String
+}
+
+"""
+Information about reporting periods
+"""
+type ReportingPeriod {
+  beginDate: String
+  endDate: String
+}
+
+"""
+Information about repositories
+"""
+type Repository {
+  alternateName: [Unknown]
+  certificate: [Unknown]
+  citationCount: Int
+  clientId: ID
+  contact: [Unknown]
+  dataAccess: [Unknown]
+  dataManagementPlans: DataManagementPlanConnectionWithTotal
+  dataUpload: [Unknown]
+  datasets: DatasetConnectionWithTotal
+  description: String
+  downloadCount: Int
+  keyword: [Unknown]
+  language: [Unknown]
+  name: String!
+  pidSystem: [Unknown]
+  prefixes: RepositoryPrefixConnectionWithTotal
+  providerType: [Unknown]
+  publications: PublicationConnectionWithTotal
+  re3dataDoi: ID
+  re3dataUrl: Url
+  repositoryType: [Unknown]
+  software: [Unknown]
+  softwares: SoftwareConnectionWithTotal
+  subject: [Unknown]
+  type: String!
+  uid: ID!
+  url: Url
+  viewCount: Int
+  works: WorkConnectionWithTotal
+}
+
+"""
+The connection type for Repository.
+"""
+type RepositoryConnectionWithTotal {
+  certificates: [Unknown]
+  edges: [RepositoryEdge]
+  members: [Unknown]
+  nodes: [Repository]
+  pageInfo: PageInfo!
+  repositoryTypes: [Unknown]
+  software: [Unknown]
+  totalCount: Int
+  years: [Unknown]
+}
+
+"""
+An edge in a connection.
+"""
+type RepositoryEdge {
+  cursor: String!
+  node: Repository
+}
+
+"""
+Information about repository prefixes
+"""
+type RepositoryPrefix {
+  id: ID!
+  name: String!
+  type: String!
+}
+
+"""
+The connection type for RepositoryPrefix.
+"""
+type RepositoryPrefixConnectionWithTotal {
+  edges: [RepositoryPrefixEdge]
+  nodes: [RepositoryPrefix]
+  pageInfo: PageInfo!
+  totalCount: Int!
+  years: Unknown!
+}
+
+"""
+An edge in a connection.
+"""
+type RepositoryPrefixEdge {
+  cursor: String!
+  node: RepositoryPrefix
+}
+
+"""
+Information about types
+"""
+type ResourceType {
+  bibtex: String
+  citeproc: String
+  resourceType: String
+  resourceTypeGeneral: String
+  ris: String
+  schemaOrg: String
+}
+
+"""
+Information about rights
+"""
+type Rights {
+  lang: String
+  rights: String
+  rightsIdentifier: String
+  rightsIdentifierScheme: String
+  rightsUri: String
+  schemeUri: String
+}
+
+type Service {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Service.
+"""
+type ServiceConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [ServiceEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Service]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  pidEntities: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type ServiceEdge {
+  cursor: String!
+  node: Service
+}
+
+type Software {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+A software application.
+"""
+type SoftwareApplication {
+  description: String
+  name: String
+  softwareVersion: String
+  url: String
+}
+
+"""
+The connection type for Software.
+"""
+type SoftwareConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  datasetConnectionCount: Int!
+  edges: [SoftwareEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funderConnectionCount: Int!
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Software]
+  openLicenseResourceTypes: [Unknown]
+  organizationConnectionCount: Int!
+  pageInfo: PageInfo!
+  personConnectionCount: Int!
+  personToWorkTypesMultilevel: [Unknown]
+  publicationConnectionCount: Int!
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  softwareConnectionCount: Int!
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type SoftwareEdge {
+  cursor: String!
+  node: Software
+}
+
+type Sound {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Sound.
+"""
+type SoundConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [SoundEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Sound]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type SoundEdge {
+  cursor: String!
+  node: Sound
+}
+
+"""
+Subject information
+"""
+type Subject {
+  classificationCode: String
+  lang: ID
+  schemeUri: String
+  subject: String
+  subjectScheme: String
+  valueUri: String
+}
+
+"""
+Information
+"""
+type Text {
+  text: String!
+}
+
+"""
+Information
+"""
+type TextRestriction {
+  restriction: [Unknown]
+  type: String!
+}
+
+"""
+Information about titles
+"""
+type Title {
+  lang: ID
+  title: String
+  titleType: String
+}
+
+"""
+Autogenerated return type of UpdateUserProfile.
+"""
+type UpdateUserProfilePayload {
+  errors: Unknown!
+  user: User
+}
+
+"""
+A valid URL, transported as a string
+"""
+scalar Url
+
+"""
+Information about usage reports
+"""
+type UsageReport {
+  datasets: UsageReportDatasetConnectionWithTotal!
+  dateCreated: String!
+  id: ID!
+  reportingPeriod: ReportingPeriod!
+  repositoryId: String
+}
+
+"""
+The connection type for UsageReport.
+"""
+type UsageReportConnectionWithTotal {
+  edges: [UsageReportEdge]
+  nodes: [UsageReport]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+"""
+The connection type for EventData.
+"""
+type UsageReportDatasetConnectionWithTotal {
+  edges: [EventDataEdge]
+  nodes: [EventData]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type UsageReportEdge {
+  cursor: String!
+  node: UsageReport
+}
+
+"""
+A user.
+"""
+type User {
+  name: String
+  uid: ID!
+}
+
+type Work {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Work.
+"""
+type WorkConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [WorkEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Work]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  resourceTypes: [Unknown]
+  totalContentUrl: Int
+  totalCount: Int!
+  totalCountFromCrossref: Int
+  totalOpenLicenses: Int
+}
+
+"""
+An edge in a connection.
+"""
+type WorkEdge {
+  cursor: String!
+  node: Work
+}
+
+interface WorkFacetsInterface {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  openLicenseResourceTypes: [Unknown]
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+type Workflow {
+  allRelated: WorkConnectionWithTotal
+  allRelatedCount: Int
+  bibtex: String!
+  citationCount: Int
+  citations: WorkConnectionWithTotal
+  citationsOverTime: [Unknown]
+  claims: [Unknown]
+  container: Container
+  contentUrl: Url
+  contributors: [Unknown]
+  creators: [Unknown]
+  dates: [Unknown]
+  descriptions: [Unknown]
+  doi: String!
+  downloadCount: Int
+  downloadsOverTime: [Unknown]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  formats: [Unknown]
+  formattedCitation: String
+  fundingReferences: [Unknown]
+  geolocations: [Unknown]
+  id: ID!
+  identifiers: [Unknown]
+  language: Language
+  member: Member
+  otherRelated: WorkConnectionWithTotal
+  otherRelatedCount: Int
+  partCount: Int
+  partOf: WorkConnectionWithTotal
+  partOfCount: Int
+  parts: WorkConnectionWithTotal
+  publicationYear: Int
+  publisher: Publisher
+  referenceCount: Int
+  references: WorkConnectionWithTotal
+  registered: ISO8601DateTime
+  registrationAgency: RegistrationAgency
+  relatedIdentifiers: [Unknown]
+  relatedItems: [Unknown]
+  repository: Repository
+  rights: [Unknown]
+  schemaOrg: JSON!
+  sizes: [Unknown]
+  subjects: [Unknown]
+  titles: [Unknown]
+  type: String!
+  types: ResourceType!
+  url: Url
+  version: String
+  versionCount: Int
+  versionOf: WorkConnectionWithTotal
+  versionOfCount: Int
+  versions: WorkConnectionWithTotal
+  viewCount: Int
+  viewsOverTime: [Unknown]
+  xml: String!
+}
+
+"""
+The connection type for Workflow.
+"""
+type WorkflowConnectionWithTotal {
+  affiliations: [Unknown]
+  authors: [Unknown]
+  creatorsAndContributors: [Unknown]
+  edges: [WorkflowEdge]
+  fieldsOfScience: [Unknown]
+  fieldsOfScienceCombined: [Unknown]
+  fieldsOfScienceRepository: [Unknown]
+  funders: [Unknown]
+  languages: [Unknown]
+  licenses: [Unknown]
+  nodes: [Workflow]
+  openLicenseResourceTypes: [Unknown]
+  pageInfo: PageInfo!
+  personToWorkTypesMultilevel: [Unknown]
+  published: [Unknown]
+  registrationAgencies: [Unknown]
+  repositories: [Unknown]
+  repositoryTypes: [Unknown]
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type WorkflowEdge {
+  cursor: String!
+  node: Workflow
+}
+
+"""
+Information about totals over time (years)
+"""
+type YearMonthTotal {
+  total: Int
+  yearMonth: String
+}
+
+"""
+Information about totals over time (years)
+"""
+type YearTotal {
+  total: Int
+  year: Int
+}

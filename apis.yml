@@ -1,156 +1,161 @@
 aid: datacite
 name: DataCite
-description: >
-  DataCite is a leading global non-profit organization that provides DOI (Digital Object Identifier)
-  registration and persistent identifier services for research outputs, enabling researchers to cite,
-  discover, and access scholarly data. DataCite maintains a REST API for minting and managing DOIs,
-  querying metadata records, and accessing the global research data graph. Membership-based access
-  allows institutions to register DOIs through APIs and the Fabrica web interface, while public
-  metadata retrieval is freely available to anyone. DataCite also offers a GraphQL API, a legacy
-  Metadata Store (MDS) API, usage statistics via its Usage Reports API, and scholarly event tracking
-  via the Event Data API.
+description: 'DataCite is a leading global non-profit organization that provides DOI
+  (Digital Object Identifier) registration and persistent identifier services for
+  research outputs, enabling researchers to cite, discover, and access scholarly data.
+  DataCite maintains a REST API for minting and managing DOIs, querying metadata records,
+  and accessing the global research data graph. Membership-based access allows institutions
+  to register DOIs through APIs and the Fabrica web interface, while public metadata
+  retrieval is freely available to anyone. DataCite also offers a GraphQL API, a legacy
+  Metadata Store (MDS) API, usage statistics via its Usage Reports API, and scholarly
+  event tracking via the Event Data API.
+
+  '
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - DOI
-  - Persistent Identifiers
-  - Scholarly Metadata
-  - Research Data
-  - Open Science
-  - Linked Data
+- DOI
+- Persistent Identifiers
+- Scholarly Metadata
+- Research Data
+- Open Science
+- Linked Data
 url: https://raw.githubusercontent.com/api-evangelist/datacite/refs/heads/main/apis.yml
 created: '2026-06-12'
 modified: '2026-06-12'
 specificationVersion: '0.19'
-
 apis:
-  - name: DataCite REST API
-    description: >
-      The primary DataCite API for retrieving, creating, and updating DOI metadata records and
-      account information. Follows the JSON:API specification. Public endpoints require no
-      authentication; member endpoints require username/password or token authentication.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://support.datacite.org/docs/api
-    baseURL: https://api.datacite.org
-    tags:
-      - DOI
-      - Metadata
-      - JSON:API
-      - REST
-    properties:
-      - type: Documentation
-        url: https://support.datacite.org/docs/api
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/datacite/lupo/master/openapi.yaml
-      - type: OpenAPI
-        url: openapi/datacite-rest-api-openapi.yml
-      - type: PostmanCollection
-        url: https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
-      - type: RateLimits
-        url: https://support.datacite.org/docs/rate-limit
+- name: DataCite REST API
+  description: 'The primary DataCite API for retrieving, creating, and updating DOI
+    metadata records and account information. Follows the JSON:API specification.
+    Public endpoints require no authentication; member endpoints require username/password
+    or token authentication.
 
-  - name: DataCite GraphQL API
-    description: >
-      An alternative query interface for DOI metadata retrieval using the GraphQL query language.
-      Currently supports queries only (no mutations or subscriptions). Publicly accessible without
-      authentication for read queries.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://support.datacite.org/docs/datacite-graphql-api-guide
-    baseURL: https://api.datacite.org/graphql
-    tags:
-      - GraphQL
-      - DOI
-      - Metadata
-      - Query
-    properties:
-      - type: Documentation
-        url: https://support.datacite.org/docs/datacite-graphql-api-guide
-
-  - name: DataCite MDS API
-    description: >
-      The legacy Metadata Store (MDS) API for DOI registration and metadata management. Supports
-      DOI minting and metadata uploads. Members are encouraged to migrate to the REST API as MDS
-      legacy endpoints are being deprecated.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://support.datacite.org/docs/mds-api-guide
-    baseURL: https://mds.datacite.org
-    tags:
-      - DOI
-      - Metadata
-      - Legacy
-      - MDS
-    properties:
-      - type: Documentation
-        url: https://support.datacite.org/docs/mds-api-guide
-      - type: OpenAPI
-        url: https://github.com/datacite/sashimi/blob/master/openapi.yaml
-
-  - name: DataCite Event Data API
-    description: >
-      Tracks mentions, citations, and scholarly events related to registered DOIs. Enables discovery
-      of how research outputs are referenced and linked across the scholarly web.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://support.datacite.org/docs/apis
-    baseURL: https://api.datacite.org/events
-    tags:
-      - Events
-      - Citations
-      - Scholarly
-      - DOI
-    properties:
-      - type: Documentation
-        url: https://support.datacite.org/docs/apis
-
-  - name: DataCite Usage Reports API
-    description: >
-      Provides access to COUNTER-compliant usage statistics for registered DOIs. Enables members
-      and data repositories to track downloads, views, and access patterns for research outputs.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://support.datacite.org/docs/usage-reports-api-guide
-    baseURL: https://api.datacite.org/reports
-    tags:
-      - Usage
-      - Statistics
-      - COUNTER
-      - Analytics
-    properties:
-      - type: Documentation
-        url: https://support.datacite.org/docs/usage-reports-api-guide
-      - type: OpenAPI
-        url: https://github.com/datacite/sashimi/blob/master/openapi.yaml
-      - type: OpenAPI
-        url: openapi/datacite-usage-reports-api-openapi.yml
-
-common:
-  - type: Website
-    url: https://datacite.org
+    '
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - DOI
+  - Metadata
+  - JSON:API
+  - REST
+  properties:
   - type: Documentation
-    url: https://support.datacite.org
-  - type: GitHubOrganization
-    url: https://github.com/datacite
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/datacite/
-  - type: Blog
-    url: https://datacite.org/blog/
-  - type: Pricing
-    url: https://datacite.org/fees/
-  - type: StatusPage
-    url: https://status.datacite.org/
-  - type: X
-    url: https://x.com/DataCite
-  - type: BestPractices
-    url: https://support.datacite.org/docs/best-practices-for-integrators
-  - type: UpcomingChanges
-    url: https://support.datacite.org/docs/upcoming-changes
-  - type: JSONLDContext
-    url: json-ld/datacite-context.jsonld
-  - type: Plans
-    url: plans/datacite-plans-pricing.yml
+    url: https://support.datacite.org/docs/api
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/datacite/lupo/master/openapi.yaml
+  - type: OpenAPI
+    url: openapi/datacite-rest-api-openapi.yml
+  - type: PostmanCollection
+    url: https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
   - type: RateLimits
-    url: rate-limits/datacite-rate-limits.yml
-  - type: FinOps
-    url: finops/datacite-finops.yml
+    url: https://support.datacite.org/docs/rate-limit
+  - url: graphql/datacite-graphql.md
+    type: GraphQL
+- name: DataCite GraphQL API
+  description: 'An alternative query interface for DOI metadata retrieval using the
+    GraphQL query language. Currently supports queries only (no mutations or subscriptions).
+    Publicly accessible without authentication for read queries.
 
+    '
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://support.datacite.org/docs/datacite-graphql-api-guide
+  baseURL: https://api.datacite.org/graphql
+  tags:
+  - GraphQL
+  - DOI
+  - Metadata
+  - Query
+  properties:
+  - type: Documentation
+    url: https://support.datacite.org/docs/datacite-graphql-api-guide
+- name: DataCite MDS API
+  description: 'The legacy Metadata Store (MDS) API for DOI registration and metadata
+    management. Supports DOI minting and metadata uploads. Members are encouraged
+    to migrate to the REST API as MDS legacy endpoints are being deprecated.
+
+    '
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://support.datacite.org/docs/mds-api-guide
+  baseURL: https://mds.datacite.org
+  tags:
+  - DOI
+  - Metadata
+  - Legacy
+  - MDS
+  properties:
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: OpenAPI
+    url: https://github.com/datacite/sashimi/blob/master/openapi.yaml
+- name: DataCite Event Data API
+  description: 'Tracks mentions, citations, and scholarly events related to registered
+    DOIs. Enables discovery of how research outputs are referenced and linked across
+    the scholarly web.
+
+    '
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://support.datacite.org/docs/apis
+  baseURL: https://api.datacite.org/events
+  tags:
+  - Events
+  - Citations
+  - Scholarly
+  - DOI
+  properties:
+  - type: Documentation
+    url: https://support.datacite.org/docs/apis
+- name: DataCite Usage Reports API
+  description: 'Provides access to COUNTER-compliant usage statistics for registered
+    DOIs. Enables members and data repositories to track downloads, views, and access
+    patterns for research outputs.
+
+    '
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://support.datacite.org/docs/usage-reports-api-guide
+  baseURL: https://api.datacite.org/reports
+  tags:
+  - Usage
+  - Statistics
+  - COUNTER
+  - Analytics
+  properties:
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+  - type: OpenAPI
+    url: https://github.com/datacite/sashimi/blob/master/openapi.yaml
+  - type: OpenAPI
+    url: openapi/datacite-usage-reports-api-openapi.yml
+common:
+- type: Website
+  url: https://datacite.org
+- type: Documentation
+  url: https://support.datacite.org
+- type: GitHubOrganization
+  url: https://github.com/datacite
+- type: LinkedIn
+  url: https://www.linkedin.com/company/datacite/
+- type: Blog
+  url: https://datacite.org/blog/
+- type: Pricing
+  url: https://datacite.org/fees/
+- type: StatusPage
+  url: https://status.datacite.org/
+- type: X
+  url: https://x.com/DataCite
+- type: BestPractices
+  url: https://support.datacite.org/docs/best-practices-for-integrators
+- type: UpcomingChanges
+  url: https://support.datacite.org/docs/upcoming-changes
+- type: JSONLDContext
+  url: json-ld/datacite-context.jsonld
+- type: Plans
+  url: plans/datacite-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/datacite-rate-limits.yml
+- type: FinOps
+  url: finops/datacite-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
