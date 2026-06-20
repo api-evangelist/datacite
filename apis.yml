@@ -12,7 +12,7 @@ description: 'DataCite is a leading global non-profit organization that provides
 
   '
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - DOI
 - Persistent Identifiers
@@ -32,7 +32,7 @@ apis:
     or token authentication.
 
     '
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
@@ -59,7 +59,7 @@ apis:
     Publicly accessible without authentication for read queries.
 
     '
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://support.datacite.org/docs/datacite-graphql-api-guide
   baseURL: https://api.datacite.org/graphql
   tags:
@@ -76,7 +76,7 @@ apis:
     to migrate to the REST API as MDS legacy endpoints are being deprecated.
 
     '
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://support.datacite.org/docs/mds-api-guide
   baseURL: https://mds.datacite.org
   tags:
@@ -95,7 +95,7 @@ apis:
     the scholarly web.
 
     '
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://support.datacite.org/docs/apis
   baseURL: https://api.datacite.org/events
   tags:
@@ -112,7 +112,7 @@ apis:
     patterns for research outputs.
 
     '
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://support.datacite.org/docs/usage-reports-api-guide
   baseURL: https://api.datacite.org/reports
   tags:
