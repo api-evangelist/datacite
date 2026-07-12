@@ -128,6 +128,10 @@ apis:
   - type: OpenAPI
     url: openapi/datacite-usage-reports-api-openapi.yml
 common:
+- type: DomainSecurity
+  url: security/datacite-domain-security.yml
+- type: Authentication
+  url: authentication/datacite-authentication.yml
 - type: Website
   url: https://datacite.org
 - type: Documentation

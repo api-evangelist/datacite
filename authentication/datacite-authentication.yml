@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/datacite-rest-api-openapi.yml, openapi/datacite-usage-reports-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BasicAuth
+  type: http
+  scheme: basic
+  sources:
+  - openapi/datacite-rest-api-openapi.yml
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  sources:
+  - openapi/datacite-rest-api-openapi.yml
+  - openapi/datacite-usage-reports-api-openapi.yml

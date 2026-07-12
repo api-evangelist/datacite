@@ -1,0 +1,26 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: datacite.org
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 14 00:27:38 2026 GMT
+  hsts: false
+- host: support.datacite.org
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  3 12:46:16 2026 GMT
+  hsts: null
+- host: api.datacite.org
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Nov  4 23:59:59 2026 GMT
+  hsts: null
+domains:
+- domain: datacite.org
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
