@@ -128,6 +128,8 @@ apis:
   - type: OpenAPI
     url: openapi/datacite-usage-reports-api-openapi.yml
 common:
+- type: AgenticAccess
+  url: agentic-access/datacite-agentic-access.yml
 - type: DomainSecurity
   url: security/datacite-domain-security.yml
 - type: Authentication
