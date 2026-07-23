@@ -1,0 +1,155 @@
+openapi: 3.0.0
+info:
+  title: REST activities publishers API
+  description: The REST API is used for all API interactions with DataCite services.
+  contact:
+    name: DataCite Support
+    url: https://support.datacite.org
+    email: support@datacite.org
+  license:
+    name: MIT
+    url: https://raw.githubusercontent.com/datacite/lupo/master/LICENSE
+  version: 2.3.0
+servers:
+- url: https://api.test.datacite.org
+  description: Staging server
+- url: https://api.datacite.org
+  description: Production server
+security:
+- {}
+- BasicAuth: []
+- bearerAuth: []
+tags:
+- name: publishers
+paths:
+  /publishers:
+    get:
+      summary: This resource returns a collection of reports publishers.
+      tags:
+      - publishers
+      parameters:
+      - name: platform
+        in: query
+        description: Name of the Platform the usage is being requested for.  This can be omitted if the service provides usage for only one platform.
+        schema:
+          type: string
+      - name: report_id
+        in: query
+        description: The report ID or code or shortname. Typically this will be the same code provided in the Report parameter of the request.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Collections of Usage Reports.
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/Publisher'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/Error_Model'
+    post:
+      summary: This resource creates a new of report publisher.
+      tags:
+      - publishers
+      parameters: []
+      responses:
+        '200':
+          description: Publisher entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/Publisher'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/Error_Model'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/Publisher'
+  /publishers/{id}:
+    get:
+      summary: This resource returns a specific report publisher.
+      tags:
+      - publishers
+      parameters:
+      - name: id
+        in: path
+        description: Publisher Unique ID. Identifier of a specific report publisher.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Publisher Instance
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/Publisher'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/Error_Model'
+    delete:
+      summary: This resource deletes a Publisher.
+      tags:
+      - publishers
+      parameters:
+      - name: id
+        in: path
+        description: Publisher Unique ID. Identifier of a specific report publisher.
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: The resource was deleted successfully.
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/Error_Model'
+    put:
+      summary: This resource returns an updated Publisher Record.
+      tags:
+      - publishers
+      parameters:
+      - name: id
+        in: path
+        description: Publisher Unique ID. Identifier of a specific report publisher.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Report Updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/Publisher'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/Error_Model'
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

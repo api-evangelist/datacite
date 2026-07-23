@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: REST activities status API
+  description: The REST API is used for all API interactions with DataCite services.
+  contact:
+    name: DataCite Support
+    url: https://support.datacite.org
+    email: support@datacite.org
+  license:
+    name: MIT
+    url: https://raw.githubusercontent.com/datacite/lupo/master/LICENSE
+  version: 2.3.0
+servers:
+- url: https://api.test.datacite.org
+  description: Staging server
+- url: https://api.datacite.org
+  description: Production server
+security:
+- {}
+- BasicAuth: []
+- bearerAuth: []
+tags:
+- name: status
+paths:
+  /status:
+    get:
+      summary: This resource returns the current status of the reporting service supported by this API.
+      tags:
+      - status
+      parameters:
+      - name: platform
+        in: query
+        description: Name of the Platform the report data is being requested for.  This can be omitted if the service provides report data for only one platform.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Status of the reporting service(s) supported by this API.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/definitions/Status'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/Error_Model'
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

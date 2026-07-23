@@ -1,0 +1,207 @@
+openapi: 3.0.0
+info:
+  title: REST activities API
+  description: The REST API is used for all API interactions with DataCite services.
+  contact:
+    name: DataCite Support
+    url: https://support.datacite.org
+    email: support@datacite.org
+  license:
+    name: MIT
+    url: https://raw.githubusercontent.com/datacite/lupo/master/LICENSE
+  version: 2.3.0
+servers:
+- url: https://api.test.datacite.org
+  description: Staging server
+- url: https://api.datacite.org
+  description: Production server
+security:
+- {}
+- BasicAuth: []
+- bearerAuth: []
+tags:
+- name: activities
+  description: Activities
+paths:
+  /activities:
+    get:
+      tags:
+      - activities
+      summary: Get a JSON API result of activities.
+      security: []
+      parameters:
+      - in: query
+        name: id
+        description: Find activity by an ID.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: ids
+        description: Find activities by array of activity IDs.
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - in: query
+        name: query
+        description: Search the index by keyword or query string syntax.
+        required: false
+        schema:
+          type: string
+      - in: query
+        $ref: '#/components/parameters/pageNumberParam'
+      - in: query
+        $ref: '#/components/parameters/pageSizeParam'
+      - in: query
+        $ref: '#/components/parameters/pageCursorParam'
+      responses:
+        '200':
+          description: A JSON API result of activities.
+          content:
+            application/vnd.api+json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Activity'
+                  meta:
+                    allOf:
+                    - $ref: '#/components/schemas/MetaCore'
+                  links:
+                    allOf:
+                    - $ref: '#/components/schemas/Links'
+  /activities/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        description: Activity ID.
+        required: true
+        schema:
+          type: string
+      tags:
+      - activities
+      summary: Get a JSON API result of a specific activity.
+      responses:
+        '200':
+          description: A JSON object.
+          content:
+            application/vnd.api+json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    $ref: '#/components/schemas/Activity'
+  /dois/{id}/activities:
+    get:
+      parameters:
+      - name: id
+        in: path
+        description: DOI
+        required: true
+        schema:
+          type: string
+      tags:
+      - activities
+      summary: Return activities for a specific DOI.
+      responses:
+        '200':
+          description: A JSON object.
+          content:
+            application/vnd.api+json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Activity'
+                  meta:
+                    allOf:
+                    - $ref: '#/components/schemas/MetaCore'
+                  links:
+                    allOf:
+                    - $ref: '#/components/schemas/Links'
+components:
+  schemas:
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+        next:
+          type: string
+    Activity:
+      type: object
+      description: Represents an activity for an event within DataCite systems.
+      properties:
+        id:
+          type: string
+          example: 57690e72-b1be-4370-9f35-de6bec5f7b71
+        type:
+          type: string
+          enum:
+          - activities
+        attributes:
+          type: object
+          properties:
+            prov:wasGeneratedBy:
+              type: string
+            prov:generatedAtTime:
+              type: string
+            prov:wasDerivedFrom:
+              type: string
+            prov:wasAttributedTo:
+              type: string
+            action:
+              type: string
+            version:
+              type: number
+            changes:
+              type: object
+    MetaCore:
+      type: object
+      properties:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
+  parameters:
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
+    pageCursorParam:
+      name: page[cursor]
+      in: query
+      schema:
+        type: string
+      description: Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor).
+    pageSizeParam:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000
+      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
