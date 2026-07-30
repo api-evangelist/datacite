@@ -12,7 +12,20 @@ description: 'DataCite is a leading global non-profit organization that provides
 
   '
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/datacite.png
 tags:
 - DOI
 - Persistent Identifiers
@@ -25,40 +38,11 @@ created: '2026-06-12'
 modified: '2026-06-12'
 specificationVersion: '0.19'
 apis:
-- name: DataCite REST API
-  description: 'The primary DataCite API for retrieving, creating, and updating DOI
-    metadata records and account information. Follows the JSON:API specification.
-    Public endpoints require no authentication; member endpoints require username/password
-    or token authentication.
-
-    '
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://support.datacite.org/docs/api
-  baseURL: https://api.datacite.org
-  tags:
-  - DOI
-  - Metadata
-  - JSON:API
-  - REST
-  properties:
-  - type: Documentation
-    url: https://support.datacite.org/docs/api
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/datacite/lupo/master/openapi.yaml
-  - type: OpenAPI
-    url: openapi/datacite-rest-api-openapi.yml
-  - type: PostmanCollection
-    url: https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
-  - type: RateLimits
-    url: https://support.datacite.org/docs/rate-limit
-  - url: graphql/datacite-graphql.md
-    type: GraphQL
 - name: DataCite GraphQL API
-  description: 'An alternative query interface for DOI metadata retrieval using the
-    GraphQL query language. Currently supports queries only (no mutations or subscriptions).
-    Publicly accessible without authentication for read queries.
-
-    '
+  description: >
+    An alternative query interface for DOI metadata retrieval using the GraphQL query language. Currently
+    supports queries only (no mutations or subscriptions). Publicly accessible without authentication
+    for read queries.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://support.datacite.org/docs/datacite-graphql-api-guide
   baseURL: https://api.datacite.org/graphql
@@ -70,31 +54,10 @@ apis:
   properties:
   - type: Documentation
     url: https://support.datacite.org/docs/datacite-graphql-api-guide
-- name: DataCite MDS API
-  description: 'The legacy Metadata Store (MDS) API for DOI registration and metadata
-    management. Supports DOI minting and metadata uploads. Members are encouraged
-    to migrate to the REST API as MDS legacy endpoints are being deprecated.
-
-    '
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://support.datacite.org/docs/mds-api-guide
-  baseURL: https://mds.datacite.org
-  tags:
-  - DOI
-  - Metadata
-  - Legacy
-  - MDS
-  properties:
-  - type: Documentation
-    url: https://support.datacite.org/docs/mds-api-guide
-  - type: OpenAPI
-    url: https://github.com/datacite/sashimi/blob/master/openapi.yaml
 - name: DataCite Event Data API
-  description: 'Tracks mentions, citations, and scholarly events related to registered
-    DOIs. Enables discovery of how research outputs are referenced and linked across
-    the scholarly web.
-
-    '
+  description: >
+    Tracks mentions, citations, and scholarly events related to registered DOIs. Enables discovery of
+    how research outputs are referenced and linked across the scholarly web.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://support.datacite.org/docs/apis
   baseURL: https://api.datacite.org/events
@@ -106,27 +69,328 @@ apis:
   properties:
   - type: Documentation
     url: https://support.datacite.org/docs/apis
-- name: DataCite Usage Reports API
-  description: 'Provides access to COUNTER-compliant usage statistics for registered
-    DOIs. Enables members and data repositories to track downloads, views, and access
-    patterns for research outputs.
-
-    '
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://support.datacite.org/docs/usage-reports-api-guide
-  baseURL: https://api.datacite.org/reports
+- aid: datacite:datacite-activities-api
+  name: DataCite activities API
+  description: Activities
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
   tags:
-  - Usage
-  - Statistics
-  - COUNTER
-  - Analytics
+  - activities
   properties:
+  - type: OpenAPI
+    url: openapi/datacite-activities-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-client-prefixes-api
+  name: DataCite client-prefixes API
+  description: Client Prefixes
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - client-prefixes
+  properties:
   - type: OpenAPI
-    url: https://github.com/datacite/sashimi/blob/master/openapi.yaml
+    url: openapi/datacite-client-prefixes-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-clients-api
+  name: DataCite clients API
+  description: Clients
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - clients
+  properties:
   - type: OpenAPI
-    url: openapi/datacite-usage-reports-api-openapi.yml
+    url: openapi/datacite-clients-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-dois-api
+  name: DataCite dois API
+  description: DOIs
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - dois
+  properties:
+  - type: OpenAPI
+    url: openapi/datacite-dois-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-events-api
+  name: DataCite events API
+  description: Events
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - events
+  properties:
+  - type: OpenAPI
+    url: openapi/datacite-events-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-heartbeat-api
+  name: DataCite heartbeat API
+  description: Heartbeat
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - heartbeat
+  properties:
+  - type: OpenAPI
+    url: openapi/datacite-heartbeat-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-prefixes-api
+  name: DataCite prefixes API
+  description: Prefixes
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - prefixes
+  properties:
+  - type: OpenAPI
+    url: openapi/datacite-prefixes-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-provider-prefixes-api
+  name: DataCite provider-prefixes API
+  description: Provider Prefixes
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - provider-prefixes
+  properties:
+  - type: OpenAPI
+    url: openapi/datacite-provider-prefixes-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-providers-api
+  name: DataCite providers API
+  description: Providers
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - providers
+  properties:
+  - type: OpenAPI
+    url: openapi/datacite-providers-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-publishers-api
+  name: DataCite publishers API
+  description: The publishers API from DataCite — 2 operation(s) for publishers.
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - publishers
+  properties:
+  - type: OpenAPI
+    url: openapi/datacite-publishers-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-report-types-api
+  name: DataCite report_types API
+  description: The report_types API from DataCite — 1 operation(s) for report_types.
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - report_types
+  properties:
+  - type: OpenAPI
+    url: openapi/datacite-report-types-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-reports-api
+  name: DataCite reports API
+  description: Reports
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - reports
+  properties:
+  - type: OpenAPI
+    url: openapi/datacite-reports-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-repositories-api
+  name: DataCite repositories API
+  description: The repositories API from DataCite — 2 operation(s) for repositories.
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - repositories
+  properties:
+  - type: OpenAPI
+    url: openapi/datacite-repositories-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
+- aid: datacite:datacite-status-api
+  name: DataCite status API
+  description: The status API from DataCite — 1 operation(s) for status.
+  humanURL: https://support.datacite.org/docs/api
+  baseURL: https://api.datacite.org
+  tags:
+  - status
+  properties:
+  - type: OpenAPI
+    url: openapi/datacite-status-api-openapi.yml
+  - type: Documentation
+    url: https://support.datacite.org/docs/api
+  - type: PostmanCollection
+    url: >-
+      https://www.postman.com/datacite/datacite-rest-api-training/documentation/z7vc626/datacite-rest-api-training-2024
+  - type: RateLimits
+    url: https://support.datacite.org/docs/rate-limit
+  - type: GraphQL
+    url: graphql/datacite-graphql.md
+  - type: Documentation
+    url: https://support.datacite.org/docs/mds-api-guide
+  - type: Documentation
+    url: https://support.datacite.org/docs/usage-reports-api-guide
 common:
 - type: AgenticAccess
   url: agentic-access/datacite-agentic-access.yml
