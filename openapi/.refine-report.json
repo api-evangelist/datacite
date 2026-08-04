@@ -1,0 +1,48 @@
+{
+  "provider": "datacite",
+  "sources": [
+    "datacite-activities-api-openapi.yml",
+    "datacite-client-prefixes-api-openapi.yml",
+    "datacite-clients-api-openapi.yml",
+    "datacite-dois-api-openapi.yml",
+    "datacite-events-api-openapi.yml",
+    "datacite-heartbeat-api-openapi.yml",
+    "datacite-prefixes-api-openapi.yml",
+    "datacite-provider-prefixes-api-openapi.yml",
+    "datacite-providers-api-openapi.yml",
+    "datacite-publishers-api-openapi.yml",
+    "datacite-report-types-api-openapi.yml",
+    "datacite-reports-api-openapi.yml",
+    "datacite-repositories-api-openapi.yml",
+    "datacite-status-api-openapi.yml"
+  ],
+  "outputs": [
+    "datacite-activities-api-openapi.yml",
+    "datacite-client-prefixes-api-openapi.yml",
+    "datacite-clients-api-openapi.yml",
+    "datacite-dois-api-openapi.yml",
+    "datacite-events-api-openapi.yml",
+    "datacite-heartbeat-api-openapi.yml",
+    "datacite-prefixes-api-openapi.yml",
+    "datacite-provider-prefixes-api-openapi.yml",
+    "datacite-providers-api-openapi.yml",
+    "datacite-publishers-api-openapi.yml",
+    "datacite-report-types-api-openapi.yml",
+    "datacite-reports-api-openapi.yml",
+    "datacite-repositories-api-openapi.yml",
+    "datacite-status-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [
+    "datacite-publishers-api-openapi.yml: dangling $ref: #/definitions/Error_Model",
+    "datacite-publishers-api-openapi.yml: dangling $ref: #/definitions/Publisher",
+    "datacite-report-types-api-openapi.yml: dangling $ref: #/definitions/Error_Model",
+    "datacite-report-types-api-openapi.yml: dangling $ref: #/definitions/Report_Types",
+    "datacite-reports-api-openapi.yml: dangling $ref: #/definitions/Error_Model",
+    "datacite-status-api-openapi.yml: dangling $ref: #/definitions/Error_Model",
+    "datacite-status-api-openapi.yml: dangling $ref: #/definitions/Status"
+  ],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
