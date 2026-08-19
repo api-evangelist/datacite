@@ -1,0 +1,610 @@
+{
+  "item": [
+    {
+      "id": "19db4bb6-7406-4406-ab11-ccd6977a4f9e",
+      "name": "reports",
+      "description": {
+        "content": "Reports",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5968f071-e28e-4d72-b601-b581e451e889",
+          "name": "A JSON array of reports.",
+          "request": {
+            "name": "A JSON array of reports.",
+            "description": {},
+            "url": {
+              "path": [
+                "reports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "platform",
+                  "value": "<string>",
+                  "description": "Name of the Platform the usage is being requested for. This can be omitted if the service provides usage for only one platform."
+                },
+                {
+                  "disabled": false,
+                  "key": "report-name",
+                  "value": "<string>",
+                  "description": "The long name of the report."
+                },
+                {
+                  "disabled": false,
+                  "key": "report-id",
+                  "value": "<string>",
+                  "description": "The report ID or code or shortname. Typically this will be the same code provided in the Report parameter of the request."
+                },
+                {
+                  "disabled": false,
+                  "key": "release",
+                  "value": "<string>",
+                  "description": "The release or version of the report."
+                },
+                {
+                  "disabled": false,
+                  "key": "created",
+                  "value": "<dateTime>",
+                  "description": "Time the report was prepared. Format as defined by date-time - RFC3339"
+                },
+                {
+                  "disabled": false,
+                  "key": "created-by",
+                  "value": "<string>",
+                  "description": "Name of the organization producing the report."
+                },
+                {
+                  "disabled": false,
+                  "key": "page[number]",
+                  "value": "<integer>",
+                  "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page[size]",
+                  "value": "<integer>",
+                  "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6dbf447f-44cd-47dc-89e2-28aa3ffe5b77",
+              "name": "A JSON array of reports.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "platform",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "report-name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "report-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "release",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "created-by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page[number]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page[size]",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"report-datasets\": [\n        {\n          \"uri\": \"https://cn.dataone.org/cn/v2/resolve/doi%3A10.5063%2FAA%2Fnceas.985.1\",\n          \"yop\": \"2010\",\n          \"platform\": \"DataONE\",\n          \"data-type\": \"dataset\",\n          \"publisher\": \"DataONE\",\n          \"dataset-id\": [\n            {\n              \"type\": \"doi\",\n              \"value\": \"10.15146/R3J66V\"\n            },\n            {\n              \"type\": \"doi\",\n              \"value\": \"10.15146/R3J66V\"\n            }\n          ],\n          \"performance\": [\n            {\n              \"period\": {\n                \"end-date\": \"2018-04-30\",\n                \"begin-date\": \"2018-04-01\"\n              },\n              \"instance\": [\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            {\n              \"period\": {\n                \"end-date\": \"2018-04-30\",\n                \"begin-date\": \"2018-04-01\"\n              },\n              \"instance\": [\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            }\n          ],\n          \"publisher-id\": [\n            {\n              \"type\": \"ror\",\n              \"value\": \"https://ror.org/04wxnsj81\"\n            },\n            {\n              \"type\": \"ror\",\n              \"value\": \"https://ror.org/04wxnsj81\"\n            }\n          ],\n          \"dataset-dates\": [\n            {\n              \"type\": \"pub-date\",\n              \"value\": \"2017-12-31\"\n            },\n            {\n              \"type\": \"pub-date\",\n              \"value\": \"2017-12-31\"\n            }\n          ],\n          \"dataset-title\": \"Lake Erie Fish Community Data\",\n          \"dataset-contributors\": [\n            {\n              \"type\": \"name\",\n              \"value\": \"Cassandra Lopez\"\n            },\n            {\n              \"type\": \"name\",\n              \"value\": \"Cassandra Lopez\"\n            }\n          ]\n        },\n        {\n          \"uri\": \"https://cn.dataone.org/cn/v2/resolve/doi%3A10.5063%2FAA%2Fnceas.985.1\",\n          \"yop\": \"2010\",\n          \"platform\": \"DataONE\",\n          \"data-type\": \"dataset\",\n          \"publisher\": \"DataONE\",\n          \"dataset-id\": [\n            {\n              \"type\": \"doi\",\n              \"value\": \"10.15146/R3J66V\"\n            },\n            {\n              \"type\": \"doi\",\n              \"value\": \"10.15146/R3J66V\"\n            }\n          ],\n          \"performance\": [\n            {\n              \"period\": {\n                \"end-date\": \"2018-04-30\",\n                \"begin-date\": \"2018-04-01\"\n              },\n              \"instance\": [\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            {\n              \"period\": {\n                \"end-date\": \"2018-04-30\",\n                \"begin-date\": \"2018-04-01\"\n              },\n              \"instance\": [\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            }\n          ],\n          \"publisher-id\": [\n            {\n              \"type\": \"ror\",\n              \"value\": \"https://ror.org/04wxnsj81\"\n            },\n            {\n              \"type\": \"ror\",\n              \"value\": \"https://ror.org/04wxnsj81\"\n            }\n          ],\n          \"dataset-dates\": [\n            {\n              \"type\": \"pub-date\",\n              \"value\": \"2017-12-31\"\n            },\n            {\n              \"type\": \"pub-date\",\n              \"value\": \"2017-12-31\"\n            }\n          ],\n          \"dataset-title\": \"Lake Erie Fish Community Data\",\n          \"dataset-contributors\": [\n            {\n              \"type\": \"name\",\n              \"value\": \"Cassandra Lopez\"\n            },\n            {\n              \"type\": \"name\",\n              \"value\": \"Cassandra Lopez\"\n            }\n          ]\n        }\n      ],\n      \"id\": \"003fadc1-daab-4d1e-97d1-96004c1ff529\",\n      \"report-header\": {\n        \"report-id\": \"DSR\",\n        \"report-name\": \"Dataset Report\",\n        \"release\": \"RD1\",\n        \"created-by\": \"DataONE\",\n        \"reporting-period\": {\n          \"end-date\": \"2018-04-30\",\n          \"begin-date\": \"2018-04-01\"\n        },\n        \"created\": \"2019-09-08T22:47:31Z\",\n        \"report-filters\": [\n          \"string\",\n          \"string\"\n        ],\n        \"report-attributes\": [\n          \"string\",\n          \"string\"\n        ],\n        \"exceptions\": [\n          {\n            \"code\": 8590.290437868196,\n            \"data\": \"string\",\n            \"message\": \"string\",\n            \"help-url\": \"string\",\n            \"severity\": \"string\"\n          },\n          {\n            \"code\": 8406.80215891563,\n            \"data\": \"string\",\n            \"message\": \"string\",\n            \"help-url\": \"string\",\n            \"severity\": \"string\"\n          }\n        ]\n      },\n      \"report-subsets\": [\n        {\n          \"gzip\": \"string\",\n          \"checksum\": \"string\"\n        },\n        {\n          \"gzip\": \"string\",\n          \"checksum\": \"string\"\n        }\n      ]\n    },\n    {\n      \"report-datasets\": [\n        {\n          \"uri\": \"https://cn.dataone.org/cn/v2/resolve/doi%3A10.5063%2FAA%2Fnceas.985.1\",\n          \"yop\": \"2010\",\n          \"platform\": \"DataONE\",\n          \"data-type\": \"dataset\",\n          \"publisher\": \"DataONE\",\n          \"dataset-id\": [\n            {\n              \"type\": \"doi\",\n              \"value\": \"10.15146/R3J66V\"\n            },\n            {\n              \"type\": \"doi\",\n              \"value\": \"10.15146/R3J66V\"\n            }\n          ],\n          \"performance\": [\n            {\n              \"period\": {\n                \"end-date\": \"2018-04-30\",\n                \"begin-date\": \"2018-04-01\"\n              },\n              \"instance\": [\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            {\n              \"period\": {\n                \"end-date\": \"2018-04-30\",\n                \"begin-date\": \"2018-04-01\"\n              },\n              \"instance\": [\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            }\n          ],\n          \"publisher-id\": [\n            {\n              \"type\": \"ror\",\n              \"value\": \"https://ror.org/04wxnsj81\"\n            },\n            {\n              \"type\": \"ror\",\n              \"value\": \"https://ror.org/04wxnsj81\"\n            }\n          ],\n          \"dataset-dates\": [\n            {\n              \"type\": \"pub-date\",\n              \"value\": \"2017-12-31\"\n            },\n            {\n              \"type\": \"pub-date\",\n              \"value\": \"2017-12-31\"\n            }\n          ],\n          \"dataset-title\": \"Lake Erie Fish Community Data\",\n          \"dataset-contributors\": [\n            {\n              \"type\": \"name\",\n              \"value\": \"Cassandra Lopez\"\n            },\n            {\n              \"type\": \"name\",\n              \"value\": \"Cassandra Lopez\"\n            }\n          ]\n        },\n        {\n          \"uri\": \"https://cn.dataone.org/cn/v2/resolve/doi%3A10.5063%2FAA%2Fnceas.985.1\",\n          \"yop\": \"2010\",\n          \"platform\": \"DataONE\",\n          \"data-type\": \"dataset\",\n          \"publisher\": \"DataONE\",\n          \"dataset-id\": [\n            {\n              \"type\": \"doi\",\n              \"value\": \"10.15146/R3J66V\"\n            },\n            {\n              \"type\": \"doi\",\n              \"value\": \"10.15146/R3J66V\"\n            }\n          ],\n          \"performance\": [\n            {\n              \"period\": {\n                \"end-date\": \"2018-04-30\",\n                \"begin-date\": \"2018-04-01\"\n              },\n              \"instance\": [\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            {\n              \"period\": {\n                \"end-date\": \"2018-04-30\",\n                \"begin-date\": \"2018-04-01\"\n              },\n              \"instance\": [\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"count\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"metric-type\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"access-method\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            }\n          ],\n          \"publisher-id\": [\n            {\n              \"type\": \"ror\",\n              \"value\": \"https://ror.org/04wxnsj81\"\n            },\n            {\n              \"type\": \"ror\",\n              \"value\": \"https://ror.org/04wxnsj81\"\n            }\n          ],\n          \"dataset-dates\": [\n            {\n              \"type\": \"pub-date\",\n              \"value\": \"2017-12-31\"\n            },\n            {\n              \"type\": \"pub-date\",\n              \"value\": \"2017-12-31\"\n            }\n          ],\n          \"dataset-title\": \"Lake Erie Fish Community Data\",\n          \"dataset-contributors\": [\n            {\n              \"type\": \"name\",\n              \"value\": \"Cassandra Lopez\"\n            },\n            {\n              \"type\": \"name\",\n              \"value\": \"Cassandra Lopez\"\n            }\n          ]\n        }\n      ],\n      \"id\": \"003fadc1-daab-4d1e-97d1-96004c1ff529\",\n      \"report-header\": {\n        \"report-id\": \"DSR\",\n        \"report-name\": \"Dataset Report\",\n        \"release\": \"RD1\",\n        \"created-by\": \"DataONE\",\n        \"reporting-period\": {\n          \"end-date\": \"2018-04-30\",\n          \"begin-date\": \"2018-04-01\"\n        },\n        \"created\": \"2019-09-08T22:47:31Z\",\n        \"report-filters\": [\n          \"string\",\n          \"string\"\n        ],\n        \"report-attributes\": [\n          \"string\",\n          \"string\"\n        ],\n        \"exceptions\": [\n          {\n            \"code\": 7918.556844480973,\n            \"data\": \"string\",\n            \"message\": \"string\",\n            \"help-url\": \"string\",\n            \"severity\": \"string\"\n          },\n          {\n            \"code\": 9102.072957360862,\n            \"data\": \"string\",\n            \"message\": \"string\",\n            \"help-url\": \"string\",\n            \"severity\": \"string\"\n          }\n        ]\n      },\n      \"report-subsets\": [\n        {\n          \"gzip\": \"string\",\n          \"checksum\": \"string\"\n        },\n        {\n          \"gzip\": \"string\",\n          \"checksum\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"total\": 7986.882790671432,\n    \"total-pages\": 1028.3282915143743,\n    \"page\": 9567.961809668088\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e9f9f0f-08fb-4608-8529-5e70cf469bb1",
+          "name": "Add a new report.",
+          "request": {
+            "name": "Add a new report.",
+            "description": {},
+            "url": {
+              "path": [
+                "reports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"report-datasets\": [\n    {\n      \"uri\": \"<string>\",\n      \"yop\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"data-type\": \"<string>\",\n      \"publisher\": \"<string>\",\n      \"dataset-id\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"performance\": [\n        {\n          \"period\": {\n            \"end-date\": \"<string>\",\n            \"begin-date\": \"<string>\"\n          },\n          \"instance\": [\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            },\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            }\n          ]\n        },\n        {\n          \"period\": {\n            \"end-date\": \"<string>\",\n            \"begin-date\": \"<string>\"\n          },\n          \"instance\": [\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            },\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            }\n          ]\n        }\n      ],\n      \"publisher-id\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"dataset-dates\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"dataset-title\": \"<string>\",\n      \"dataset-contributors\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"uri\": \"<string>\",\n      \"yop\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"data-type\": \"<string>\",\n      \"publisher\": \"<string>\",\n      \"dataset-id\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"performance\": [\n        {\n          \"period\": {\n            \"end-date\": \"<string>\",\n            \"begin-date\": \"<string>\"\n          },\n          \"instance\": [\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            },\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            }\n          ]\n        },\n        {\n          \"period\": {\n            \"end-date\": \"<string>\",\n            \"begin-date\": \"<string>\"\n          },\n          \"instance\": [\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            },\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            }\n          ]\n        }\n      ],\n      \"publisher-id\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"dataset-dates\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"dataset-title\": \"<string>\",\n      \"dataset-contributors\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"id\": \"<string>\",\n  \"report-header\": {\n    \"report-id\": \"<string>\",\n    \"report-name\": \"<string>\",\n    \"release\": \"<string>\",\n    \"created-by\": \"<string>\",\n    \"reporting-period\": {\n      \"end-date\": \"<string>\",\n      \"begin-date\": \"<string>\"\n    },\n    \"created\": \"<dateTime>\",\n    \"report-filters\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"report-attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"report-subsets\": [\n    {\n      \"gzip\": \"<string>\",\n      \"checksum\": \"<string>\"\n    },\n    {\n      \"gzip\": \"<string>\",\n      \"checksum\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e6e0b0d8-b7b0-4250-8b46-096cdf4e953b",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"report-datasets\": [\n    {\n      \"uri\": \"https://cn.dataone.org/cn/v2/resolve/doi%3A10.5063%2FAA%2Fnceas.985.1\",\n      \"yop\": \"2010\",\n      \"platform\": \"DataONE\",\n      \"data-type\": \"dataset\",\n      \"publisher\": \"DataONE\",\n      \"dataset-id\": [\n        {\n          \"type\": \"doi\",\n          \"value\": \"10.15146/R3J66V\"\n        },\n        {\n          \"type\": \"doi\",\n          \"value\": \"10.15146/R3J66V\"\n        }\n      ],\n      \"performance\": [\n        {\n          \"period\": {\n            \"end-date\": \"2018-04-30\",\n            \"begin-date\": \"2018-04-01\"\n          },\n          \"instance\": [\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            },\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            }\n          ]\n        },\n        {\n          \"period\": {\n            \"end-date\": \"2018-04-30\",\n            \"begin-date\": \"2018-04-01\"\n          },\n          \"instance\": [\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            },\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            }\n          ]\n        }\n      ],\n      \"publisher-id\": [\n        {\n          \"type\": \"ror\",\n          \"value\": \"https://ror.org/04wxnsj81\"\n        },\n        {\n          \"type\": \"ror\",\n          \"value\": \"https://ror.org/04wxnsj81\"\n        }\n      ],\n      \"dataset-dates\": [\n        {\n          \"type\": \"pub-date\",\n          \"value\": \"2017-12-31\"\n        },\n        {\n          \"type\": \"pub-date\",\n          \"value\": \"2017-12-31\"\n        }\n      ],\n      \"dataset-title\": \"Lake Erie Fish Community Data\",\n      \"dataset-contributors\": [\n        {\n          \"type\": \"name\",\n          \"value\": \"Cassandra Lopez\"\n        },\n        {\n          \"type\": \"name\",\n          \"value\": \"Cassandra Lopez\"\n        }\n      ]\n    },\n    {\n      \"uri\": \"https://cn.dataone.org/cn/v2/resolve/doi%3A10.5063%2FAA%2Fnceas.985.1\",\n      \"yop\": \"2010\",\n      \"platform\": \"DataONE\",\n      \"data-type\": \"dataset\",\n      \"publisher\": \"DataONE\",\n      \"dataset-id\": [\n        {\n          \"type\": \"doi\",\n          \"value\": \"10.15146/R3J66V\"\n        },\n        {\n          \"type\": \"doi\",\n          \"value\": \"10.15146/R3J66V\"\n        }\n      ],\n      \"performance\": [\n        {\n          \"period\": {\n            \"end-date\": \"2018-04-30\",\n            \"begin-date\": \"2018-04-01\"\n          },\n          \"instance\": [\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            },\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            }\n          ]\n        },\n        {\n          \"period\": {\n            \"end-date\": \"2018-04-30\",\n            \"begin-date\": \"2018-04-01\"\n          },\n          \"instance\": [\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            },\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            }\n          ]\n        }\n      ],\n      \"publisher-id\": [\n        {\n          \"type\": \"ror\",\n          \"value\": \"https://ror.org/04wxnsj81\"\n        },\n        {\n          \"type\": \"ror\",\n          \"value\": \"https://ror.org/04wxnsj81\"\n        }\n      ],\n      \"dataset-dates\": [\n        {\n          \"type\": \"pub-date\",\n          \"value\": \"2017-12-31\"\n        },\n        {\n          \"type\": \"pub-date\",\n          \"value\": \"2017-12-31\"\n        }\n      ],\n      \"dataset-title\": \"Lake Erie Fish Community Data\",\n      \"dataset-contributors\": [\n        {\n          \"type\": \"name\",\n          \"value\": \"Cassandra Lopez\"\n        },\n        {\n          \"type\": \"name\",\n          \"value\": \"Cassandra Lopez\"\n        }\n      ]\n    }\n  ],\n  \"id\": \"003fadc1-daab-4d1e-97d1-96004c1ff529\",\n  \"report-header\": {\n    \"report-id\": \"DSR\",\n    \"report-name\": \"Dataset Report\",\n    \"release\": \"RD1\",\n    \"created-by\": \"DataONE\",\n    \"reporting-period\": {\n      \"end-date\": \"2018-04-30\",\n      \"begin-date\": \"2018-04-01\"\n    },\n    \"created\": \"2019-09-08T22:47:31Z\",\n    \"report-filters\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"report-attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"report-subsets\": [\n    {\n      \"gzip\": \"<string>\",\n      \"checksum\": \"<string>\"\n    },\n    {\n      \"gzip\": \"<string>\",\n      \"checksum\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e69c928f-854b-406c-bc6f-172309be496c",
+          "name": "Return a report.",
+          "request": {
+            "name": "Return a report.",
+            "description": {},
+            "url": {
+              "path": [
+                "reports",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Report"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eec58792-3970-4d3a-8d05-8f90ff980575",
+              "name": "A JSON object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"report-datasets\": [\n      {\n        \"uri\": \"https://cn.dataone.org/cn/v2/resolve/doi%3A10.5063%2FAA%2Fnceas.985.1\",\n        \"yop\": \"2010\",\n        \"platform\": \"DataONE\",\n        \"data-type\": \"dataset\",\n        \"publisher\": \"DataONE\",\n        \"dataset-id\": [\n          {\n            \"type\": \"doi\",\n            \"value\": \"10.15146/R3J66V\"\n          },\n          {\n            \"type\": \"doi\",\n            \"value\": \"10.15146/R3J66V\"\n          }\n        ],\n        \"performance\": [\n          {\n            \"period\": {\n              \"end-date\": \"2018-04-30\",\n              \"begin-date\": \"2018-04-01\"\n            },\n            \"instance\": [\n              {\n                \"count\": 20,\n                \"metric-type\": \"unique-dataset-requests\",\n                \"access-method\": \"regular\"\n              },\n              {\n                \"count\": 20,\n                \"metric-type\": \"unique-dataset-requests\",\n                \"access-method\": \"regular\"\n              }\n            ]\n          },\n          {\n            \"period\": {\n              \"end-date\": \"2018-04-30\",\n              \"begin-date\": \"2018-04-01\"\n            },\n            \"instance\": [\n              {\n                \"count\": 20,\n                \"metric-type\": \"unique-dataset-requests\",\n                \"access-method\": \"regular\"\n              },\n              {\n                \"count\": 20,\n                \"metric-type\": \"unique-dataset-requests\",\n                \"access-method\": \"regular\"\n              }\n            ]\n          }\n        ],\n        \"publisher-id\": [\n          {\n            \"type\": \"ror\",\n            \"value\": \"https://ror.org/04wxnsj81\"\n          },\n          {\n            \"type\": \"ror\",\n            \"value\": \"https://ror.org/04wxnsj81\"\n          }\n        ],\n        \"dataset-dates\": [\n          {\n            \"type\": \"pub-date\",\n            \"value\": \"2017-12-31\"\n          },\n          {\n            \"type\": \"pub-date\",\n            \"value\": \"2017-12-31\"\n          }\n        ],\n        \"dataset-title\": \"Lake Erie Fish Community Data\",\n        \"dataset-contributors\": [\n          {\n            \"type\": \"name\",\n            \"value\": \"Cassandra Lopez\"\n          },\n          {\n            \"type\": \"name\",\n            \"value\": \"Cassandra Lopez\"\n          }\n        ]\n      },\n      {\n        \"uri\": \"https://cn.dataone.org/cn/v2/resolve/doi%3A10.5063%2FAA%2Fnceas.985.1\",\n        \"yop\": \"2010\",\n        \"platform\": \"DataONE\",\n        \"data-type\": \"dataset\",\n        \"publisher\": \"DataONE\",\n        \"dataset-id\": [\n          {\n            \"type\": \"doi\",\n            \"value\": \"10.15146/R3J66V\"\n          },\n          {\n            \"type\": \"doi\",\n            \"value\": \"10.15146/R3J66V\"\n          }\n        ],\n        \"performance\": [\n          {\n            \"period\": {\n              \"end-date\": \"2018-04-30\",\n              \"begin-date\": \"2018-04-01\"\n            },\n            \"instance\": [\n              {\n                \"count\": 20,\n                \"metric-type\": \"unique-dataset-requests\",\n                \"access-method\": \"regular\"\n              },\n              {\n                \"count\": 20,\n                \"metric-type\": \"unique-dataset-requests\",\n                \"access-method\": \"regular\"\n              }\n            ]\n          },\n          {\n            \"period\": {\n              \"end-date\": \"2018-04-30\",\n              \"begin-date\": \"2018-04-01\"\n            },\n            \"instance\": [\n              {\n                \"count\": 20,\n                \"metric-type\": \"unique-dataset-requests\",\n                \"access-method\": \"regular\"\n              },\n              {\n                \"count\": 20,\n                \"metric-type\": \"unique-dataset-requests\",\n                \"access-method\": \"regular\"\n              }\n            ]\n          }\n        ],\n        \"publisher-id\": [\n          {\n            \"type\": \"ror\",\n            \"value\": \"https://ror.org/04wxnsj81\"\n          },\n          {\n            \"type\": \"ror\",\n            \"value\": \"https://ror.org/04wxnsj81\"\n          }\n        ],\n        \"dataset-dates\": [\n          {\n            \"type\": \"pub-date\",\n            \"value\": \"2017-12-31\"\n          },\n          {\n            \"type\": \"pub-date\",\n            \"value\": \"2017-12-31\"\n          }\n        ],\n        \"dataset-title\": \"Lake Erie Fish Community Data\",\n        \"dataset-contributors\": [\n          {\n            \"type\": \"name\",\n            \"value\": \"Cassandra Lopez\"\n          },\n          {\n            \"type\": \"name\",\n            \"value\": \"Cassandra Lopez\"\n          }\n        ]\n      }\n    ],\n    \"id\": \"003fadc1-daab-4d1e-97d1-96004c1ff529\",\n    \"report-header\": {\n      \"report-id\": \"DSR\",\n      \"report-name\": \"Dataset Report\",\n      \"release\": \"RD1\",\n      \"created-by\": \"DataONE\",\n      \"reporting-period\": {\n        \"end-date\": \"2018-04-30\",\n        \"begin-date\": \"2018-04-01\"\n      },\n      \"created\": \"2019-09-08T22:47:31Z\",\n      \"report-filters\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"report-attributes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"exceptions\": [\n        {\n          \"code\": 798.58999024636,\n          \"data\": \"string\",\n          \"message\": \"string\",\n          \"help-url\": \"string\",\n          \"severity\": \"string\"\n        },\n        {\n          \"code\": 4815.969484833671,\n          \"data\": \"string\",\n          \"message\": \"string\",\n          \"help-url\": \"string\",\n          \"severity\": \"string\"\n        }\n      ]\n    },\n    \"report-subsets\": [\n      {\n        \"gzip\": \"<string>\",\n        \"checksum\": \"<string>\"\n      },\n      {\n        \"gzip\": \"<string>\",\n        \"checksum\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94f05c91-2114-4bb2-830a-6c9fbf6d8671",
+          "name": "Update a report.",
+          "request": {
+            "name": "Update a report.",
+            "description": {},
+            "url": {
+              "path": [
+                "reports",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Report"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"report-datasets\": [\n    {\n      \"uri\": \"<string>\",\n      \"yop\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"data-type\": \"<string>\",\n      \"publisher\": \"<string>\",\n      \"dataset-id\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"performance\": [\n        {\n          \"period\": {\n            \"end-date\": \"<string>\",\n            \"begin-date\": \"<string>\"\n          },\n          \"instance\": [\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            },\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            }\n          ]\n        },\n        {\n          \"period\": {\n            \"end-date\": \"<string>\",\n            \"begin-date\": \"<string>\"\n          },\n          \"instance\": [\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            },\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            }\n          ]\n        }\n      ],\n      \"publisher-id\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"dataset-dates\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"dataset-title\": \"<string>\",\n      \"dataset-contributors\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"uri\": \"<string>\",\n      \"yop\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"data-type\": \"<string>\",\n      \"publisher\": \"<string>\",\n      \"dataset-id\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"performance\": [\n        {\n          \"period\": {\n            \"end-date\": \"<string>\",\n            \"begin-date\": \"<string>\"\n          },\n          \"instance\": [\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            },\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            }\n          ]\n        },\n        {\n          \"period\": {\n            \"end-date\": \"<string>\",\n            \"begin-date\": \"<string>\"\n          },\n          \"instance\": [\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            },\n            {\n              \"count\": \"<number>\",\n              \"metric-type\": \"<string>\",\n              \"access-method\": \"<string>\"\n            }\n          ]\n        }\n      ],\n      \"publisher-id\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"dataset-dates\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"dataset-title\": \"<string>\",\n      \"dataset-contributors\": [\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"id\": \"<string>\",\n  \"report-header\": {\n    \"report-id\": \"<string>\",\n    \"report-name\": \"<string>\",\n    \"release\": \"<string>\",\n    \"created-by\": \"<string>\",\n    \"reporting-period\": {\n      \"end-date\": \"<string>\",\n      \"begin-date\": \"<string>\"\n    },\n    \"created\": \"<dateTime>\",\n    \"report-filters\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"report-attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"report-subsets\": [\n    {\n      \"gzip\": \"<string>\",\n      \"checksum\": \"<string>\"\n    },\n    {\n      \"gzip\": \"<string>\",\n      \"checksum\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "99043775-d45f-4b7d-8cd4-1ae4ea966411",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"report-datasets\": [\n    {\n      \"uri\": \"https://cn.dataone.org/cn/v2/resolve/doi%3A10.5063%2FAA%2Fnceas.985.1\",\n      \"yop\": \"2010\",\n      \"platform\": \"DataONE\",\n      \"data-type\": \"dataset\",\n      \"publisher\": \"DataONE\",\n      \"dataset-id\": [\n        {\n          \"type\": \"doi\",\n          \"value\": \"10.15146/R3J66V\"\n        },\n        {\n          \"type\": \"doi\",\n          \"value\": \"10.15146/R3J66V\"\n        }\n      ],\n      \"performance\": [\n        {\n          \"period\": {\n            \"end-date\": \"2018-04-30\",\n            \"begin-date\": \"2018-04-01\"\n          },\n          \"instance\": [\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            },\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            }\n          ]\n        },\n        {\n          \"period\": {\n            \"end-date\": \"2018-04-30\",\n            \"begin-date\": \"2018-04-01\"\n          },\n          \"instance\": [\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            },\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            }\n          ]\n        }\n      ],\n      \"publisher-id\": [\n        {\n          \"type\": \"ror\",\n          \"value\": \"https://ror.org/04wxnsj81\"\n        },\n        {\n          \"type\": \"ror\",\n          \"value\": \"https://ror.org/04wxnsj81\"\n        }\n      ],\n      \"dataset-dates\": [\n        {\n          \"type\": \"pub-date\",\n          \"value\": \"2017-12-31\"\n        },\n        {\n          \"type\": \"pub-date\",\n          \"value\": \"2017-12-31\"\n        }\n      ],\n      \"dataset-title\": \"Lake Erie Fish Community Data\",\n      \"dataset-contributors\": [\n        {\n          \"type\": \"name\",\n          \"value\": \"Cassandra Lopez\"\n        },\n        {\n          \"type\": \"name\",\n          \"value\": \"Cassandra Lopez\"\n        }\n      ]\n    },\n    {\n      \"uri\": \"https://cn.dataone.org/cn/v2/resolve/doi%3A10.5063%2FAA%2Fnceas.985.1\",\n      \"yop\": \"2010\",\n      \"platform\": \"DataONE\",\n      \"data-type\": \"dataset\",\n      \"publisher\": \"DataONE\",\n      \"dataset-id\": [\n        {\n          \"type\": \"doi\",\n          \"value\": \"10.15146/R3J66V\"\n        },\n        {\n          \"type\": \"doi\",\n          \"value\": \"10.15146/R3J66V\"\n        }\n      ],\n      \"performance\": [\n        {\n          \"period\": {\n            \"end-date\": \"2018-04-30\",\n            \"begin-date\": \"2018-04-01\"\n          },\n          \"instance\": [\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            },\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            }\n          ]\n        },\n        {\n          \"period\": {\n            \"end-date\": \"2018-04-30\",\n            \"begin-date\": \"2018-04-01\"\n          },\n          \"instance\": [\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            },\n            {\n              \"count\": 20,\n              \"metric-type\": \"unique-dataset-requests\",\n              \"access-method\": \"regular\"\n            }\n          ]\n        }\n      ],\n      \"publisher-id\": [\n        {\n          \"type\": \"ror\",\n          \"value\": \"https://ror.org/04wxnsj81\"\n        },\n        {\n          \"type\": \"ror\",\n          \"value\": \"https://ror.org/04wxnsj81\"\n        }\n      ],\n      \"dataset-dates\": [\n        {\n          \"type\": \"pub-date\",\n          \"value\": \"2017-12-31\"\n        },\n        {\n          \"type\": \"pub-date\",\n          \"value\": \"2017-12-31\"\n        }\n      ],\n      \"dataset-title\": \"Lake Erie Fish Community Data\",\n      \"dataset-contributors\": [\n        {\n          \"type\": \"name\",\n          \"value\": \"Cassandra Lopez\"\n        },\n        {\n          \"type\": \"name\",\n          \"value\": \"Cassandra Lopez\"\n        }\n      ]\n    }\n  ],\n  \"id\": \"003fadc1-daab-4d1e-97d1-96004c1ff529\",\n  \"report-header\": {\n    \"report-id\": \"DSR\",\n    \"report-name\": \"Dataset Report\",\n    \"release\": \"RD1\",\n    \"created-by\": \"DataONE\",\n    \"reporting-period\": {\n      \"end-date\": \"2018-04-30\",\n      \"begin-date\": \"2018-04-01\"\n    },\n    \"created\": \"2019-09-08T22:47:31Z\",\n    \"report-filters\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"report-attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"report-subsets\": [\n    {\n      \"gzip\": \"<string>\",\n      \"checksum\": \"<string>\"\n    },\n    {\n      \"gzip\": \"<string>\",\n      \"checksum\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "997a8cb6-9470-464a-a9c8-265f386e7ee2",
+          "name": "This resource deletes a specific Dataset report.",
+          "request": {
+            "name": "This resource deletes a specific Dataset report.",
+            "description": {},
+            "url": {
+              "path": [
+                "reports",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Report Unique ID. Identifier of a specific usage report is being deleted.  If omitted, there should be a error."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b7a436d3-8515-4fa8-a8b3-e787bea85326",
+              "name": "The resource was deleted successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Report Unique ID. Identifier of a specific usage report is being deleted.  If omitted, there should be a error."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a27a1c73-9793-4979-8534-1a2ae5eb278a",
+              "name": "unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Report Unique ID. Identifier of a specific usage report is being deleted.  If omitted, there should be a error."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.test.datacite.org",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "73b70353-a640-4dd1-a63a-73de629b956f",
+    "name": "REST activities reports API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The REST API is used for all API interactions with DataCite services.\n\nContact Support:\n Name: DataCite Support\n Email: support@datacite.org",
+      "type": "text/plain"
+    }
+  }
+}

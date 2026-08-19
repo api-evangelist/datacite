@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "f3a8423b-1580-4efb-ad6c-e228c0d93ce5",
+      "name": "heartbeat",
+      "description": {
+        "content": "Heartbeat",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b24cc270-8d7b-4bb9-bb94-ace38a776dea",
+          "name": "Return the current status of the REST API.",
+          "request": {
+            "name": "Return the current status of the REST API.",
+            "description": {},
+            "url": {
+              "path": [
+                "heartbeat"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f7bfdcd-8286-4b62-bcb0-d85882363eeb",
+              "name": "REST API is operating normally.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "heartbeat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "OK",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c7cbb0b6-6c7d-4e76-9359-bc85f63a0054",
+              "name": "REST API is not working properly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "heartbeat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "failed",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.test.datacite.org",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "1f4d43c9-26f5-41c1-a7e6-c82be0da457e",
+    "name": "REST activities heartbeat API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The REST API is used for all API interactions with DataCite services.\n\nContact Support:\n Name: DataCite Support\n Email: support@datacite.org",
+      "type": "text/plain"
+    }
+  }
+}

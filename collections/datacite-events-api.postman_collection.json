@@ -1,0 +1,355 @@
+{
+  "item": [
+    {
+      "id": "7db5d0ca-e112-4c3f-a92e-0bb97e7410bd",
+      "name": "events",
+      "description": {
+        "content": "Events",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "58135974-4c40-41e5-a6ea-856dc96a3743",
+          "name": "Return a list of events.",
+          "request": {
+            "name": "Return a list of events.",
+            "description": {},
+            "url": {
+              "path": [
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "Query for any event information."
+                },
+                {
+                  "disabled": false,
+                  "key": "subj-id",
+                  "value": "<string>",
+                  "description": "The identifier for the event subject expressed as URL."
+                },
+                {
+                  "disabled": false,
+                  "key": "obj-id",
+                  "value": "<string>",
+                  "description": "The identifier for the event object expressed as URL."
+                },
+                {
+                  "disabled": false,
+                  "key": "doi",
+                  "value": "<string>",
+                  "description": "The subj-id or obj-id of the event expressed as DOI."
+                },
+                {
+                  "disabled": false,
+                  "key": "prefix",
+                  "value": "<string>",
+                  "description": "The DOI prefix of the subj-id or obj-id of the event."
+                },
+                {
+                  "disabled": false,
+                  "key": "orcid",
+                  "value": "<string>",
+                  "description": "The subj-id or obj-id of the event expressed as an ORCID iD."
+                },
+                {
+                  "disabled": false,
+                  "key": "year-month",
+                  "value": "<string>",
+                  "description": "The year and month in which the event occurred in the format YYYY-MM."
+                },
+                {
+                  "disabled": false,
+                  "key": "source-id",
+                  "value": "<string>,<string>",
+                  "description": "The [source of the event](https://support.datacite.org/docs/eventdata-guide#source-id). Use commas to include multiple sources."
+                },
+                {
+                  "disabled": false,
+                  "key": "relation-type-id",
+                  "value": "<string>,<string>",
+                  "description": "The relation type of the event. See [Linking events](https://support.datacite.org/docs/eventdata-guide#linking-events) and [Usage events](https://support.datacite.org/docs/eventdata-guide#usage-events) documentation for definitions. Use commas to include multiple relation types."
+                },
+                {
+                  "disabled": false,
+                  "key": "subtype",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "citation-type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "registrant-id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "publication-year",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page[number]",
+                  "value": "<integer>",
+                  "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page[size]",
+                  "value": "<integer>",
+                  "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page[cursor]",
+                  "value": "<string>",
+                  "description": "Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Sort order. By default, all events are sorted in ascending chronological order (using the last updated timestamp)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bbc08765-721f-4a7d-8a9d-1ed29bba2ee3",
+              "name": "A JSON array of events.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subj-id",
+                      "value": "https://doi.org/10.14454/g8e5-6293"
+                    },
+                    {
+                      "key": "obj-id",
+                      "value": "https://doi.org/10.14454/g8e5-6293"
+                    },
+                    {
+                      "key": "doi",
+                      "value": "10.14454/g8e5-629"
+                    },
+                    {
+                      "key": "prefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orcid",
+                      "value": "0000-0002-4684-9769"
+                    },
+                    {
+                      "key": "year-month",
+                      "value": "2018-08"
+                    },
+                    {
+                      "key": "source-id",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "relation-type-id",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "subtype",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "citation-type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "registrant-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "publication-year",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page[number]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page[size]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page[cursor]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"type\": \"events\",\n      \"attributes\": {\n        \"subj-id\": \"string\",\n        \"obj-id\": \"string\",\n        \"source-id\": \"<string>\",\n        \"relation-type-id\": \"<string>\",\n        \"total\": 3811.5418345437947,\n        \"message-action\": \"add\",\n        \"source-token\": \"string\",\n        \"license\": \"string\",\n        \"occured-at\": \"string\",\n        \"timestamp\": \"string\",\n        \"relationships\": {\n          \"subj\": {\n            \"data\": {\n              \"id\": \"string\",\n              \"type\": \"string\"\n            }\n          },\n          \"obj\": {\n            \"data\": {\n              \"id\": \"string\",\n              \"type\": \"string\"\n            }\n          }\n        }\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"type\": \"events\",\n      \"attributes\": {\n        \"subj-id\": \"string\",\n        \"obj-id\": \"string\",\n        \"source-id\": \"<string>\",\n        \"relation-type-id\": \"<string>\",\n        \"total\": 1802.9717622483997,\n        \"message-action\": \"add\",\n        \"source-token\": \"string\",\n        \"license\": \"string\",\n        \"occured-at\": \"string\",\n        \"timestamp\": \"string\",\n        \"relationships\": {\n          \"subj\": {\n            \"data\": {\n              \"id\": \"string\",\n              \"type\": \"string\"\n            }\n          },\n          \"obj\": {\n            \"data\": {\n              \"id\": \"string\",\n              \"type\": \"string\"\n            }\n          }\n        }\n      }\n    }\n  ],\n  \"meta\": {\n    \"total\": 6991.260271407914,\n    \"total-pages\": 7305.826974925187,\n    \"page\": 5196.465524369854,\n    \"sources\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 2994.8239232162123\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 6649.957733441541\n      }\n    ],\n    \"occurred\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 2298.3487316539586\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 2244.8274849003346\n      }\n    ],\n    \"prefixes\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 260.52430311093053\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 9289.44284877553\n      }\n    ],\n    \"citation-types\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 1326.7182731800388\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 707.6740718405661\n      }\n    ],\n    \"relation-types\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 8975.659184096286\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 9471.395481234264\n      }\n    ],\n    \"registrants\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 3678.859533693348\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 7073.415082685894\n      }\n    ]\n  },\n  \"links\": {\n    \"self\": \"string\",\n    \"next\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b07b32f-effe-459d-b52d-fb4257ce658b",
+          "name": "Return an event.",
+          "request": {
+            "name": "Return an event.",
+            "description": {},
+            "url": {
+              "path": [
+                "events",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Event"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "364abd87-af0e-4fa2-a8e6-dbea12e6f3d3",
+              "name": "A JSON object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "events",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Event"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": \"string\",\n    \"type\": \"events\",\n    \"attributes\": {\n      \"subj-id\": \"string\",\n      \"obj-id\": \"string\",\n      \"source-id\": \"<string>\",\n      \"relation-type-id\": \"<string>\",\n      \"total\": 1761.080988975371,\n      \"message-action\": \"create\",\n      \"source-token\": \"string\",\n      \"license\": \"string\",\n      \"occured-at\": \"string\",\n      \"timestamp\": \"string\",\n      \"relationships\": {\n        \"subj\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"obj\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.test.datacite.org",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "e9205a5f-aac3-4616-b3ac-bd67d55309d7",
+    "name": "REST activities events API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The REST API is used for all API interactions with DataCite services.\n\nContact Support:\n Name: DataCite Support\n Email: support@datacite.org",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST activities prefixes API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "prefixes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return a list of prefixes.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/prefixes",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Return a list of prefixes."
+        },
+        {
+          "info": {
+            "name": "Return prefixes DOI production statistics.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/prefixes/totals",
+            "params": [
+              {
+                "name": "client-id",
+                "value": "datacite.blog",
+                "type": "query",
+                "description": "Filter by a specific DataCite client (repository). Use commas to include multiple repositories."
+              }
+            ]
+          },
+          "docs": "Return prefixes DOI production statistics."
+        },
+        {
+          "info": {
+            "name": "Return a prefix.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/prefixes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Prefix"
+              }
+            ]
+          },
+          "docs": "Return a prefix."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

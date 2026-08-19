@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST activities client-prefixes API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "client-prefixes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return a list of client-prefixes.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/client-prefixes",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "client-id",
+                "value": "datacite.blog",
+                "type": "query",
+                "description": "Filter by a specific DataCite client (repository). Use commas to include multiple repositories."
+              },
+              {
+                "name": "prefix-id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page[number]",
+                "value": "",
+                "type": "query",
+                "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "page[size]",
+                "value": "",
+                "type": "query",
+                "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Return a list of client-prefixes."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

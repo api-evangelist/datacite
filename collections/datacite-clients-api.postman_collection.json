@@ -1,0 +1,383 @@
+{
+  "item": [
+    {
+      "id": "b899b3d3-3f39-4133-b2cc-79cfe601a505",
+      "name": "clients",
+      "description": {
+        "content": "Clients",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "75142658-f8e6-4359-acc6-d1fc8011dab7",
+          "name": "Return a list of clients (repositories).",
+          "request": {
+            "name": "Return a list of clients (repositories).",
+            "description": {},
+            "url": {
+              "path": [
+                "clients"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>",
+                  "description": "The year the client was created."
+                },
+                {
+                  "disabled": false,
+                  "key": "provider-id",
+                  "value": "<string>",
+                  "description": "Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers."
+                },
+                {
+                  "disabled": false,
+                  "key": "software",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "client-type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "repository-type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "certificate",
+                  "value": "<string>,<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page[number]",
+                  "value": "<integer>",
+                  "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page[size]",
+                  "value": "<integer>",
+                  "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "include",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8a533ac-8002-4a1f-9ce0-018fd4cc99db",
+              "name": "A JSON array of clients.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clients"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "provider-id",
+                      "value": "cern"
+                    },
+                    {
+                      "key": "software",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client-type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "repository-type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "certificate",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "page[number]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page[size]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "include",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"type\": \"clients\",\n      \"attributes\": {\n        \"name\": \"string\",\n        \"symbol\": \"string\",\n        \"year\": 9185.209265520729,\n        \"contactEmail\": \"string\",\n        \"alternateName\": \"string\",\n        \"description\": \"string\",\n        \"language\": [\n          \"string\",\n          \"string\"\n        ],\n        \"clientType\": \"<string>\",\n        \"domains\": \"string\",\n        \"re3data\": \"string\",\n        \"opendoar\": \"string\",\n        \"issn\": {\n          \"issnl\": \"string\",\n          \"print\": \"string\",\n          \"electronic\": \"string\"\n        },\n        \"url\": \"string\",\n        \"created\": \"string\",\n        \"updated\": \"string\",\n        \"isActive\": true,\n        \"hasPassword\": false\n      },\n      \"relationships\": {\n        \"provider\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"consortium\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"prefixes\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"type\": \"clients\",\n      \"attributes\": {\n        \"name\": \"string\",\n        \"symbol\": \"string\",\n        \"year\": 3688.385355416317,\n        \"contactEmail\": \"string\",\n        \"alternateName\": \"string\",\n        \"description\": \"string\",\n        \"language\": [\n          \"string\",\n          \"string\"\n        ],\n        \"clientType\": \"<string>\",\n        \"domains\": \"string\",\n        \"re3data\": \"string\",\n        \"opendoar\": \"string\",\n        \"issn\": {\n          \"issnl\": \"string\",\n          \"print\": \"string\",\n          \"electronic\": \"string\"\n        },\n        \"url\": \"string\",\n        \"created\": \"string\",\n        \"updated\": \"string\",\n        \"isActive\": true,\n        \"hasPassword\": true\n      },\n      \"relationships\": {\n        \"provider\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"consortium\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"prefixes\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      }\n    }\n  ],\n  \"meta\": {\n    \"total\": 9179.317947426554,\n    \"totalPages\": 4036.048516007238,\n    \"page\": 4704.891199412501,\n    \"years\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 8071.507344828396\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 4018.047537230517\n      }\n    ],\n    \"providers\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 3992.5414057475004\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 4292.023963419171\n      }\n    ],\n    \"software\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 8894.789679183386\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 3451.6033570054274\n      }\n    ],\n    \"certificates\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 3568.4634291679495\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 8723.322318830891\n      }\n    ],\n    \"repository_types\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 6624.695523147266\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 1947.9015711140923\n      }\n    ],\n    \"clientTypes\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 2174.114066024968\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 9537.219052515728\n      }\n    ]\n  },\n  \"links\": {\n    \"self\": \"string\",\n    \"next\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f2d5b3f-aff8-4a15-a6f4-bc88b037033c",
+          "name": "Return clients DOI production statistics.",
+          "request": {
+            "name": "Return clients DOI production statistics.",
+            "description": {},
+            "url": {
+              "path": [
+                "clients",
+                "totals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "provider-id",
+                  "value": "<string>",
+                  "description": "Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers."
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>,<string>",
+                  "description": "Authentication is required to retrieve draft records."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf6401f8-c4fb-4c83-8075-24124fefbfcb",
+              "name": "A JSON array of clients stats.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clients",
+                    "totals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "provider-id",
+                      "value": "cern"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>,<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"count\": 7270.794459537807,\n    \"temporal\": {\n      \"this_month\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 3303.7769814454323\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 5620.439525164519\n        }\n      ],\n      \"this_year\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 7583.462641546226\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 2640.0336953723813\n        }\n      ],\n      \"last_year\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 243.08399066270914\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 1451.3942499415589\n        }\n      ],\n      \"two_years_ago\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 4162.898668155151\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 3374.326110002086\n        }\n      ]\n    },\n    \"states\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 8858.22543440003\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 8136.766893770083\n      }\n    ]\n  },\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"count\": 3461.705467295283,\n    \"temporal\": {\n      \"this_month\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 2613.466660544064\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 5235.699235992826\n        }\n      ],\n      \"this_year\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 5239.148140775285\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 3205.5159980175795\n        }\n      ],\n      \"last_year\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 2787.050801358065\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 4288.213599067919\n        }\n      ],\n      \"two_years_ago\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 2512.796123646308\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 1703.1842099102312\n        }\n      ]\n    },\n    \"states\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 2318.5585624817472\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 9895.78649016642\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f4e6b109-182e-4faf-827c-6603b0b2e30d",
+          "name": "Return a client.",
+          "request": {
+            "name": "Return a client.",
+            "description": {},
+            "url": {
+              "path": [
+                "clients",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) DataCite Repository account ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "15f455c2-2065-4279-9f7e-7b9d6a98a3db",
+              "name": "A JSON object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clients",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) DataCite Repository account ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": \"string\",\n    \"type\": \"clients\",\n    \"attributes\": {\n      \"name\": \"string\",\n      \"symbol\": \"string\",\n      \"year\": 5311.775199990781,\n      \"contactEmail\": \"string\",\n      \"alternateName\": \"string\",\n      \"description\": \"string\",\n      \"language\": [\n        \"string\",\n        \"string\"\n      ],\n      \"clientType\": \"<string>\",\n      \"domains\": \"string\",\n      \"re3data\": \"string\",\n      \"opendoar\": \"string\",\n      \"issn\": {\n        \"issnl\": \"string\",\n        \"print\": \"string\",\n        \"electronic\": \"string\"\n      },\n      \"url\": \"string\",\n      \"created\": \"string\",\n      \"updated\": \"string\",\n      \"isActive\": true,\n      \"hasPassword\": true\n    },\n    \"relationships\": {\n      \"provider\": {\n        \"data\": {\n          \"id\": \"string\",\n          \"type\": \"string\"\n        }\n      },\n      \"consortium\": {\n        \"data\": {\n          \"id\": \"string\",\n          \"type\": \"string\"\n        }\n      },\n      \"prefixes\": {\n        \"data\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.test.datacite.org",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "d7899168-07de-4388-88d6-e68149218bf7",
+    "name": "REST activities clients API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The REST API is used for all API interactions with DataCite services.\n\nContact Support:\n Name: DataCite Support\n Email: support@datacite.org",
+      "type": "text/plain"
+    }
+  }
+}

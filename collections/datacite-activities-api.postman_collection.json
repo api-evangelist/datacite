@@ -1,0 +1,346 @@
+{
+  "item": [
+    {
+      "id": "f19d2cf3-95d3-48d6-bb9b-94f0f659584b",
+      "name": "activities",
+      "description": {
+        "content": "Activities",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "70c17296-9cd4-4f38-b89b-e4b123c17066",
+          "name": "Get a JSON API result of activities.",
+          "request": {
+            "name": "Get a JSON API result of activities.",
+            "description": {},
+            "url": {
+              "path": [
+                "activities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "Find activity by an ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>",
+                  "description": "Find activities by array of activity IDs."
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>",
+                  "description": "Find activities by array of activity IDs."
+                },
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "Search the index by keyword or query string syntax."
+                },
+                {
+                  "disabled": false,
+                  "key": "page[number]",
+                  "value": "<integer>",
+                  "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page[size]",
+                  "value": "<integer>",
+                  "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page[cursor]",
+                  "value": "<string>",
+                  "description": "Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3ffb8458-1946-41f2-8590-8ddc3274be44",
+              "name": "A JSON API result of activities.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "activities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page[number]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page[size]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page[cursor]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"57690e72-b1be-4370-9f35-de6bec5f7b71\",\n      \"type\": \"activities\",\n      \"attributes\": {\n        \"prov:wasGeneratedBy\": \"string\",\n        \"prov:generatedAtTime\": \"string\",\n        \"prov:wasDerivedFrom\": \"string\",\n        \"prov:wasAttributedTo\": \"string\",\n        \"action\": \"string\",\n        \"version\": 5905.859962939178,\n        \"changes\": {}\n      }\n    },\n    {\n      \"id\": \"57690e72-b1be-4370-9f35-de6bec5f7b71\",\n      \"type\": \"activities\",\n      \"attributes\": {\n        \"prov:wasGeneratedBy\": \"string\",\n        \"prov:generatedAtTime\": \"string\",\n        \"prov:wasDerivedFrom\": \"string\",\n        \"prov:wasAttributedTo\": \"string\",\n        \"action\": \"string\",\n        \"version\": 1189.222811091305,\n        \"changes\": {}\n      }\n    }\n  ],\n  \"meta\": {\n    \"total\": 1582.787980640583,\n    \"totalPages\": 6446.205408754252,\n    \"page\": 1363.3460261482921\n  },\n  \"links\": {\n    \"self\": \"string\",\n    \"next\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a006339e-3c93-43b0-a048-6dfded7b2592",
+          "name": "Get a JSON API result of a specific activity.",
+          "request": {
+            "name": "Get a JSON API result of a specific activity.",
+            "description": {},
+            "url": {
+              "path": [
+                "activities",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Activity ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5cc3741d-7481-4bd0-9ff5-20f46060cde1",
+              "name": "A JSON object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "activities",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Activity ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": \"57690e72-b1be-4370-9f35-de6bec5f7b71\",\n    \"type\": \"activities\",\n    \"attributes\": {\n      \"prov:wasGeneratedBy\": \"string\",\n      \"prov:generatedAtTime\": \"string\",\n      \"prov:wasDerivedFrom\": \"string\",\n      \"prov:wasAttributedTo\": \"string\",\n      \"action\": \"string\",\n      \"version\": 9027.579125629542,\n      \"changes\": {}\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "906ebb73-f7df-47f9-bfda-2e915c91b4f4",
+          "name": "Return activities for a specific DOI.",
+          "request": {
+            "name": "Return activities for a specific DOI.",
+            "description": {},
+            "url": {
+              "path": [
+                "dois",
+                ":id",
+                "activities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) DOI"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9eaac67-dc2e-4e3e-a757-3e89e3ea109d",
+              "name": "A JSON object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dois",
+                    ":id",
+                    "activities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) DOI"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"57690e72-b1be-4370-9f35-de6bec5f7b71\",\n      \"type\": \"activities\",\n      \"attributes\": {\n        \"prov:wasGeneratedBy\": \"string\",\n        \"prov:generatedAtTime\": \"string\",\n        \"prov:wasDerivedFrom\": \"string\",\n        \"prov:wasAttributedTo\": \"string\",\n        \"action\": \"string\",\n        \"version\": 5905.859962939178,\n        \"changes\": {}\n      }\n    },\n    {\n      \"id\": \"57690e72-b1be-4370-9f35-de6bec5f7b71\",\n      \"type\": \"activities\",\n      \"attributes\": {\n        \"prov:wasGeneratedBy\": \"string\",\n        \"prov:generatedAtTime\": \"string\",\n        \"prov:wasDerivedFrom\": \"string\",\n        \"prov:wasAttributedTo\": \"string\",\n        \"action\": \"string\",\n        \"version\": 1189.222811091305,\n        \"changes\": {}\n      }\n    }\n  ],\n  \"meta\": {\n    \"total\": 1582.787980640583,\n    \"totalPages\": 6446.205408754252,\n    \"page\": 1363.3460261482921\n  },\n  \"links\": {\n    \"self\": \"string\",\n    \"next\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.test.datacite.org",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "938424b9-3911-4acb-897d-9d70c6409840",
+    "name": "REST activities API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The REST API is used for all API interactions with DataCite services.\n\nContact Support:\n Name: DataCite Support\n Email: support@datacite.org",
+      "type": "text/plain"
+    }
+  }
+}

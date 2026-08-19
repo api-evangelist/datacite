@@ -1,0 +1,364 @@
+{
+  "item": [
+    {
+      "id": "ea8df690-ea2d-4e07-8dba-132d303dbf9a",
+      "name": "repositories",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bebd4213-f1be-482c-92be-475905a713ab",
+          "name": "Add a new repository.",
+          "request": {
+            "name": "Add a new repository.",
+            "description": {},
+            "url": {
+              "path": [
+                "repositories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"type\": \"<string>\",\n    \"attributes\": {\n      \"name\": \"<string>\",\n      \"symbol\": \"<string>\",\n      \"systemEmail\": \"<email>\",\n      \"clientType\": \"<string>\",\n      \"alternateName\": \"<string>\",\n      \"domains\": \"<string>\",\n      \"description\": \"<string>\",\n      \"language\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"certificate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"serviceContact\": {\n        \"email\": \"<email>\",\n        \"givenName\": \"<string>\",\n        \"familyName\": \"<string>\"\n      },\n      \"issn\": {\n        \"issnl\": \"<string>\",\n        \"electronic\": \"<string>\",\n        \"print\": \"<string>\"\n      },\n      \"url\": \"<url>\",\n      \"repositoryType\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"software\": \"<string>\",\n      \"isActive\": \"<boolean>\",\n      \"passwordInput\": \"<string>\",\n      \"subjects\": [\n        {\n          \"subject\": \"<string>\",\n          \"subjectScheme\": \"<string>\",\n          \"schemeUri\": \"<string>\",\n          \"valueUri\": \"<string>\",\n          \"lang\": \"<string>\",\n          \"classificationCode\": \"<string>\"\n        },\n        {\n          \"subject\": \"<string>\",\n          \"subjectScheme\": \"<string>\",\n          \"schemeUri\": \"<string>\",\n          \"valueUri\": \"<string>\",\n          \"lang\": \"<string>\",\n          \"classificationCode\": \"<string>\"\n        }\n      ]\n    },\n    \"relationships\": {\n      \"provider\": {\n        \"data\": {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\"\n        }\n      }\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5d775678-0483-4d74-acc7-e17513663345",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repositories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"type\": \"<string>\",\n    \"attributes\": {\n      \"name\": \"<string>\",\n      \"symbol\": \"ABCD.EFG-HIJ\",\n      \"systemEmail\": \"<email>\",\n      \"clientType\": \"<string>\",\n      \"alternateName\": \"<string>\",\n      \"domains\": \"*\",\n      \"description\": \"<string>\",\n      \"language\": [\n        \"en\",\n        \"en\"\n      ],\n      \"certificate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"serviceContact\": {\n        \"email\": \"<email>\",\n        \"givenName\": \"<string>\",\n        \"familyName\": \"<string>\"\n      },\n      \"issn\": {\n        \"issnl\": \"2049-3630\",\n        \"electronic\": \"2049-3630\",\n        \"print\": \"2049-3630\"\n      },\n      \"url\": \"<url>\",\n      \"repositoryType\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"software\": \"<string>\",\n      \"isActive\": \"<boolean>\",\n      \"passwordInput\": \"<string>\",\n      \"subjects\": [\n        {\n          \"subject\": \"Chemical engineering\",\n          \"subjectScheme\": \"Fields of Science and Technology (FOS)\",\n          \"schemeUri\": \"https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf\",\n          \"valueUri\": \"<string>\",\n          \"lang\": \"<string>\",\n          \"classificationCode\": \"2.4\"\n        },\n        {\n          \"subject\": \"Chemical engineering\",\n          \"subjectScheme\": \"Fields of Science and Technology (FOS)\",\n          \"schemeUri\": \"https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf\",\n          \"valueUri\": \"<string>\",\n          \"lang\": \"<string>\",\n          \"classificationCode\": \"2.4\"\n        }\n      ]\n    },\n    \"relationships\": {\n      \"provider\": {\n        \"data\": {\n          \"id\": \"ABCD\",\n          \"type\": \"<string>\"\n        }\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"type\": \"repositories\",\n  \"attributes\": {\n    \"name\": \"string\",\n    \"symbol\": \"string\",\n    \"re3data\": \"string\",\n    \"opendoar\": \"string\",\n    \"year\": 4423.561641298447,\n    \"systemEmail\": \"string\",\n    \"serviceContact\": {\n      \"email\": \"string\",\n      \"givenName\": \"string\",\n      \"familyName\": \"string\"\n    },\n    \"alternateName\": \"string\",\n    \"description\": \"string\",\n    \"language\": [\n      \"string\",\n      \"string\"\n    ],\n    \"clientType\": \"<string>\",\n    \"repositoryType\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"certificate\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"domains\": \"string\",\n    \"issn\": {\n      \"issnl\": \"string\",\n      \"print\": \"string\",\n      \"electronic\": \"string\"\n    },\n    \"url\": \"string\",\n    \"software\": \"<string>\",\n    \"subjects\": [\n      {\n        \"subject\": \"Chemical engineering\",\n        \"subjectScheme\": \"Fields of Science and Technology (FOS)\",\n        \"schemeUri\": \"https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf\",\n        \"valueUri\": \"<string>\",\n        \"lang\": \"<string>\",\n        \"classificationCode\": \"2.4\"\n      },\n      {\n        \"subject\": \"Chemical engineering\",\n        \"subjectScheme\": \"Fields of Science and Technology (FOS)\",\n        \"schemeUri\": \"https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf\",\n        \"valueUri\": \"<string>\",\n        \"lang\": \"<string>\",\n        \"classificationCode\": \"2.4\"\n      }\n    ],\n    \"created\": \"string\",\n    \"updated\": \"string\",\n    \"isActive\": true,\n    \"hasPassword\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cacc67e1-a3a8-48ba-a139-e6c159c2f188",
+          "name": "Update a repository.",
+          "request": {
+            "name": "Update a repository.",
+            "description": {},
+            "url": {
+              "path": [
+                "repositories",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) DataCite Repository ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"type\": \"<string>\",\n    \"attributes\": {\n      \"name\": \"<string>\",\n      \"systemEmail\": \"<email>\",\n      \"clientType\": \"<string>\",\n      \"alternateName\": \"<string>\",\n      \"domains\": \"<string>\",\n      \"description\": \"<string>\",\n      \"language\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"certificate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"serviceContact\": {\n        \"email\": \"<email>\",\n        \"givenName\": \"<string>\",\n        \"familyName\": \"<string>\"\n      },\n      \"issn\": {\n        \"issnl\": \"<string>\",\n        \"electronic\": \"<string>\",\n        \"print\": \"<string>\"\n      },\n      \"url\": \"<url>\",\n      \"repositoryType\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"software\": \"<string>\",\n      \"isActive\": \"<boolean>\",\n      \"passwordInput\": \"<string>\",\n      \"subjects\": [\n        {\n          \"subject\": \"<string>\",\n          \"subjectScheme\": \"<string>\",\n          \"schemeUri\": \"<string>\",\n          \"valueUri\": \"<string>\",\n          \"lang\": \"<string>\",\n          \"classificationCode\": \"<string>\"\n        },\n        {\n          \"subject\": \"<string>\",\n          \"subjectScheme\": \"<string>\",\n          \"schemeUri\": \"<string>\",\n          \"valueUri\": \"<string>\",\n          \"lang\": \"<string>\",\n          \"classificationCode\": \"<string>\"\n        }\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7bf38b00-cde9-47ed-a6fb-c20fe287e68a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repositories",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) DataCite Repository ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"type\": \"<string>\",\n    \"attributes\": {\n      \"name\": \"<string>\",\n      \"systemEmail\": \"<email>\",\n      \"clientType\": \"<string>\",\n      \"alternateName\": \"<string>\",\n      \"domains\": \"*\",\n      \"description\": \"<string>\",\n      \"language\": [\n        \"en\",\n        \"en\"\n      ],\n      \"certificate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"serviceContact\": {\n        \"email\": \"<email>\",\n        \"givenName\": \"<string>\",\n        \"familyName\": \"<string>\"\n      },\n      \"issn\": {\n        \"issnl\": \"2049-3630\",\n        \"electronic\": \"2049-3630\",\n        \"print\": \"2049-3630\"\n      },\n      \"url\": \"<url>\",\n      \"repositoryType\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"software\": \"<string>\",\n      \"isActive\": \"<boolean>\",\n      \"passwordInput\": \"<string>\",\n      \"subjects\": [\n        {\n          \"subject\": \"Chemical engineering\",\n          \"subjectScheme\": \"Fields of Science and Technology (FOS)\",\n          \"schemeUri\": \"https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf\",\n          \"valueUri\": \"<string>\",\n          \"lang\": \"<string>\",\n          \"classificationCode\": \"2.4\"\n        },\n        {\n          \"subject\": \"Chemical engineering\",\n          \"subjectScheme\": \"Fields of Science and Technology (FOS)\",\n          \"schemeUri\": \"https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf\",\n          \"valueUri\": \"<string>\",\n          \"lang\": \"<string>\",\n          \"classificationCode\": \"2.4\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"type\": \"repositories\",\n  \"attributes\": {\n    \"name\": \"string\",\n    \"symbol\": \"string\",\n    \"re3data\": \"string\",\n    \"opendoar\": \"string\",\n    \"year\": 1830.689905951849,\n    \"systemEmail\": \"string\",\n    \"serviceContact\": {\n      \"email\": \"string\",\n      \"givenName\": \"string\",\n      \"familyName\": \"string\"\n    },\n    \"alternateName\": \"string\",\n    \"description\": \"string\",\n    \"language\": [\n      \"string\",\n      \"string\"\n    ],\n    \"clientType\": \"<string>\",\n    \"repositoryType\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"certificate\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"domains\": \"string\",\n    \"issn\": {\n      \"issnl\": \"string\",\n      \"print\": \"string\",\n      \"electronic\": \"string\"\n    },\n    \"url\": \"string\",\n    \"software\": \"<string>\",\n    \"subjects\": [\n      {\n        \"subject\": \"Chemical engineering\",\n        \"subjectScheme\": \"Fields of Science and Technology (FOS)\",\n        \"schemeUri\": \"https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf\",\n        \"valueUri\": \"<string>\",\n        \"lang\": \"<string>\",\n        \"classificationCode\": \"2.4\"\n      },\n      {\n        \"subject\": \"Chemical engineering\",\n        \"subjectScheme\": \"Fields of Science and Technology (FOS)\",\n        \"schemeUri\": \"https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf\",\n        \"valueUri\": \"<string>\",\n        \"lang\": \"<string>\",\n        \"classificationCode\": \"2.4\"\n      }\n    ],\n    \"created\": \"string\",\n    \"updated\": \"string\",\n    \"isActive\": true,\n    \"hasPassword\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f0a956f2-a3cd-4108-8213-8e87eb0dcb7e",
+          "name": "Delete a repository (only possible if no DOIs are in the repository)",
+          "request": {
+            "name": "Delete a repository (only possible if no DOIs are in the repository)",
+            "description": {},
+            "url": {
+              "path": [
+                "repositories",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) DataCite Repository ID."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1e514045-70e2-4d86-a6aa-7018be45295a",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repositories",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) DataCite Repository ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.test.datacite.org",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "090c3ce6-0e25-410e-b9f8-ebf184384e94",
+    "name": "REST activities repositories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The REST API is used for all API interactions with DataCite services.\n\nContact Support:\n Name: DataCite Support\n Email: support@datacite.org",
+      "type": "text/plain"
+    }
+  }
+}

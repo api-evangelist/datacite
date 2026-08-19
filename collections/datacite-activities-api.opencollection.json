@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST activities API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "activities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a JSON API result of activities.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/activities",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Find activity by an ID."
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "Find activities by array of activity IDs."
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search the index by keyword or query string syntax."
+              },
+              {
+                "name": "page[number]",
+                "value": "",
+                "type": "query",
+                "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "page[size]",
+                "value": "",
+                "type": "query",
+                "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "page[cursor]",
+                "value": "",
+                "type": "query",
+                "description": "Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor)."
+              }
+            ]
+          },
+          "docs": "Get a JSON API result of activities."
+        },
+        {
+          "info": {
+            "name": "Get a JSON API result of a specific activity.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/activities/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Activity ID."
+              }
+            ]
+          },
+          "docs": "Get a JSON API result of a specific activity."
+        },
+        {
+          "info": {
+            "name": "Return activities for a specific DOI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/dois/:id/activities",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "DOI"
+              }
+            ]
+          },
+          "docs": "Return activities for a specific DOI."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

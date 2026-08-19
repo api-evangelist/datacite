@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST activities heartbeat API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "heartbeat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return the current status of the REST API.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/heartbeat"
+          },
+          "docs": "Return the current status of the REST API."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

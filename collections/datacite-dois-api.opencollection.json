@@ -1,0 +1,470 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST activities dois API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "dois",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return a list of DOIs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/dois",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search [DOI metadata fields](https://support.datacite.org/docs/api-queries#using-the-query-parameter) using OpenSearch query string syntax."
+              },
+              {
+                "name": "created",
+                "value": "",
+                "type": "query",
+                "description": "Filter by the DOI date created (yyyy). Use commas to filter by multiple years (yyyy,yyyy)."
+              },
+              {
+                "name": "registered",
+                "value": "",
+                "type": "query",
+                "description": "Filter by the DOI date registered (yyyy). Use commas to filter by multiple years (yyyy,yyyy)."
+              },
+              {
+                "name": "published",
+                "value": "",
+                "type": "query",
+                "description": "Filter by the DOI date published (yyyy). Use commas to filter by multiple years (yyyy,yyyy)."
+              },
+              {
+                "name": "provider-id",
+                "value": "cern",
+                "type": "query",
+                "description": "Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers."
+              },
+              {
+                "name": "client-id",
+                "value": "datacite.blog",
+                "type": "query",
+                "description": "Filter by a specific DataCite client (repository). Use commas to include multiple repositories."
+              },
+              {
+                "name": "consortium-id",
+                "value": "ardc",
+                "type": "query",
+                "description": "Filter by a specific DataCite consortium."
+              },
+              {
+                "name": "prefix",
+                "value": "10.5438",
+                "type": "query",
+                "description": "Filter by a specific prefix. Use commas to include multiple prefixes."
+              },
+              {
+                "name": "client-type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "certificate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "affiliation-id",
+                "value": "",
+                "type": "query",
+                "description": "Search creators.affiliation.affiliationIdentifier and contributors.affiliation.affiliationIdentifier for a ROR ID."
+              },
+              {
+                "name": "affiliation-country",
+                "value": "US,GB",
+                "type": "query",
+                "description": "Filter DOIs by associated country inferred from ROR IDs in creators/contributors affiliations. Use comma-separated ISO 3166-1 alpha-2 country codes."
+              },
+              {
+                "name": "funded-by",
+                "value": "",
+                "type": "query",
+                "description": "Search fundingReferences.funderIdentifier for a ROR ID. Results also include DOIs containing a Crossref Funder ID in fundingReferences.funderIdentifier corresponding to the ROR ID."
+              },
+              {
+                "name": "include-funder-child-organizations",
+                "value": "",
+                "type": "query",
+                "description": "When the `funded-by=` parameter is set to a ROR ID and `include-funder-child-organizations=true`, the returned list of DOIs will be filtered to DataCite resources funded by the organization identified by the ROR ID as well as all of its child organizations. Child organizations include direct descendants as well as children of children."
+              },
+              {
+                "name": "funder-id",
+                "value": "",
+                "type": "query",
+                "description": "Search fundingReferences.funderIdentifier for a Crossref Funder ID."
+              },
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "query",
+                "description": "Search creators.nameIdentifiers.nameIdentifier for an ORCID iD."
+              },
+              {
+                "name": "resource-type-id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by the resourceTypeGeneral. Use commas to include multiple values."
+              },
+              {
+                "name": "resource-type",
+                "value": "",
+                "type": "query",
+                "description": "Filter by the free text resourceType. Use commas to include multiple values."
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "Filter by the free text Subject. Use commas to include multiple terms."
+              },
+              {
+                "name": "field-of-science",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "license",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "schema-version",
+                "value": "4",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "Filter by the [DOI state](https://support.datacite.org/docs/doi-states). Authentication is required to retrieve registered DOIs and draft records."
+              },
+              {
+                "name": "affiliation",
+                "value": "",
+                "type": "query",
+                "description": "Set `affiliation=true` to see additional affiliation information such as the affiliation identifier."
+              },
+              {
+                "name": "publisher",
+                "value": "",
+                "type": "query",
+                "description": "Set `publisher=true` to see additional publisher information such as the publisher identifier."
+              },
+              {
+                "name": "link-check-status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "has-citations",
+                "value": "",
+                "type": "query",
+                "description": "Search the citationCount field for integer values greater than or equal to the inputted value."
+              },
+              {
+                "name": "has-references",
+                "value": "",
+                "type": "query",
+                "description": "Search the referenceCount field for integer values greater than or equal to the inputted value."
+              },
+              {
+                "name": "has-parts",
+                "value": "",
+                "type": "query",
+                "description": "Search the partCount field for integer values greater than or equal to the inputted value."
+              },
+              {
+                "name": "has-part-of",
+                "value": "",
+                "type": "query",
+                "description": "Search the partOfCount field for integer values greater than or equal to the inputted value."
+              },
+              {
+                "name": "has-versions",
+                "value": "",
+                "type": "query",
+                "description": "Search the versionCount field for integer values greater than or equal to the inputted value."
+              },
+              {
+                "name": "has-version-of",
+                "value": "",
+                "type": "query",
+                "description": "Search the versionOfCount field for integer values greater than or equal to the inputted value."
+              },
+              {
+                "name": "has-views",
+                "value": "",
+                "type": "query",
+                "description": "Search the viewCount field for integer values greater than or equal to the inputted value."
+              },
+              {
+                "name": "has-downloads",
+                "value": "",
+                "type": "query",
+                "description": "Search the downloadCount field for integer values greater than or equal to the inputted value."
+              },
+              {
+                "name": "has-person",
+                "value": "",
+                "type": "query",
+                "description": "Return DOIs where creators.nameIdentifiers.nameIdentifierScheme has at least one \"ORCID\" value."
+              },
+              {
+                "name": "has-affiliation",
+                "value": "",
+                "type": "query",
+                "description": "Return DOIs where either creators.affiliation.affiliationIdentifierScheme or contributors.affiliation.affiliationIdentifierScheme has at least one \"ROR\" value."
+              },
+              {
+                "name": "has-organization",
+                "value": "",
+                "type": "query",
+                "description": "Return DOIs where either creators.nameIdentifiers.nameIdentifierScheme or contributors.nameIdentifiers.nameIdentifierScheme has at least one \"ROR\" value."
+              },
+              {
+                "name": "has-funder",
+                "value": "",
+                "type": "query",
+                "description": "Return DOIs where fundingReferences.funderIdentifierType has at least one \"Crossref Funder ID\" value."
+              },
+              {
+                "name": "random",
+                "value": "",
+                "type": "query",
+                "description": "Retrieve a random sample of DOIs. When true, the `page[number]` parameter is ignored."
+              },
+              {
+                "name": "sample-size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sample-group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page[number]",
+                "value": "",
+                "type": "query",
+                "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "page[size]",
+                "value": "",
+                "type": "query",
+                "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "page[cursor]",
+                "value": "",
+                "type": "query",
+                "description": "Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor)."
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort order:\n * `relevance` - Relevance score descending \n * `name` - DOI name alphabetical ascending \n * `-name` - DOI name alphabetical descending\n * `created` - Created date ascending\n * `-created` - Created date descending\n * `updated` - Updated date ascending\n * `-updated` - Updated date descending\n * `published` - Published date ascending\n * `-published` - Published date descending\n * `view-count` - viewCount ascending\n * `-view-count` - viewCount descending\n * `download-count` - downloadCount ascending\n * `-download-count` - downloadCount descending\n * `citation-count` - citationCount ascending\n * `-citation-count` - citationCount descending\n * `title` - first title alphabetical ascending\n * `-title` - first title alphabetical descending\n"
+              },
+              {
+                "name": "disable-facets",
+                "value": "",
+                "type": "query",
+                "description": "Exclude facets from the response."
+              },
+              {
+                "name": "detail",
+                "value": "",
+                "type": "query",
+                "description": "When set to `true`, will include the following in the response:\n * attributes:\n   * `prefix`\n   * `suffix`\n   * `viewsOverTime`\n   * `citationsOverTime`\n   * `references`\n   * `citations`\n   * `parts`\n   * `partOf`\n   * `versions`\n   * `versionOf`\n   * `xml`\n   * `alternateIdentifiers`\n* relationships:\n   * `provider`\n"
+              },
+              {
+                "name": "fields[dois]",
+                "value": "",
+                "type": "query",
+                "description": "Only return the attributes specified. For example, `fields[dois]=titles,subjects` will only return titles and subjects."
+              },
+              {
+                "name": "source",
+                "value": "",
+                "type": "query",
+                "description": "The [system used to create the DOI](https://support.datacite.org/docs/api-get-doi#source)."
+              }
+            ]
+          },
+          "docs": "Return a list of DOIs."
+        },
+        {
+          "info": {
+            "name": "Add a new DOI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.test.datacite.org/dois",
+            "params": [
+              {
+                "name": "affiliation",
+                "value": "",
+                "type": "query",
+                "description": "Set `affiliation=true` to see additional affiliation information such as the affiliation identifier."
+              },
+              {
+                "name": "publisher",
+                "value": "",
+                "type": "query",
+                "description": "Set `publisher=true` to see additional publisher information such as the publisher identifier."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Add a new DOI."
+        },
+        {
+          "info": {
+            "name": "Return a DOI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/dois/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "DOI"
+              },
+              {
+                "name": "affiliation",
+                "value": "",
+                "type": "query",
+                "description": "Set `affiliation=true` to see additional affiliation information such as the affiliation identifier."
+              },
+              {
+                "name": "publisher",
+                "value": "",
+                "type": "query",
+                "description": "Set `publisher=true` to see additional publisher information such as the publisher identifier."
+              }
+            ]
+          },
+          "docs": "Return a DOI."
+        },
+        {
+          "info": {
+            "name": "Update a DOI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.test.datacite.org/dois/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The DOI to update."
+              },
+              {
+                "name": "affiliation",
+                "value": "",
+                "type": "query",
+                "description": "Set `affiliation=true` to see additional affiliation information such as the affiliation identifier."
+              },
+              {
+                "name": "publisher",
+                "value": "",
+                "type": "query",
+                "description": "Set `publisher=true` to see additional publisher information such as the publisher identifier."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "PUT requests to the /dois endpoint will update a DOI record if it already exists and create a new record if the DOI name is not already taken."
+        },
+        {
+          "info": {
+            "name": "Delete a DOI (for DOIs in draft state only).",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.test.datacite.org/dois/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "DOI"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Delete a DOI (for DOIs in draft state only)."
+        },
+        {
+          "info": {
+            "name": "Return activities for a specific DOI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/dois/:id/activities",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "DOI"
+              }
+            ]
+          },
+          "docs": "Return activities for a specific DOI."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,373 @@
+{
+  "item": [
+    {
+      "id": "16d0d2bd-9dc3-4c31-b772-102c86a06ca6",
+      "name": "providers",
+      "description": {
+        "content": "Providers",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "beab9026-0847-4083-bfed-88277a0c9cf2",
+          "name": "Return a list of providers (including members and consortium organizations).",
+          "request": {
+            "name": "Return a list of providers (including members and consortium organizations).",
+            "description": {},
+            "url": {
+              "path": [
+                "providers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>",
+                  "description": "The year the provider was created."
+                },
+                {
+                  "disabled": false,
+                  "key": "consortium-id",
+                  "value": "<string>",
+                  "description": "Filter by a specific DataCite consortium."
+                },
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "member-type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "organization-type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "focus-area",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "has-required-contacts",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page[number]",
+                  "value": "<integer>",
+                  "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page[size]",
+                  "value": "<integer>",
+                  "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "043ff6d4-3ae4-4ab2-ade6-56ec522abc66",
+              "name": "A JSON array of providers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "consortium-id",
+                      "value": "ardc"
+                    },
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member-type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "organization-type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "focus-area",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has-required-contacts",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page[number]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page[size]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"type\": \"providers\",\n      \"attributes\": {\n        \"name\": \"string\",\n        \"displayName\": \"string\",\n        \"symbol\": \"string\",\n        \"website\": \"string\",\n        \"systemEmail\": \"string\",\n        \"groupEmail\": \"string\",\n        \"globusUuid\": \"string\",\n        \"description\": \"string\",\n        \"region\": \"<string>\",\n        \"country\": \"string\",\n        \"logoUrl\": \"string\",\n        \"memberType\": \"<string>\",\n        \"organizationType\": \"<string>\",\n        \"focusArea\": \"<string>\",\n        \"nonProfitStatus\": \"string\",\n        \"isActive\": false,\n        \"hasPassword\": true,\n        \"joined\": \"string\",\n        \"twitterHandle\": \"string\",\n        \"rorId\": \"string\",\n        \"technicalContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"secondaryTechnicalContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"billingContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"secondaryBillingContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"serviceContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"secondaryServiceContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"votingContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"hasRequiredContacts\": false,\n        \"created\": \"string\",\n        \"updated\": \"string\",\n        \"doiEstimate\": 9154.437821677226\n      },\n      \"relationships\": {\n        \"clients\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        \"prefixes\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        \"contacts\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        \"consortium\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"consortiumOrganizations\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"type\": \"providers\",\n      \"attributes\": {\n        \"name\": \"string\",\n        \"displayName\": \"string\",\n        \"symbol\": \"string\",\n        \"website\": \"string\",\n        \"systemEmail\": \"string\",\n        \"groupEmail\": \"string\",\n        \"globusUuid\": \"string\",\n        \"description\": \"string\",\n        \"region\": \"<string>\",\n        \"country\": \"string\",\n        \"logoUrl\": \"string\",\n        \"memberType\": \"<string>\",\n        \"organizationType\": \"<string>\",\n        \"focusArea\": \"<string>\",\n        \"nonProfitStatus\": \"string\",\n        \"isActive\": false,\n        \"hasPassword\": true,\n        \"joined\": \"string\",\n        \"twitterHandle\": \"string\",\n        \"rorId\": \"string\",\n        \"technicalContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"secondaryTechnicalContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"billingContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"secondaryBillingContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"serviceContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"secondaryServiceContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"votingContact\": {\n          \"email\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\"\n        },\n        \"hasRequiredContacts\": true,\n        \"created\": \"string\",\n        \"updated\": \"string\",\n        \"doiEstimate\": 5182.306309269741\n      },\n      \"relationships\": {\n        \"clients\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        \"prefixes\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        \"contacts\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        \"consortium\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"consortiumOrganizations\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      }\n    }\n  ],\n  \"meta\": {\n    \"total\": 6749.136555500064,\n    \"totalPages\": 9094.186441557013,\n    \"page\": 7515.576930148822,\n    \"years\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 7194.601002795776\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 502.49557306048854\n      }\n    ],\n    \"regions\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 51.046101529586\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 6662.71653355015\n      }\n    ],\n    \"memberTypes\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 1374.649456249809\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 6830.995182789017\n      }\n    ],\n    \"organizationTypes\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 7727.571107789507\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 169.48208455257463\n      }\n    ],\n    \"focusAreas\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 9446.119215488769\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 1611.9375852118167\n      }\n    ],\n    \"nonProfitStatuses\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 3107.998062306041\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 3767.4614538659102\n      }\n    ],\n    \"hasRequiredContacts\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 247.40270912491647\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 6067.081206671745\n      }\n    ]\n  },\n  \"links\": {\n    \"self\": \"string\",\n    \"next\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "792cab65-2c8d-4ba8-b580-72bc7245156f",
+          "name": "Return providers DOI production statistics.",
+          "request": {
+            "name": "Return providers DOI production statistics.",
+            "description": {},
+            "url": {
+              "path": [
+                "providers",
+                "totals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>,<string>",
+                  "description": "Authentication is required to retrieve draft records."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ee64887a-5f20-4fe0-a008-8176ad479dbd",
+              "name": "A JSON array of providers stats.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "providers",
+                    "totals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "state",
+                      "value": "<string>,<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"count\": 4354.102076773443,\n    \"temporal\": {\n      \"this_month\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 4812.276751974969\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 3084.2643722878406\n        }\n      ],\n      \"this_year\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 41.441866237150734\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 5204.102427361194\n        }\n      ],\n      \"last_year\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 1508.0187725148298\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 5929.417451298435\n        }\n      ],\n      \"two_years_ago\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 4033.7416661784773\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 8028.4776784268515\n        }\n      ]\n    },\n    \"states\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 422.1112031842933\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 3695.407807659217\n      }\n    ]\n  },\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"count\": 3702.3737765322094,\n    \"temporal\": {\n      \"this_month\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 5429.3045429881295\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 4465.724508251844\n        }\n      ],\n      \"this_year\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 5801.8264454080445\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 1612.3596750814152\n        }\n      ],\n      \"last_year\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 8691.020675445858\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 9685.135429333233\n        }\n      ],\n      \"two_years_ago\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 4014.3076713343808\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"count\": 5224.434055154994\n        }\n      ]\n    },\n    \"states\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 7303.368162939651\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 7170.445096622996\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b68eb6e-8e2b-4f95-a128-95197f136401",
+          "name": "Return a provider.",
+          "request": {
+            "name": "Return a provider.",
+            "description": {},
+            "url": {
+              "path": [
+                "providers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) DataCite Direct Member, Consortium Organization, or Consortium account ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e36798c4-b334-426a-aa99-855642e58533",
+              "name": "A JSON object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) DataCite Direct Member, Consortium Organization, or Consortium account ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": \"string\",\n    \"type\": \"providers\",\n    \"attributes\": {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"symbol\": \"string\",\n      \"website\": \"string\",\n      \"systemEmail\": \"string\",\n      \"groupEmail\": \"string\",\n      \"globusUuid\": \"string\",\n      \"description\": \"string\",\n      \"region\": \"<string>\",\n      \"country\": \"string\",\n      \"logoUrl\": \"string\",\n      \"memberType\": \"<string>\",\n      \"organizationType\": \"<string>\",\n      \"focusArea\": \"<string>\",\n      \"nonProfitStatus\": \"string\",\n      \"isActive\": false,\n      \"hasPassword\": true,\n      \"joined\": \"string\",\n      \"twitterHandle\": \"string\",\n      \"rorId\": \"string\",\n      \"technicalContact\": {\n        \"email\": \"string\",\n        \"familyName\": \"string\",\n        \"givenName\": \"string\"\n      },\n      \"secondaryTechnicalContact\": {\n        \"email\": \"string\",\n        \"familyName\": \"string\",\n        \"givenName\": \"string\"\n      },\n      \"billingContact\": {\n        \"email\": \"string\",\n        \"familyName\": \"string\",\n        \"givenName\": \"string\"\n      },\n      \"secondaryBillingContact\": {\n        \"email\": \"string\",\n        \"familyName\": \"string\",\n        \"givenName\": \"string\"\n      },\n      \"serviceContact\": {\n        \"email\": \"string\",\n        \"familyName\": \"string\",\n        \"givenName\": \"string\"\n      },\n      \"secondaryServiceContact\": {\n        \"email\": \"string\",\n        \"familyName\": \"string\",\n        \"givenName\": \"string\"\n      },\n      \"votingContact\": {\n        \"email\": \"string\",\n        \"familyName\": \"string\",\n        \"givenName\": \"string\"\n      },\n      \"hasRequiredContacts\": true,\n      \"created\": \"string\",\n      \"updated\": \"string\",\n      \"doiEstimate\": 3048.137510992561\n    },\n    \"relationships\": {\n      \"clients\": {\n        \"data\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"prefixes\": {\n        \"data\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"contacts\": {\n        \"data\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"consortium\": {\n        \"data\": {\n          \"id\": \"string\",\n          \"type\": \"string\"\n        }\n      },\n      \"consortiumOrganizations\": {\n        \"data\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        ]\n      }\n    }\n  },\n  \"meta\": {\n    \"repositoryCount\": 6414.961724578866,\n    \"consortiumOrganizationCount\": 8411.860275413163\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.test.datacite.org",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "8c3dc286-3266-449e-91c0-bd5751700c3e",
+    "name": "REST activities providers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The REST API is used for all API interactions with DataCite services.\n\nContact Support:\n Name: DataCite Support\n Email: support@datacite.org",
+      "type": "text/plain"
+    }
+  }
+}

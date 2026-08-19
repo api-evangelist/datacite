@@ -1,0 +1,170 @@
+{
+  "item": [
+    {
+      "id": "073900e2-2dc0-4766-b366-4a37d57b729d",
+      "name": "client-prefixes",
+      "description": {
+        "content": "Client Prefixes",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "af95ee52-cd4f-41ef-963a-f1a49384b08a",
+          "name": "Return a list of client-prefixes.",
+          "request": {
+            "name": "Return a list of client-prefixes.",
+            "description": {},
+            "url": {
+              "path": [
+                "client-prefixes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "client-id",
+                  "value": "<string>",
+                  "description": "Filter by a specific DataCite client (repository). Use commas to include multiple repositories."
+                },
+                {
+                  "disabled": false,
+                  "key": "prefix-id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page[number]",
+                  "value": "<integer>",
+                  "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page[size]",
+                  "value": "<integer>",
+                  "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b151aac8-95ac-44e0-98f1-c3b106dccb54",
+              "name": "A JSON array of client-prefixes.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "client-prefixes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "client-id",
+                      "value": "datacite.blog"
+                    },
+                    {
+                      "key": "prefix-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page[number]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page[size]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"type\": \"client-prefixes\",\n      \"attributes\": {\n        \"createdAt\": \"string\",\n        \"updatedAt\": \"string\"\n      },\n      \"relationships\": {\n        \"client\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"provider\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"providerPrefix\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"prefix\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"type\": \"client-prefixes\",\n      \"attributes\": {\n        \"createdAt\": \"string\",\n        \"updatedAt\": \"string\"\n      },\n      \"relationships\": {\n        \"client\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"provider\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"providerPrefix\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"prefix\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      }\n    }\n  ],\n  \"meta\": {\n    \"total\": 5001.2020047938895,\n    \"totalPages\": 3758.343575764337,\n    \"page\": 3121.91890779591,\n    \"years\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 6066.312701843906\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 5974.528266110664\n      }\n    ]\n  },\n  \"links\": {\n    \"self\": \"string\",\n    \"next\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.test.datacite.org",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "8c590073-a83d-4d50-8b4d-aa752dc7ef9c",
+    "name": "REST activities client-prefixes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The REST API is used for all API interactions with DataCite services.\n\nContact Support:\n Name: DataCite Support\n Email: support@datacite.org",
+      "type": "text/plain"
+    }
+  }
+}

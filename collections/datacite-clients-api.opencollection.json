@@ -1,0 +1,134 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST activities clients API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "clients",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return a list of clients (repositories).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/clients",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query",
+                "description": "The year the client was created."
+              },
+              {
+                "name": "provider-id",
+                "value": "cern",
+                "type": "query",
+                "description": "Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers."
+              },
+              {
+                "name": "software",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "client-type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "repository-type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "certificate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page[number]",
+                "value": "",
+                "type": "query",
+                "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "page[size]",
+                "value": "",
+                "type": "query",
+                "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Return a list of clients (repositories)."
+        },
+        {
+          "info": {
+            "name": "Return clients DOI production statistics.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/clients/totals",
+            "params": [
+              {
+                "name": "provider-id",
+                "value": "cern",
+                "type": "query",
+                "description": "Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers."
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "Authentication is required to retrieve draft records."
+              }
+            ]
+          },
+          "docs": "Return clients DOI production statistics."
+        },
+        {
+          "info": {
+            "name": "Return a client.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/clients/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "DataCite Repository account ID."
+              }
+            ]
+          },
+          "docs": "Return a client."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

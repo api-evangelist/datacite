@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST activities report_types API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "report_types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "This resource returns a list of reports supported by the API for a given application.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/report_types",
+            "params": [
+              {
+                "name": "platform",
+                "value": "",
+                "type": "query",
+                "description": "The name of the Platform the report data is being requested for.  This can be omitted if the service provides report data for only one platform."
+              }
+            ]
+          },
+          "docs": "This resource returns a list of reports supported by the API for a given application."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

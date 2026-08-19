@@ -1,0 +1,148 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST activities events API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return a list of events.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/events",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Query for any event information."
+              },
+              {
+                "name": "subj-id",
+                "value": "https://doi.org/10.14454/g8e5-6293",
+                "type": "query",
+                "description": "The identifier for the event subject expressed as URL."
+              },
+              {
+                "name": "obj-id",
+                "value": "https://doi.org/10.14454/g8e5-6293",
+                "type": "query",
+                "description": "The identifier for the event object expressed as URL."
+              },
+              {
+                "name": "doi",
+                "value": "10.14454/g8e5-629",
+                "type": "query",
+                "description": "The subj-id or obj-id of the event expressed as DOI."
+              },
+              {
+                "name": "prefix",
+                "value": "10.14454",
+                "type": "query",
+                "description": "The DOI prefix of the subj-id or obj-id of the event."
+              },
+              {
+                "name": "orcid",
+                "value": "0000-0002-4684-9769",
+                "type": "query",
+                "description": "The subj-id or obj-id of the event expressed as an ORCID iD."
+              },
+              {
+                "name": "year-month",
+                "value": "2018-08",
+                "type": "query",
+                "description": "The year and month in which the event occurred in the format YYYY-MM."
+              },
+              {
+                "name": "source-id",
+                "value": "",
+                "type": "query",
+                "description": "The [source of the event](https://support.datacite.org/docs/eventdata-guide#source-id). Use commas to include multiple sources."
+              },
+              {
+                "name": "relation-type-id",
+                "value": "",
+                "type": "query",
+                "description": "The relation type of the event. See [Linking events](https://support.datacite.org/docs/eventdata-guide#linking-events) and [Usage events](https://support.datacite.org/docs/eventdata-guide#usage-events) documentation for definitions. Use commas to include multiple relation types."
+              },
+              {
+                "name": "subtype",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "citation-type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "registrant-id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "publication-year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page[number]",
+                "value": "",
+                "type": "query",
+                "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "page[size]",
+                "value": "",
+                "type": "query",
+                "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "page[cursor]",
+                "value": "",
+                "type": "query",
+                "description": "Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor)."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort order. By default, all events are sorted in ascending chronological order (using the last updated timestamp)."
+              }
+            ]
+          },
+          "docs": "Return a list of events."
+        },
+        {
+          "info": {
+            "name": "Return an event.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/events/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Event"
+              }
+            ]
+          },
+          "docs": "Return an event."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

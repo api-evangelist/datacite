@@ -1,0 +1,128 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST activities providers API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "providers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return a list of providers (including members and consortium organizations).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/providers",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query",
+                "description": "The year the provider was created."
+              },
+              {
+                "name": "consortium-id",
+                "value": "ardc",
+                "type": "query",
+                "description": "Filter by a specific DataCite consortium."
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "member-type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "organization-type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "focus-area",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "has-required-contacts",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page[number]",
+                "value": "",
+                "type": "query",
+                "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "page[size]",
+                "value": "",
+                "type": "query",
+                "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Return a list of providers (including members and consortium organizations)."
+        },
+        {
+          "info": {
+            "name": "Return providers DOI production statistics.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/providers/totals",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "Authentication is required to retrieve draft records."
+              }
+            ]
+          },
+          "docs": "Return providers DOI production statistics."
+        },
+        {
+          "info": {
+            "name": "Return a provider.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/providers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "DataCite Direct Member, Consortium Organization, or Consortium account ID."
+              }
+            ]
+          },
+          "docs": "Return a provider."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

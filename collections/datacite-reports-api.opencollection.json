@@ -1,0 +1,165 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST activities reports API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "A JSON array of reports.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/reports",
+            "params": [
+              {
+                "name": "platform",
+                "value": "",
+                "type": "query",
+                "description": "Name of the Platform the usage is being requested for. This can be omitted if the service provides usage for only one platform."
+              },
+              {
+                "name": "report-name",
+                "value": "",
+                "type": "query",
+                "description": "The long name of the report."
+              },
+              {
+                "name": "report-id",
+                "value": "",
+                "type": "query",
+                "description": "The report ID or code or shortname. Typically this will be the same code provided in the Report parameter of the request."
+              },
+              {
+                "name": "release",
+                "value": "",
+                "type": "query",
+                "description": "The release or version of the report."
+              },
+              {
+                "name": "created",
+                "value": "",
+                "type": "query",
+                "description": "Time the report was prepared. Format as defined by date-time - RFC3339"
+              },
+              {
+                "name": "created-by",
+                "value": "",
+                "type": "query",
+                "description": "Name of the organization producing the report."
+              },
+              {
+                "name": "page[number]",
+                "value": "",
+                "type": "query",
+                "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "page[size]",
+                "value": "",
+                "type": "query",
+                "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+              }
+            ]
+          },
+          "docs": "A JSON array of reports."
+        },
+        {
+          "info": {
+            "name": "Add a new report.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.test.datacite.org/reports",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Add a new report."
+        },
+        {
+          "info": {
+            "name": "Return a report.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/reports/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Report"
+              }
+            ]
+          },
+          "docs": "Return a report."
+        },
+        {
+          "info": {
+            "name": "Update a report.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.test.datacite.org/reports/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Report"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Update a report."
+        },
+        {
+          "info": {
+            "name": "This resource deletes a specific Dataset report.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.test.datacite.org/reports/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Report Unique ID. Identifier of a specific usage report is being deleted.  If omitted, there should be a error."
+              }
+            ]
+          },
+          "docs": "This resource deletes a specific Dataset report."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST activities provider-prefixes API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "provider-prefixes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return a list of provider-prefixes.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.test.datacite.org/provider-prefixes",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "consortium-id",
+                "value": "ardc",
+                "type": "query",
+                "description": "Filter by a specific DataCite consortium."
+              },
+              {
+                "name": "provider-id",
+                "value": "cern",
+                "type": "query",
+                "description": "Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers."
+              },
+              {
+                "name": "prefix-id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page[number]",
+                "value": "",
+                "type": "query",
+                "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "page[size]",
+                "value": "",
+                "type": "query",
+                "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Return a list of provider-prefixes."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

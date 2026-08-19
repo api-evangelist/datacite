@@ -1,0 +1,180 @@
+{
+  "item": [
+    {
+      "id": "efc2226f-d491-4d53-aea8-3b551f25011e",
+      "name": "provider-prefixes",
+      "description": {
+        "content": "Provider Prefixes",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3c427ebe-a633-4393-afa7-2fc881719ac1",
+          "name": "Return a list of provider-prefixes.",
+          "request": {
+            "name": "Return a list of provider-prefixes.",
+            "description": {},
+            "url": {
+              "path": [
+                "provider-prefixes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "consortium-id",
+                  "value": "<string>",
+                  "description": "Filter by a specific DataCite consortium."
+                },
+                {
+                  "disabled": false,
+                  "key": "provider-id",
+                  "value": "<string>",
+                  "description": "Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers."
+                },
+                {
+                  "disabled": false,
+                  "key": "prefix-id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page[number]",
+                  "value": "<integer>",
+                  "description": "Page number for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page[size]",
+                  "value": "<integer>",
+                  "description": "Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d26421fc-cadc-483b-b160-46cd7fabd32d",
+              "name": "A JSON array of provider-prefixes.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "provider-prefixes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "consortium-id",
+                      "value": "ardc"
+                    },
+                    {
+                      "key": "provider-id",
+                      "value": "cern"
+                    },
+                    {
+                      "key": "prefix-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page[number]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page[size]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"type\": \"provider-prefixes\",\n      \"attributes\": {\n        \"createdAt\": \"string\",\n        \"updatedAt\": \"string\"\n      },\n      \"relationships\": {\n        \"provider\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"prefix\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"clients\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        \"clientPrefixes\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"type\": \"provider-prefixes\",\n      \"attributes\": {\n        \"createdAt\": \"string\",\n        \"updatedAt\": \"string\"\n      },\n      \"relationships\": {\n        \"provider\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"prefix\": {\n          \"data\": {\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        \"clients\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        \"clientPrefixes\": {\n          \"data\": [\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      }\n    }\n  ],\n  \"meta\": {\n    \"total\": 8172.1208378738,\n    \"totalPages\": 2322.502425012587,\n    \"page\": 1622.2585543484536,\n    \"years\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 8855.867161687118\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 459.3009529254455\n      }\n    ],\n    \"states\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 1938.0000918632545\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 9151.914930159082\n      }\n    ],\n    \"providers\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 9358.596101008843\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"count\": 7718.702679272907\n      }\n    ]\n  },\n  \"links\": {\n    \"self\": \"string\",\n    \"next\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.test.datacite.org",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "e8310dba-dfb4-413e-bb7f-0e838df7e7a7",
+    "name": "REST activities provider-prefixes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The REST API is used for all API interactions with DataCite services.\n\nContact Support:\n Name: DataCite Support\n Email: support@datacite.org",
+      "type": "text/plain"
+    }
+  }
+}
