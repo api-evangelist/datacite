@@ -62,6 +62,11 @@ apis:
   humanURL: https://support.datacite.org/docs/apis
   baseURL: https://api.datacite.org/events
   tags:
+  - Event
+  - Citations
+  - Scholarly
+  - DOI
+  tags_raw:
   - Events
   - Citations
   - Scholarly
@@ -75,6 +80,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - Activities
+  tags_raw:
   - activities
   properties:
   - type: OpenAPI
@@ -121,6 +128,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - Clients
+  tags_raw:
   - clients
   properties:
   - type: OpenAPI
@@ -144,6 +153,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - DOIs
+  tags_raw:
   - dois
   properties:
   - type: OpenAPI
@@ -167,6 +178,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - Event
+  tags_raw:
   - events
   properties:
   - type: OpenAPI
@@ -190,6 +203,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - Heartbeat
+  tags_raw:
   - heartbeat
   properties:
   - type: OpenAPI
@@ -213,6 +228,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - Prefixes
+  tags_raw:
   - prefixes
   properties:
   - type: OpenAPI
@@ -259,6 +276,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - Providers
+  tags_raw:
   - providers
   properties:
   - type: OpenAPI
@@ -282,6 +301,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - Publishers
+  tags_raw:
   - publishers
   properties:
   - type: OpenAPI
@@ -305,6 +326,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - Report Types
+  tags_raw:
   - report_types
   properties:
   - type: OpenAPI
@@ -328,6 +351,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - Reports
+  tags_raw:
   - reports
   properties:
   - type: OpenAPI
@@ -351,6 +376,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - Repositories
+  tags_raw:
   - repositories
   properties:
   - type: OpenAPI
@@ -374,6 +401,8 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
+  - Status
+  tags_raw:
   - status
   properties:
   - type: OpenAPI
