@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: REST activities repositories API
+  title: REST Repositories API
   description: The REST API is used for all API interactions with DataCite services.
   contact:
     name: DataCite Support
@@ -288,6 +288,34 @@ paths:
           description: No Content
 components:
   schemas:
+    software:
+      type: string
+      enum:
+      - Cayuse
+      - CKAN
+      - Dataverse
+      - dLibra
+      - DSpace
+      - EPrints
+      - Ex Libris Esploro
+      - Fedora
+      - Invenio
+      - Islandora
+      - MyCoRe
+      - Nesstar
+      - Omega-PSIR
+      - Omeka S
+      - Open Journal Systems (OJS)
+      - OPUS
+      - Pubman
+      - Pure
+      - Redivis
+      - RSpace
+      - Samvera
+      - SESAR
+      - Ubiquity
+      - Other
+      - Unknown
     RepositoryResponse:
       type: object
       properties:
@@ -372,13 +400,6 @@ components:
             hasPassword:
               description: Returned only when authenticated with associated credentials.
               type: boolean
-    client-type:
-      type: string
-      enum:
-      - repository
-      - periodical
-      - igsnCatalog
-      - raidRegistry
     certificate:
       type: string
       enum:
@@ -389,43 +410,6 @@ components:
       - DSA
       - RatSWD
       - WDS
-    software:
-      type: string
-      enum:
-      - Cayuse
-      - CKAN
-      - Dataverse
-      - dLibra
-      - DSpace
-      - EPrints
-      - Ex Libris Esploro
-      - Fedora
-      - Invenio
-      - Islandora
-      - MyCoRe
-      - Nesstar
-      - Omega-PSIR
-      - Omeka S
-      - Open Journal Systems (OJS)
-      - OPUS
-      - Pubman
-      - Pure
-      - Redivis
-      - RSpace
-      - Samvera
-      - SESAR
-      - Ubiquity
-      - Other
-      - Unknown
-    repositoryType:
-      type: string
-      enum:
-      - disciplinary
-      - governmental
-      - institutional
-      - multidisciplinary
-      - project-related
-      - other
     subject:
       type: object
       properties:
@@ -445,6 +429,22 @@ components:
         classificationCode:
           type: string
           example: '2.4'
+    client-type:
+      type: string
+      enum:
+      - repository
+      - periodical
+      - igsnCatalog
+      - raidRegistry
+    repositoryType:
+      type: string
+      enum:
+      - disciplinary
+      - governmental
+      - institutional
+      - multidisciplinary
+      - project-related
+      - other
   securitySchemes:
     BasicAuth:
       type: http

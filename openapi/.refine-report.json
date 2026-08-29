@@ -1,20 +1,8 @@
 {
   "provider": "datacite",
   "sources": [
-    "datacite-activities-api-openapi.yml",
-    "datacite-client-prefixes-api-openapi.yml",
-    "datacite-clients-api-openapi.yml",
-    "datacite-dois-api-openapi.yml",
-    "datacite-events-api-openapi.yml",
-    "datacite-heartbeat-api-openapi.yml",
-    "datacite-prefixes-api-openapi.yml",
-    "datacite-provider-prefixes-api-openapi.yml",
-    "datacite-providers-api-openapi.yml",
-    "datacite-publishers-api-openapi.yml",
-    "datacite-report-types-api-openapi.yml",
-    "datacite-reports-api-openapi.yml",
-    "datacite-repositories-api-openapi.yml",
-    "datacite-status-api-openapi.yml"
+    "_original/datacite-rest-api-openapi.yml",
+    "_original/datacite-usage-reports-api-openapi.yml"
   ],
   "outputs": [
     "datacite-activities-api-openapi.yml",
@@ -26,23 +14,48 @@
     "datacite-prefixes-api-openapi.yml",
     "datacite-provider-prefixes-api-openapi.yml",
     "datacite-providers-api-openapi.yml",
-    "datacite-publishers-api-openapi.yml",
-    "datacite-report-types-api-openapi.yml",
     "datacite-reports-api-openapi.yml",
     "datacite-repositories-api-openapi.yml",
+    "datacite-publishers-api-openapi.yml",
+    "datacite-report-types-api-openapi.yml",
     "datacite-status-api-openapi.yml"
   ],
   "archived": [],
   "errors": [
-    "datacite-publishers-api-openapi.yml: dangling $ref: #/definitions/Error_Model",
-    "datacite-publishers-api-openapi.yml: dangling $ref: #/definitions/Publisher",
-    "datacite-report-types-api-openapi.yml: dangling $ref: #/definitions/Error_Model",
-    "datacite-report-types-api-openapi.yml: dangling $ref: #/definitions/Report_Types",
-    "datacite-reports-api-openapi.yml: dangling $ref: #/definitions/Error_Model",
-    "datacite-status-api-openapi.yml: dangling $ref: #/definitions/Error_Model",
-    "datacite-status-api-openapi.yml: dangling $ref: #/definitions/Status"
+    "datacite-usage-reports-api-openapi.yml: dangling $ref: #/definitions/Error_Model",
+    "datacite-usage-reports-api-openapi.yml: dangling $ref: #/definitions/Publisher",
+    "datacite-usage-reports-api-openapi.yml: dangling $ref: #/definitions/Report",
+    "datacite-usage-reports-api-openapi.yml: dangling $ref: #/definitions/Report_Types",
+    "datacite-usage-reports-api-openapi.yml: dangling $ref: #/definitions/Status"
   ],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "datacite-rest-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "datacite-rest-api-openapi.yml: declared missing tag: repositories",
+    "datacite-usage-reports-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "datacite-usage-reports-api-openapi.yml: declared missing tag: heartbeat",
+    "datacite-usage-reports-api-openapi.yml: declared missing tag: publishers",
+    "datacite-usage-reports-api-openapi.yml: declared missing tag: report_types",
+    "datacite-usage-reports-api-openapi.yml: declared missing tag: reports",
+    "datacite-usage-reports-api-openapi.yml: declared missing tag: status",
+    "tag 'heartbeat' spans 2 source specs (datacite-rest-api-openapi.yml, datacite-usage-reports-api-openapi.yml): per-path servers applied",
+    "tag 'reports' spans 2 source specs (datacite-rest-api-openapi.yml, datacite-usage-reports-api-openapi.yml): per-path servers applied"
+  ],
+  "skipped": [
+    "datacite-activities-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-client-prefixes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-clients-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-dois-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-heartbeat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-prefixes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-provider-prefixes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-providers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-publishers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-report-types-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-reports-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-repositories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-status-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: REST activities providers API
+  title: REST Providers API
   description: The REST API is used for all API interactions with DataCite services.
   contact:
     name: DataCite Support
@@ -172,22 +172,18 @@ paths:
                         description: Returned only when the provider is a Consortium.
 components:
   schemas:
-    ProviderContact:
+    MetaCore:
       type: object
-      description: Returned only when authenticated with associated credentials.
       properties:
-        email:
-          type: string
-        familyName:
-          type: string
-        givenName:
-          type: string
-    region:
-      type: string
-      enum:
-      - AMER
-      - APAC
-      - EMEA
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
     MetaObject:
       type: object
       properties:
@@ -197,19 +193,6 @@ components:
           type: string
         count:
           type: number
-    state:
-      type: string
-      enum:
-      - findable
-      - registered
-      - draft
-    Links:
-      type: object
-      properties:
-        self:
-          type: string
-        next:
-          type: string
     organization-type:
       type: string
       enum:
@@ -223,6 +206,27 @@ components:
       - internationalOrganization
       - other
       - null
+    state:
+      type: string
+      enum:
+      - findable
+      - registered
+      - draft
+    focus-area:
+      type: string
+      enum:
+      - naturalSciences
+      - engineeringAndTechnology
+      - medicalAndHealthSciences
+      - agriculturalSciences
+      - socialSciences
+      - humanities
+      - general
+      - null
+    DataArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataObject'
     TotalsObject:
       type: object
       properties:
@@ -255,30 +259,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MetaObject'
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
-    member-type:
-      type: string
-      enum:
-      - consortium_organization
-      - direct_member
-      - consortium
-      - member_only
-      - developer
-    MetaCore:
-      type: object
-      properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
     Provider:
       type: object
       properties:
@@ -393,21 +373,35 @@ components:
       required:
       - id
       - attributes - name - symbol
-    DataArray:
+    MetaArray:
       type: array
       items:
-        $ref: '#/components/schemas/DataObject'
-    focus-area:
+        $ref: '#/components/schemas/MetaObject'
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+        next:
+          type: string
+    ProviderContact:
+      type: object
+      description: Returned only when authenticated with associated credentials.
+      properties:
+        email:
+          type: string
+        familyName:
+          type: string
+        givenName:
+          type: string
+    member-type:
       type: string
       enum:
-      - naturalSciences
-      - engineeringAndTechnology
-      - medicalAndHealthSciences
-      - agriculturalSciences
-      - socialSciences
-      - humanities
-      - general
-      - null
+      - consortium_organization
+      - direct_member
+      - consortium
+      - member_only
+      - developer
     DataObject:
       type: object
       properties:
@@ -415,6 +409,12 @@ components:
           type: string
         type:
           type: string
+    region:
+      type: string
+      enum:
+      - AMER
+      - APAC
+      - EMEA
   parameters:
     pageNumberParam:
       name: page[number]
@@ -422,6 +422,13 @@ components:
       schema:
         type: integer
       description: Page number for [pagination](https://support.datacite.org/docs/pagination).
+    consortiumIdParam:
+      name: consortium-id
+      in: query
+      description: Filter by a specific DataCite consortium.
+      schema:
+        type: string
+      example: ardc
     pageSizeParam:
       name: page[size]
       in: query
@@ -430,13 +437,6 @@ components:
         minimum: 0
         maximum: 1000
       description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
-    consortiumIdParam:
-      name: consortium-id
-      in: query
-      description: Filter by a specific DataCite consortium.
-      schema:
-        type: string
-      example: ardc
   securitySchemes:
     BasicAuth:
       type: http

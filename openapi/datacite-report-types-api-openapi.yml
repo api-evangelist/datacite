@@ -1,24 +1,23 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: REST activities report_types API
-  description: The REST API is used for all API interactions with DataCite services.
+  title: Data Usage Report Types API
+  description: The SASHIMI API represents a RESTful implementation of SUSHI automation intended to returns COUNTER Research Data Release 1 reports
+  termsOfService: ''
   contact:
-    name: DataCite Support
-    url: https://support.datacite.org
+    name: DataCite Data Usage API
+    url: https://metrics.stage.datacite.org
     email: support@datacite.org
   license:
     name: MIT
-    url: https://raw.githubusercontent.com/datacite/lupo/master/LICENSE
-  version: 2.3.0
+    url: https://raw.githubusercontent.com/datacite/sashimi/master/LICENSE
+  version: 1.0.0
 servers:
-- url: https://api.test.datacite.org
-  description: Staging server
 - url: https://api.datacite.org
   description: Production server
+- url: https://metrics.stage.datacite.org
+  description: Staging server
 security:
-- {}
-- BasicAuth: []
-- bearerAuth: []
+- Bearer: []
 tags:
 - name: report_types
 paths:
@@ -50,10 +49,7 @@ paths:
                 $ref: '#/definitions/Error_Model'
 components:
   securitySchemes:
-    BasicAuth:
-      type: http
-      scheme: basic
-    bearerAuth:
+    Bearer:
       type: http
       scheme: bearer
-      bearerFormat: JWT
+      description: Token-based authentication for members
