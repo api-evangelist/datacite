@@ -1,0 +1,27 @@
+slug: datacite
+provider: DataCite
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Education
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: dois
+  spec_file: datacite-dois-api-openapi.yml
+  capability_id: BC-4780.40
+  capability_id_l1: BC-4780
+  capability_name: Scholarly Output & Publication Management
+  confidence: 0.8
+  evidence: POST /dois — Add a new DOI; PUT /dois/{id} — Update a DOI; schemas DoiPropertiesMetadata,
+    relatedIdentifierType, resourceTypeGeneral
+  reason: Operations mint and maintain DOIs with scholarly metadata (titles, contributors, resource types,
+    related identifiers) for research outputs. That is directly 'stewardship of scholarly output including
+    publications, open access, and persistent identifiers' (BC-4780.40). Some residual doubt because the
+    vendor is infrastructure rather than an institution's own research office.
