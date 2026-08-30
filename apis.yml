@@ -165,7 +165,7 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
-  - DOIs
+  - dois
   tags_raw:
   - dois
   properties:
@@ -215,7 +215,7 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
-  - Heartbeat
+  - heartbeat
   tags_raw:
   - heartbeat
   properties:
@@ -240,7 +240,7 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
-  - Prefixes
+  - prefixes
   tags_raw:
   - prefixes
   properties:
@@ -313,7 +313,7 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
-  - Publishers
+  - publishers
   tags_raw:
   - publishers
   properties:
@@ -337,8 +337,7 @@ apis:
   description: The report_types API from DataCite — 1 operation(s) for report_types.
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
-  tags:
-  - Report Types
+  tags: []
   tags_raw:
   - report_types
   properties:
@@ -388,7 +387,7 @@ apis:
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
   tags:
-  - Repositories
+  - repositories
   tags_raw:
   - repositories
   properties:
