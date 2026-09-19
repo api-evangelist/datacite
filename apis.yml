@@ -415,6 +415,8 @@ apis:
   humanURL: https://support.datacite.org/docs/datacite-graphql-api-guide
   baseURL: https://api.datacite.org/graphql
   tags:
+  - DOIs
+  tags_raw:
   - dois
   properties:
   - type: OpenAPI
