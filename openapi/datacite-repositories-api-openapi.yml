@@ -20,13 +20,13 @@ security:
 - BasicAuth: []
 - bearerAuth: []
 tags:
-- name: repositories
+- name: Repositories
 paths:
   /repositories:
     post:
       tags:
-      - repositories
-      summary: Add a new repository.
+      - Repositories
+      summary: Add a new repository
       security:
       - BasicAuth: []
       requestBody:
@@ -156,6 +156,8 @@ paths:
             application/vnd.api+json:
               schema:
                 $ref: '#/components/schemas/RepositoryResponse'
+      operationId: postRepositories
+      x-operation-id-source: derived
   /repositories/{id}:
     put:
       parameters:
@@ -165,11 +167,11 @@ paths:
         required: true
         schema:
           type: string
-      summary: Update a repository.
+      summary: Update a repository
       security:
       - BasicAuth: []
       tags:
-      - repositories
+      - Repositories
       requestBody:
         required: true
         content:
@@ -270,6 +272,8 @@ paths:
             application/vnd.api+json:
               schema:
                 $ref: '#/components/schemas/RepositoryResponse'
+      operationId: putRepositoriesById
+      x-operation-id-source: derived
     delete:
       parameters:
       - name: id
@@ -279,43 +283,17 @@ paths:
         schema:
           type: string
       tags:
-      - repositories
+      - Repositories
       summary: Delete a repository (only possible if no DOIs are in the repository)
       security:
       - BasicAuth: []
       responses:
         '204':
           description: No Content
+      operationId: deleteRepositoriesById
+      x-operation-id-source: derived
 components:
   schemas:
-    software:
-      type: string
-      enum:
-      - Cayuse
-      - CKAN
-      - Dataverse
-      - dLibra
-      - DSpace
-      - EPrints
-      - Ex Libris Esploro
-      - Fedora
-      - Invenio
-      - Islandora
-      - MyCoRe
-      - Nesstar
-      - Omega-PSIR
-      - Omeka S
-      - Open Journal Systems (OJS)
-      - OPUS
-      - Pubman
-      - Pure
-      - Redivis
-      - RSpace
-      - Samvera
-      - SESAR
-      - Ubiquity
-      - Other
-      - Unknown
     RepositoryResponse:
       type: object
       properties:
@@ -400,6 +378,34 @@ components:
             hasPassword:
               description: Returned only when authenticated with associated credentials.
               type: boolean
+    software:
+      type: string
+      enum:
+      - Cayuse
+      - CKAN
+      - Dataverse
+      - dLibra
+      - DSpace
+      - EPrints
+      - Ex Libris Esploro
+      - Fedora
+      - Invenio
+      - Islandora
+      - MyCoRe
+      - Nesstar
+      - Omega-PSIR
+      - Omeka S
+      - Open Journal Systems (OJS)
+      - OPUS
+      - Pubman
+      - Pure
+      - Redivis
+      - RSpace
+      - Samvera
+      - SESAR
+      - Ubiquity
+      - Other
+      - Unknown
     certificate:
       type: string
       enum:
@@ -410,6 +416,13 @@ components:
       - DSA
       - RatSWD
       - WDS
+    client-type:
+      type: string
+      enum:
+      - repository
+      - periodical
+      - igsnCatalog
+      - raidRegistry
     subject:
       type: object
       properties:
@@ -429,13 +442,6 @@ components:
         classificationCode:
           type: string
           example: '2.4'
-    client-type:
-      type: string
-      enum:
-      - repository
-      - periodical
-      - igsnCatalog
-      - raidRegistry
     repositoryType:
       type: string
       enum:

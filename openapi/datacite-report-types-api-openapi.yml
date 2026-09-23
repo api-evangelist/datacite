@@ -19,13 +19,13 @@ servers:
 security:
 - Bearer: []
 tags:
-- name: report_types
+- name: Report Types
 paths:
   /report_types:
     get:
-      summary: This resource returns a list of reports supported by the API for a given application.
+      summary: This resource returns a list of reports supported by the API for a given…
       tags:
-      - report_types
+      - Report Types
       parameters:
       - name: platform
         in: query
@@ -47,6 +47,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/definitions/Error_Model'
+      operationId: getReportTypes
+      x-operation-id-source: derived
 components:
   securitySchemes:
     Bearer:

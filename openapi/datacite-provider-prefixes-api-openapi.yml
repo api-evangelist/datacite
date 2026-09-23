@@ -27,7 +27,7 @@ paths:
     get:
       tags:
       - provider-prefixes
-      summary: Return a list of provider-prefixes.
+      summary: Return a list of provider-prefixes
       parameters:
       - in: query
         name: query
@@ -87,8 +87,21 @@ paths:
                   links:
                     allOf:
                     - $ref: '#/components/schemas/Links'
+      operationId: getProviderPrefixes
+      x-operation-id-source: derived
 components:
   schemas:
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+        next:
+          type: string
+    DataArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataObject'
     MetaCore:
       type: object
       properties:
@@ -101,30 +114,6 @@ components:
         page:
           description: Current page of the results.
           type: number
-    MetaObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-        count:
-          type: number
-    DataArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataObject'
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
-    Links:
-      type: object
-      properties:
-        self:
-          type: string
-        next:
-          type: string
     DataObject:
       type: object
       properties:
@@ -175,13 +164,20 @@ components:
                   $ref: '#/components/schemas/DataArray'
       required:
       - id
+    MetaObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        count:
+          type: number
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
   parameters:
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
     pageSizeParam:
       name: page[size]
       in: query
@@ -190,13 +186,12 @@ components:
         minimum: 0
         maximum: 1000
       description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
-    providerIdParam:
-      name: provider-id
+    pageNumberParam:
+      name: page[number]
       in: query
-      description: Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers.
       schema:
-        type: string
-      example: cern
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
     consortiumIdParam:
       name: consortium-id
       in: query
@@ -204,6 +199,13 @@ components:
       schema:
         type: string
       example: ardc
+    providerIdParam:
+      name: provider-id
+      in: query
+      description: Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers.
+      schema:
+        type: string
+      example: cern
   securitySchemes:
     BasicAuth:
       type: http

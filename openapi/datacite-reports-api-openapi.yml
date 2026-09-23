@@ -11,14 +11,14 @@ servers:
 - url: https://metrics.stage.datacite.org
   description: Staging server
 tags:
-- name: reports
+- name: Reports
   description: Reports
 paths:
   /reports:
     get:
       tags:
-      - reports
-      summary: A JSON array of reports.
+      - Reports
+      summary: A JSON array of reports
       security: []
       parameters:
       - in: query
@@ -80,10 +80,12 @@ paths:
                       page:
                         description: Current page of the results.
                         type: number
+      operationId: getReports
+      x-operation-id-source: derived
     post:
       tags:
-      - reports
-      summary: Add a new report.
+      - Reports
+      summary: Add a new report
       security:
       - BasicAuth: []
       - bearerAuth: []
@@ -96,6 +98,8 @@ paths:
       responses:
         '201':
           description: Created
+      operationId: postReports
+      x-operation-id-source: derived
     servers:
     - url: https://api.test.datacite.org
       description: Staging server
@@ -111,8 +115,8 @@ paths:
         schema:
           type: string
       tags:
-      - reports
-      summary: Return a report.
+      - Reports
+      summary: Return a report
       responses:
         '200':
           description: A JSON object.
@@ -128,6 +132,8 @@ paths:
       - {}
       - BasicAuth: []
       - bearerAuth: []
+      operationId: getReportsById
+      x-operation-id-source: derived
     put:
       parameters:
       - name: id
@@ -137,8 +143,8 @@ paths:
         schema:
           type: string
       tags:
-      - reports
-      summary: Update a report.
+      - Reports
+      summary: Update a report
       security:
       - BasicAuth: []
       - bearerAuth: []
@@ -151,10 +157,12 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: putReportsById
+      x-operation-id-source: derived
     delete:
-      summary: This resource deletes a specific Dataset report.
+      summary: This resource deletes a specific Dataset report
       tags:
-      - reports
+      - Reports
       parameters:
       - name: id
         in: path
@@ -175,12 +183,29 @@ paths:
       - {}
       - BasicAuth: []
       - bearerAuth: []
+      operationId: deleteReportsById
+      x-operation-id-source: derived
     servers:
     - url: https://api.test.datacite.org
       description: Staging server
     - url: https://api.datacite.org
       description: Production server
 components:
+  parameters:
+    pageSizeParam:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000
+      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
   schemas:
     Report:
       type: object
@@ -388,21 +413,6 @@ components:
                 type: string
       required:
       - report-datasets
-  parameters:
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
-    pageSizeParam:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 0
-        maximum: 1000
-      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
   securitySchemes:
     BasicAuth:
       type: http

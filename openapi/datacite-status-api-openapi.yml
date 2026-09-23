@@ -19,13 +19,13 @@ servers:
 security:
 - Bearer: []
 tags:
-- name: status
+- name: Status
 paths:
   /status:
     get:
-      summary: This resource returns the current status of the reporting service supported by this API.
+      summary: This resource returns the current status of the reporting service supported by…
       tags:
-      - status
+      - Status
       parameters:
       - name: platform
         in: query
@@ -47,6 +47,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/definitions/Error_Model'
+      operationId: getStatus
+      x-operation-id-source: derived
 components:
   securitySchemes:
     Bearer:

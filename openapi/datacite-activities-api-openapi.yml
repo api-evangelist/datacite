@@ -20,14 +20,14 @@ security:
 - BasicAuth: []
 - bearerAuth: []
 tags:
-- name: activities
+- name: Activities
   description: Activities
 paths:
   /activities:
     get:
       tags:
-      - activities
-      summary: Get a JSON API result of activities.
+      - Activities
+      summary: Get a JSON API result of activities
       security: []
       parameters:
       - in: query
@@ -74,6 +74,8 @@ paths:
                   links:
                     allOf:
                     - $ref: '#/components/schemas/Links'
+      operationId: getActivities
+      x-operation-id-source: derived
   /activities/{id}:
     get:
       parameters:
@@ -84,8 +86,8 @@ paths:
         schema:
           type: string
       tags:
-      - activities
-      summary: Get a JSON API result of a specific activity.
+      - Activities
+      summary: Get a JSON API result of a specific activity
       responses:
         '200':
           description: A JSON object.
@@ -97,6 +99,8 @@ paths:
                   data:
                     type: object
                     $ref: '#/components/schemas/Activity'
+      operationId: getActivitiesById
+      x-operation-id-source: derived
   /dois/{id}/activities:
     get:
       parameters:
@@ -107,8 +111,8 @@ paths:
         schema:
           type: string
       tags:
-      - activities
-      summary: Return activities for a specific DOI.
+      - Activities
+      summary: Return activities for a specific DOI
       responses:
         '200':
           description: A JSON object.
@@ -127,8 +131,29 @@ paths:
                   links:
                     allOf:
                     - $ref: '#/components/schemas/Links'
+      operationId: getDoisByIdActivities
+      x-operation-id-source: derived
 components:
   schemas:
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+        next:
+          type: string
+    MetaCore:
+      type: object
+      properties:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
     Activity:
       type: object
       description: Represents an activity for an event within DataCite systems.
@@ -157,38 +182,7 @@ components:
               type: number
             changes:
               type: object
-    MetaCore:
-      type: object
-      properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
-    Links:
-      type: object
-      properties:
-        self:
-          type: string
-        next:
-          type: string
   parameters:
-    pageCursorParam:
-      name: page[cursor]
-      in: query
-      schema:
-        type: string
-      description: Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor).
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
     pageSizeParam:
       name: page[size]
       in: query
@@ -197,6 +191,18 @@ components:
         minimum: 0
         maximum: 1000
       description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
+    pageCursorParam:
+      name: page[cursor]
+      in: query
+      schema:
+        type: string
+      description: Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor).
   securitySchemes:
     BasicAuth:
       type: http

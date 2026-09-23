@@ -27,7 +27,7 @@ paths:
     get:
       tags:
       - client-prefixes
-      summary: Return a list of client-prefixes.
+      summary: Return a list of client-prefixes
       parameters:
       - in: query
         name: query
@@ -83,29 +83,17 @@ paths:
                   links:
                     allOf:
                     - $ref: '#/components/schemas/Links'
+      operationId: getClientPrefixes
+      x-operation-id-source: derived
 components:
   schemas:
-    MetaCore:
+    Links:
       type: object
       properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
-    MetaObject:
-      type: object
-      properties:
-        id:
+        self:
           type: string
-        type:
+        next:
           type: string
-        count:
-          type: number
     ClientPrefix:
       type: object
       properties:
@@ -149,17 +137,18 @@ components:
                   $ref: '#/components/schemas/DataObject'
       required:
       - id
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
-    Links:
+    MetaCore:
       type: object
       properties:
-        self:
-          type: string
-        next:
-          type: string
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
     DataObject:
       type: object
       properties:
@@ -167,7 +156,28 @@ components:
           type: string
         type:
           type: string
+    MetaObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        count:
+          type: number
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
   parameters:
+    pageSizeParam:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000
+      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
     pageNumberParam:
       name: page[number]
       in: query
@@ -181,14 +191,6 @@ components:
       schema:
         type: string
       example: datacite.blog
-    pageSizeParam:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 0
-        maximum: 1000
-      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
   securitySchemes:
     BasicAuth:
       type: http

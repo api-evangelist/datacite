@@ -20,14 +20,14 @@ security:
 - BasicAuth: []
 - bearerAuth: []
 tags:
-- name: prefixes
+- name: Prefixes
   description: Prefixes
 paths:
   /prefixes:
     get:
       tags:
-      - prefixes
-      summary: Return a list of prefixes.
+      - Prefixes
+      summary: Return a list of prefixes
       security: []
       parameters:
       - in: query
@@ -72,11 +72,13 @@ paths:
                   links:
                     allOf:
                     - $ref: '#/components/schemas/Links'
+      operationId: getPrefixes
+      x-operation-id-source: derived
   /prefixes/totals:
     get:
       tags:
-      - prefixes
-      summary: Return prefixes DOI production statistics.
+      - Prefixes
+      summary: Return prefixes DOI production statistics
       parameters:
       - in: query
         $ref: '#/components/parameters/clientIdParam'
@@ -85,11 +87,13 @@ paths:
           description: A JSON array of prefixes stats.
         '204':
           description: No content; must include the client-id parameter.
+      operationId: getPrefixesTotals
+      x-operation-id-source: derived
   /prefixes/{id}:
     get:
       tags:
-      - prefixes
-      summary: Return a prefix.
+      - Prefixes
+      summary: Return a prefix
       security: []
       parameters:
       - name: id
@@ -105,50 +109,16 @@ paths:
             application/vnd.api+json:
               schema:
                 $ref: '#/components/schemas/Prefix'
+      operationId: getPrefixesById
+      x-operation-id-source: derived
 components:
   schemas:
-    MetaCore:
-      type: object
-      properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
-    MetaObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-        count:
-          type: number
-    DataArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataObject'
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
     Links:
       type: object
       properties:
         self:
           type: string
         next:
-          type: string
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
           type: string
     Prefix:
       type: object
@@ -191,6 +161,42 @@ components:
                   $ref: '#/components/schemas/DataArray'
       required:
       - prefix
+    MetaCore:
+      type: object
+      properties:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
+    DataArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataObject'
+    DataObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+    MetaObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        count:
+          type: number
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
   parameters:
     clientIdParam:
       name: client-id

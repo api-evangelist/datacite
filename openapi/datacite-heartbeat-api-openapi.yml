@@ -11,14 +11,14 @@ servers:
 - url: https://metrics.stage.datacite.org
   description: Staging server
 tags:
-- name: heartbeat
+- name: Heartbeat
   description: Heartbeat
 paths:
   /heartbeat:
     get:
       tags:
-      - heartbeat
-      summary: Return the current status of the REST API.
+      - Heartbeat
+      summary: Return the current status of the REST API
       security: []
       responses:
         '200':
@@ -35,6 +35,8 @@ paths:
               schema:
                 type: string
                 example: failed
+      operationId: getHeartbeat
+      x-operation-id-source: derived
     servers:
     - url: https://api.test.datacite.org
       description: Staging server

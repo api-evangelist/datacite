@@ -20,14 +20,14 @@ security:
 - BasicAuth: []
 - bearerAuth: []
 tags:
-- name: providers
+- name: Providers
   description: Providers
 paths:
   /providers:
     get:
       tags:
-      - providers
-      summary: Return a list of providers (including members and consortium organizations).
+      - Providers
+      summary: Return a list of providers (including members and consortium organizations)
       parameters:
       - in: query
         name: query
@@ -115,11 +115,13 @@ paths:
                   links:
                     allOf:
                     - $ref: '#/components/schemas/Links'
+      operationId: getProviders
+      x-operation-id-source: derived
   /providers/totals:
     get:
       tags:
-      - providers
-      summary: Return providers DOI production statistics.
+      - Providers
+      summary: Return providers DOI production statistics
       parameters:
       - in: query
         name: state
@@ -139,6 +141,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TotalsObject'
+      operationId: getProvidersTotals
+      x-operation-id-source: derived
   /providers/{id}:
     get:
       parameters:
@@ -149,8 +153,8 @@ paths:
         schema:
           type: string
       tags:
-      - providers
-      summary: Return a provider.
+      - Providers
+      summary: Return a provider
       responses:
         '200':
           description: A JSON object.
@@ -170,29 +174,25 @@ paths:
                       consortiumOrganizationCount:
                         type: number
                         description: Returned only when the provider is a Consortium.
+      operationId: getProvidersById
+      x-operation-id-source: derived
 components:
   schemas:
-    MetaCore:
+    member-type:
+      type: string
+      enum:
+      - consortium_organization
+      - direct_member
+      - consortium
+      - member_only
+      - developer
+    Links:
       type: object
       properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
-    MetaObject:
-      type: object
-      properties:
-        id:
+        self:
           type: string
-        type:
+        next:
           type: string
-        count:
-          type: number
     organization-type:
       type: string
       enum:
@@ -206,27 +206,16 @@ components:
       - internationalOrganization
       - other
       - null
-    state:
-      type: string
-      enum:
-      - findable
-      - registered
-      - draft
-    focus-area:
-      type: string
-      enum:
-      - naturalSciences
-      - engineeringAndTechnology
-      - medicalAndHealthSciences
-      - agriculturalSciences
-      - socialSciences
-      - humanities
-      - general
-      - null
-    DataArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataObject'
+    ProviderContact:
+      type: object
+      description: Returned only when authenticated with associated credentials.
+      properties:
+        email:
+          type: string
+        familyName:
+          type: string
+        givenName:
+          type: string
     TotalsObject:
       type: object
       properties:
@@ -373,35 +362,39 @@ components:
       required:
       - id
       - attributes - name - symbol
-    MetaArray:
+    DataArray:
       type: array
       items:
-        $ref: '#/components/schemas/MetaObject'
-    Links:
+        $ref: '#/components/schemas/DataObject'
+    MetaCore:
       type: object
       properties:
-        self:
-          type: string
-        next:
-          type: string
-    ProviderContact:
-      type: object
-      description: Returned only when authenticated with associated credentials.
-      properties:
-        email:
-          type: string
-        familyName:
-          type: string
-        givenName:
-          type: string
-    member-type:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
+    focus-area:
       type: string
       enum:
-      - consortium_organization
-      - direct_member
-      - consortium
-      - member_only
-      - developer
+      - naturalSciences
+      - engineeringAndTechnology
+      - medicalAndHealthSciences
+      - agriculturalSciences
+      - socialSciences
+      - humanities
+      - general
+      - null
+    state:
+      type: string
+      enum:
+      - findable
+      - registered
+      - draft
     DataObject:
       type: object
       properties:
@@ -409,13 +402,34 @@ components:
           type: string
         type:
           type: string
+    MetaObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        count:
+          type: number
     region:
       type: string
       enum:
       - AMER
       - APAC
       - EMEA
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
   parameters:
+    pageSizeParam:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000
+      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
     pageNumberParam:
       name: page[number]
       in: query
@@ -429,14 +443,6 @@ components:
       schema:
         type: string
       example: ardc
-    pageSizeParam:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 0
-        maximum: 1000
-      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
   securitySchemes:
     BasicAuth:
       type: http

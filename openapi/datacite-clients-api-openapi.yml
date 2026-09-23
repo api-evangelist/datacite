@@ -20,14 +20,14 @@ security:
 - BasicAuth: []
 - bearerAuth: []
 tags:
-- name: clients
+- name: Clients
   description: Clients
 paths:
   /clients:
     get:
       tags:
-      - clients
-      summary: Return a list of clients (repositories).
+      - Clients
+      summary: Return a list of clients (repositories)
       parameters:
       - in: query
         name: query
@@ -119,11 +119,13 @@ paths:
                   links:
                     allOf:
                     - $ref: '#/components/schemas/Links'
+      operationId: getClients
+      x-operation-id-source: derived
   /clients/totals:
     get:
       tags:
-      - clients
-      summary: Return clients DOI production statistics.
+      - Clients
+      summary: Return clients DOI production statistics
       parameters:
       - in: query
         $ref: '#/components/parameters/providerIdParam'
@@ -145,6 +147,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TotalsObject'
+      operationId: getClientsTotals
+      x-operation-id-source: derived
   /clients/{id}:
     get:
       parameters:
@@ -155,8 +159,8 @@ paths:
         schema:
           type: string
       tags:
-      - clients
-      summary: Return a client.
+      - Clients
+      summary: Return a client
       responses:
         '200':
           description: A JSON object.
@@ -168,20 +172,17 @@ paths:
                   data:
                     type: object
                     $ref: '#/components/schemas/Client'
+      operationId: getClientsById
+      x-operation-id-source: derived
 components:
   schemas:
-    MetaCore:
+    Links:
       type: object
       properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
+        self:
+          type: string
+        next:
+          type: string
     software:
       type: string
       enum:
@@ -210,15 +211,84 @@ components:
       - Ubiquity
       - Other
       - Unknown
-    MetaObject:
+    DataArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataObject'
+    TotalsObject:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        count:
+          type: number
+        temporal:
+          type: object
+          properties:
+            this_month:
+              type: array
+              items:
+                $ref: '#/components/schemas/MetaObject'
+            this_year:
+              type: array
+              items:
+                $ref: '#/components/schemas/MetaObject'
+            last_year:
+              type: array
+              items:
+                $ref: '#/components/schemas/MetaObject'
+            two_years_ago:
+              type: array
+              items:
+                $ref: '#/components/schemas/MetaObject'
+        states:
+          type: array
+          items:
+            $ref: '#/components/schemas/MetaObject'
+    certificate:
+      type: string
+      enum:
+      - CLARIN
+      - CoreTrustSeal
+      - DIN 31644
+      - DINI
+      - DSA
+      - RatSWD
+      - WDS
+    MetaCore:
+      type: object
+      properties:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
+    state:
+      type: string
+      enum:
+      - findable
+      - registered
+      - draft
+    client-type:
+      type: string
+      enum:
+      - repository
+      - periodical
+      - igsnCatalog
+      - raidRegistry
+    DataObject:
       type: object
       properties:
         id:
           type: string
         type:
           type: string
-        count:
-          type: number
     Client:
       type: object
       properties:
@@ -300,83 +370,19 @@ components:
       required:
       - id
       - attributes - name - symbol - contactEmail
-    state:
-      type: string
-      enum:
-      - findable
-      - registered
-      - draft
-    certificate:
-      type: string
-      enum:
-      - CLARIN
-      - CoreTrustSeal
-      - DIN 31644
-      - DINI
-      - DSA
-      - RatSWD
-      - WDS
-    DataArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataObject'
-    TotalsObject:
-      type: object
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        count:
-          type: number
-        temporal:
-          type: object
-          properties:
-            this_month:
-              type: array
-              items:
-                $ref: '#/components/schemas/MetaObject'
-            this_year:
-              type: array
-              items:
-                $ref: '#/components/schemas/MetaObject'
-            last_year:
-              type: array
-              items:
-                $ref: '#/components/schemas/MetaObject'
-            two_years_ago:
-              type: array
-              items:
-                $ref: '#/components/schemas/MetaObject'
-        states:
-          type: array
-          items:
-            $ref: '#/components/schemas/MetaObject'
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
-    Links:
-      type: object
-      properties:
-        self:
-          type: string
-        next:
-          type: string
-    DataObject:
+    MetaObject:
       type: object
       properties:
         id:
           type: string
         type:
           type: string
-    client-type:
-      type: string
-      enum:
-      - repository
-      - periodical
-      - igsnCatalog
-      - raidRegistry
+        count:
+          type: number
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
     repositoryType:
       type: string
       enum:
@@ -387,6 +393,14 @@ components:
       - project-related
       - other
   parameters:
+    pageSizeParam:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000
+      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
     pageNumberParam:
       name: page[number]
       in: query
@@ -400,14 +414,6 @@ components:
       schema:
         type: string
       example: cern
-    pageSizeParam:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 0
-        maximum: 1000
-      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
   securitySchemes:
     BasicAuth:
       type: http

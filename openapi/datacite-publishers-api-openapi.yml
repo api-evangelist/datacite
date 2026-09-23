@@ -19,13 +19,13 @@ servers:
 security:
 - Bearer: []
 tags:
-- name: publishers
+- name: Publishers
 paths:
   /publishers:
     get:
-      summary: This resource returns a collection of reports publishers.
+      summary: This resource returns a collection of reports publishers
       tags:
-      - publishers
+      - Publishers
       parameters:
       - name: platform
         in: query
@@ -50,10 +50,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/definitions/Error_Model'
+      operationId: getPublishers
+      x-operation-id-source: derived
     post:
-      summary: This resource creates a new of report publisher.
+      summary: This resource creates a new of report publisher
       tags:
-      - publishers
+      - Publishers
       parameters: []
       responses:
         '200':
@@ -74,11 +76,13 @@ paths:
           application/json:
             schema:
               $ref: '#/definitions/Publisher'
+      operationId: postPublishers
+      x-operation-id-source: derived
   /publishers/{id}:
     get:
-      summary: This resource returns a specific report publisher.
+      summary: This resource returns a specific report publisher
       tags:
-      - publishers
+      - Publishers
       parameters:
       - name: id
         in: path
@@ -99,10 +103,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/definitions/Error_Model'
+      operationId: getPublishersById
+      x-operation-id-source: derived
     delete:
-      summary: This resource deletes a Publisher.
+      summary: This resource deletes a Publisher
       tags:
-      - publishers
+      - Publishers
       parameters:
       - name: id
         in: path
@@ -119,10 +125,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/definitions/Error_Model'
+      operationId: deletePublishersById
+      x-operation-id-source: derived
     put:
-      summary: This resource returns an updated Publisher Record.
+      summary: This resource returns an updated Publisher Record
       tags:
-      - publishers
+      - Publishers
       parameters:
       - name: id
         in: path
@@ -143,6 +151,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/definitions/Error_Model'
+      operationId: putPublishersById
+      x-operation-id-source: derived
 components:
   securitySchemes:
     Bearer:

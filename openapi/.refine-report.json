@@ -20,7 +20,9 @@
     "datacite-report-types-api-openapi.yml",
     "datacite-status-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [
     "datacite-usage-reports-api-openapi.yml: dangling $ref: #/definitions/Error_Model",
     "datacite-usage-reports-api-openapi.yml: dangling $ref: #/definitions/Publisher",
@@ -40,13 +42,15 @@
     "datacite-usage-reports-api-openapi.yml: declared missing tag: reports",
     "datacite-usage-reports-api-openapi.yml: declared missing tag: status",
     "tag 'heartbeat' spans 2 source specs (datacite-rest-api-openapi.yml, datacite-usage-reports-api-openapi.yml): per-path servers applied",
-    "tag 'reports' spans 2 source specs (datacite-rest-api-openapi.yml, datacite-usage-reports-api-openapi.yml): per-path servers applied"
+    "tag 'reports' spans 2 source specs (datacite-rest-api-openapi.yml, datacite-usage-reports-api-openapi.yml): per-path servers applied",
+    "superseded outputs removed: datacite-do-is-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 16 total)"
   ],
   "skipped": [
     "datacite-activities-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "datacite-client-prefixes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "datacite-clients-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "datacite-dois-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "datacite-do-is-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "datacite-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "datacite-heartbeat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "datacite-prefixes-api-openapi.yml: previously refined output, superseded by openapi/_original/",

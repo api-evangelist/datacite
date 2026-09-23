@@ -20,12 +20,12 @@ security:
 - BasicAuth: []
 - bearerAuth: []
 tags:
-- name: events
+- name: Events
   description: Events
 paths:
   /events:
     get:
-      summary: Return a list of events.
+      summary: Return a list of events
       security: []
       parameters:
       - in: query
@@ -164,7 +164,9 @@ paths:
                     allOf:
                     - $ref: '#/components/schemas/Links'
       tags:
-      - events
+      - Events
+      operationId: getEvents
+      x-operation-id-source: derived
   /events/{id}:
     get:
       parameters:
@@ -175,8 +177,8 @@ paths:
         schema:
           type: string
       tags:
-      - events
-      summary: Return an event.
+      - Events
+      summary: Return an event
       security: []
       responses:
         '200':
@@ -189,120 +191,16 @@ paths:
                   data:
                     type: object
                     $ref: '#/components/schemas/Event'
+      operationId: getEventsById
+      x-operation-id-source: derived
 components:
-  parameters:
-    pageCursorParam:
-      name: page[cursor]
-      in: query
-      schema:
-        type: string
-      description: Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor).
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
-    pageSizeParam:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 0
-        maximum: 1000
-      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
   schemas:
-    MetaObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-        count:
-          type: number
-    source-id:
-      type: string
-      enum:
-      - datacite-usage
-      - datacite-related
-      - datacite-crossref
-      - datacite-kisti
-      - datacite-op
-      - datacite-medra
-      - datacite-istic
-      - datacite-funder
-      - datacite-orcid-auto-update
-      - datacite-url
-      - crossref
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
     Links:
       type: object
       properties:
         self:
           type: string
         next:
-          type: string
-    Event:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - events
-        attributes:
-          type: object
-          properties:
-            subj-id:
-              type: string
-            obj-id:
-              type: string
-            source-id:
-              $ref: '#/components/schemas/source-id'
-            relation-type-id:
-              $ref: '#/components/schemas/relation-type-id'
-            total:
-              type: number
-            message-action:
-              type: string
-              enum:
-              - create
-              - add
-            source-token:
-              type: string
-            license:
-              type: string
-            occured-at:
-              type: string
-            timestamp:
-              type: string
-            relationships:
-              type: object
-              properties:
-                subj:
-                  type: object
-                  properties:
-                    data:
-                      $ref: '#/components/schemas/DataObject'
-                obj:
-                  type: object
-                  properties:
-                    data:
-                      $ref: '#/components/schemas/DataObject'
-      required:
-      - id
-      - attributes - subj-id - source-token - source-id
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
           type: string
     relation-type-id:
       type: string
@@ -357,6 +255,112 @@ components:
       - unique-dataset-investigations-machine
       - total-dataset-requests-machine
       - unique-dataset-requests-machine
+    DataObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+    source-id:
+      type: string
+      enum:
+      - datacite-usage
+      - datacite-related
+      - datacite-crossref
+      - datacite-kisti
+      - datacite-op
+      - datacite-medra
+      - datacite-istic
+      - datacite-funder
+      - datacite-orcid-auto-update
+      - datacite-url
+      - crossref
+    Event:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - events
+        attributes:
+          type: object
+          properties:
+            subj-id:
+              type: string
+            obj-id:
+              type: string
+            source-id:
+              $ref: '#/components/schemas/source-id'
+            relation-type-id:
+              $ref: '#/components/schemas/relation-type-id'
+            total:
+              type: number
+            message-action:
+              type: string
+              enum:
+              - create
+              - add
+            source-token:
+              type: string
+            license:
+              type: string
+            occured-at:
+              type: string
+            timestamp:
+              type: string
+            relationships:
+              type: object
+              properties:
+                subj:
+                  type: object
+                  properties:
+                    data:
+                      $ref: '#/components/schemas/DataObject'
+                obj:
+                  type: object
+                  properties:
+                    data:
+                      $ref: '#/components/schemas/DataObject'
+      required:
+      - id
+      - attributes - subj-id - source-token - source-id
+    MetaObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        count:
+          type: number
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
+  parameters:
+    pageSizeParam:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000
+      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
+    pageCursorParam:
+      name: page[cursor]
+      in: query
+      schema:
+        type: string
+      description: Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor).
   securitySchemes:
     BasicAuth:
       type: http
