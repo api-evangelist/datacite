@@ -176,12 +176,21 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Links:
+    repositoryType:
+      type: string
+      enum:
+      - disciplinary
+      - governmental
+      - institutional
+      - multidisciplinary
+      - project-related
+      - other
+    DataObject:
       type: object
       properties:
-        self:
+        id:
           type: string
-        next:
+        type:
           type: string
     software:
       type: string
@@ -211,10 +220,22 @@ components:
       - Ubiquity
       - Other
       - Unknown
-    DataArray:
+    MetaCore:
+      type: object
+      properties:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
+    MetaArray:
       type: array
       items:
-        $ref: '#/components/schemas/DataObject'
+        $ref: '#/components/schemas/MetaObject'
     TotalsObject:
       type: object
       properties:
@@ -247,6 +268,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MetaObject'
+    client-type:
+      type: string
+      enum:
+      - repository
+      - periodical
+      - igsnCatalog
+      - raidRegistry
     certificate:
       type: string
       enum:
@@ -257,38 +285,25 @@ components:
       - DSA
       - RatSWD
       - WDS
-    MetaCore:
-      type: object
-      properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
+    DataArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataObject'
     state:
       type: string
       enum:
       - findable
       - registered
       - draft
-    client-type:
-      type: string
-      enum:
-      - repository
-      - periodical
-      - igsnCatalog
-      - raidRegistry
-    DataObject:
+    MetaObject:
       type: object
       properties:
         id:
           type: string
         type:
           type: string
+        count:
+          type: number
     Client:
       type: object
       properties:
@@ -370,28 +385,13 @@ components:
       required:
       - id
       - attributes - name - symbol - contactEmail
-    MetaObject:
+    Links:
       type: object
       properties:
-        id:
+        self:
           type: string
-        type:
+        next:
           type: string
-        count:
-          type: number
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
-    repositoryType:
-      type: string
-      enum:
-      - disciplinary
-      - governmental
-      - institutional
-      - multidisciplinary
-      - project-related
-      - other
   parameters:
     pageSizeParam:
       name: page[size]

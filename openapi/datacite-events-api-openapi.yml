@@ -195,13 +195,31 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Links:
+    DataObject:
       type: object
       properties:
-        self:
+        id:
           type: string
-        next:
+        type:
           type: string
+    source-id:
+      type: string
+      enum:
+      - datacite-usage
+      - datacite-related
+      - datacite-crossref
+      - datacite-kisti
+      - datacite-op
+      - datacite-medra
+      - datacite-istic
+      - datacite-funder
+      - datacite-orcid-auto-update
+      - datacite-url
+      - crossref
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
     relation-type-id:
       type: string
       enum:
@@ -255,27 +273,15 @@ components:
       - unique-dataset-investigations-machine
       - total-dataset-requests-machine
       - unique-dataset-requests-machine
-    DataObject:
+    MetaObject:
       type: object
       properties:
         id:
           type: string
         type:
           type: string
-    source-id:
-      type: string
-      enum:
-      - datacite-usage
-      - datacite-related
-      - datacite-crossref
-      - datacite-kisti
-      - datacite-op
-      - datacite-medra
-      - datacite-istic
-      - datacite-funder
-      - datacite-orcid-auto-update
-      - datacite-url
-      - crossref
+        count:
+          type: number
     Event:
       type: object
       properties:
@@ -327,19 +333,13 @@ components:
       required:
       - id
       - attributes - subj-id - source-token - source-id
-    MetaObject:
+    Links:
       type: object
       properties:
-        id:
+        self:
           type: string
-        type:
+        next:
           type: string
-        count:
-          type: number
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
   parameters:
     pageSizeParam:
       name: page[size]

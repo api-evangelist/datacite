@@ -87,13 +87,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Links:
-      type: object
-      properties:
-        self:
-          type: string
-        next:
-          type: string
     ClientPrefix:
       type: object
       properties:
@@ -137,6 +130,13 @@ components:
                   $ref: '#/components/schemas/DataObject'
       required:
       - id
+    DataObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
     MetaCore:
       type: object
       properties:
@@ -149,13 +149,10 @@ components:
         page:
           description: Current page of the results.
           type: number
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
     MetaObject:
       type: object
       properties:
@@ -165,10 +162,13 @@ components:
           type: string
         count:
           type: number
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+        next:
+          type: string
   parameters:
     pageSizeParam:
       name: page[size]

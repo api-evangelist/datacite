@@ -595,74 +595,33 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    source:
-      type: string
-      enum:
-      - mds
-      - api
-      - fabricaForm
-      - fabrica
-      - ez
-    contributorType:
-      description: '[DataCite Metadata Schema: contributorType](https://datacite-metadata-schema.readthedocs.io/en/4/appendices/appendix-1/contributorType/)'
-      type: string
-      enum:
-      - ContactPerson
-      - DataCollector
-      - DataCurator
-      - DataManager
-      - Distributor
-      - Editor
-      - HostingInstitution
-      - Producer
-      - ProjectLeader
-      - ProjectManager
-      - ProjectMember
-      - RegistrationAgency
-      - RegistrationAuthority
-      - RelatedPerson
-      - Researcher
-      - ResearchGroup
-      - RightsHolder
-      - Sponsor
-      - Supervisor
-      - Translator
-      - WorkPackageLeader
-      - Other
-    state:
-      type: string
-      enum:
-      - findable
-      - registered
-      - draft
-    Activity:
+    subject:
       type: object
-      description: Represents an activity for an event within DataCite systems.
       properties:
-        id:
+        subject:
           type: string
-          example: 57690e72-b1be-4370-9f35-de6bec5f7b71
-        type:
+          example: Chemical engineering
+        subjectScheme:
           type: string
-          enum:
-          - activities
-        attributes:
-          type: object
-          properties:
-            prov:wasGeneratedBy:
-              type: string
-            prov:generatedAtTime:
-              type: string
-            prov:wasDerivedFrom:
-              type: string
-            prov:wasAttributedTo:
-              type: string
-            action:
-              type: string
-            version:
-              type: number
-            changes:
-              type: object
+          example: Fields of Science and Technology (FOS)
+        schemeUri:
+          type: string
+          example: https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf
+        valueUri:
+          type: string
+        lang:
+          type: string
+        classificationCode:
+          type: string
+          example: '2.4'
+    referenceCount:
+      description: Total references, pulled from Event Data.
+      readOnly: true
+      type: number
+    citationCount:
+      description: Total citations, pulled from Event Data.
+      readOnly: true
+      type: number
     DoiDetailItem:
       description: Represents a single DOI and provides access to metadata attributes. More information is available at https://schema.datacite.org.
       type: object
@@ -885,81 +844,66 @@ components:
             types:
               resourceTypeGeneral: Text
             url: https://schema.datacite.org/meta/kernel-4.1/
-    downloadCount:
-      description: Total downloads, pulled from Event Data.
-      readOnly: true
-      type: number
+    client-type:
+      type: string
+      enum:
+      - repository
+      - periodical
+      - igsnCatalog
+      - raidRegistry
+    state:
+      type: string
+      enum:
+      - findable
+      - registered
+      - draft
+    relationType:
+      description: '[DataCite Metadata Schema: relationType](https://datacite-metadata-schema.readthedocs.io/en/4/appendices/appendix-1/relationType/)'
+      type: string
+      enum:
+      - IsCitedBy
+      - Cites
+      - IsSupplementTo
+      - IsSupplementedBy
+      - IsContinuedBy
+      - Continues
+      - IsDescribedBy
+      - Describes
+      - HasMetadata
+      - IsMetadataFor
+      - HasVersion
+      - IsVersionOf
+      - IsNewVersionOf
+      - IsPreviousVersionOf
+      - IsPartOf
+      - HasPart
+      - IsPublishedIn
+      - IsReferencedBy
+      - References
+      - IsDocumentedBy
+      - Documents
+      - IsCompiledBy
+      - Compiles
+      - IsVariantFormOf
+      - IsOriginalFormOf
+      - IsIdenticalTo
+      - IsReviewedBy
+      - Reviews
+      - IsDerivedFrom
+      - IsSourceOf
+      - IsRequiredBy
+      - Requires
+      - IsObsoletedBy
+      - Obsoletes
+      - IsCollectedBy
+      - Collects
+      - IsTranslationOf
+      - HasTranslation
+      - Other
     viewCount:
       description: Total views, pulled from Event Data.
       readOnly: true
       type: number
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
-    referenceCount:
-      description: Total references, pulled from Event Data.
-      readOnly: true
-      type: number
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-    MetaObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-        count:
-          type: number
-    relatedIdentifierType:
-      description: '[DataCite Metadata Schema: relatedIdentifierType](https://datacite-metadata-schema.readthedocs.io/en/4/appendices/appendix-1/relatedIdentifierType/)'
-      type: string
-      enum:
-      - ARK
-      - arXiv
-      - bibcode
-      - CSTR
-      - DOI
-      - EAN13
-      - EISSN
-      - Handle
-      - IGSN
-      - ISBN
-      - ISSN
-      - ISTC
-      - LISSN
-      - LSID
-      - PMID
-      - PURL
-      - RAiD
-      - RRID
-      - SWHID
-      - UPC
-      - URL
-      - URN
-      - w3id
-    DataArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataObject'
-    MetaCore:
-      type: object
-      properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
     titleType:
       type: string
       enum:
@@ -967,6 +911,10 @@ components:
       - Subtitle
       - TranslatedTitle
       - Other
+    versionCount:
+      description: Total number of versions, pulled from Event Data.
+      readOnly: true
+      type: number
     DoiPropertiesDates:
       type: object
       properties:
@@ -982,33 +930,72 @@ components:
           description: The date the DOI was last updated.
           type: string
           readOnly: true
-    versionCount:
-      description: Total number of versions, pulled from Event Data.
-      readOnly: true
-      type: number
-    versionOfCount:
-      description: Total number to which this DOI is a version, pulled from Event Data.
-      readOnly: true
-      type: number
-    client-type:
+    resourceTypeGeneral:
+      description: '[DataCite Metadata Schema: resourceTypeGeneral](https://datacite-metadata-schema.readthedocs.io/en/4/appendices/appendix-1/resourceTypeGeneral/)'
       type: string
       enum:
-      - repository
-      - periodical
-      - igsnCatalog
-      - raidRegistry
-    nameType:
-      type: string
-      enum:
-      - Personal
-      - Organizational
-    Links:
+      - Audiovisual
+      - Award
+      - Book
+      - BookChapter
+      - Collection
+      - ComputationalNotebook
+      - ConferencePaper
+      - ConferenceProceeding
+      - DataPaper
+      - Dataset
+      - Dissertation
+      - Event
+      - Image
+      - Instrument
+      - InteractiveResource
+      - Journal
+      - JournalArticle
+      - Model
+      - OutputManagementPlan
+      - PeerReview
+      - PhysicalObject
+      - Poster
+      - Preprint
+      - Presentation
+      - Project
+      - Report
+      - Service
+      - Software
+      - Sound
+      - Standard
+      - StudyRegistration
+      - Text
+      - Workflow
+      - Other
+    Activity:
       type: object
+      description: Represents an activity for an event within DataCite systems.
       properties:
-        self:
+        id:
           type: string
-        next:
+          example: 57690e72-b1be-4370-9f35-de6bec5f7b71
+        type:
           type: string
+          enum:
+          - activities
+        attributes:
+          type: object
+          properties:
+            prov:wasGeneratedBy:
+              type: string
+            prov:generatedAtTime:
+              type: string
+            prov:wasDerivedFrom:
+              type: string
+            prov:wasAttributedTo:
+              type: string
+            action:
+              type: string
+            version:
+              type: number
+            changes:
+              type: object
     DoiPropertiesMetadata:
       type: object
       properties:
@@ -1432,48 +1419,68 @@ components:
                 type: string
               awardTitle:
                 type: string
-    citationCount:
-      description: Total citations, pulled from Event Data.
-      readOnly: true
-      type: number
-    resourceTypeGeneral:
-      description: '[DataCite Metadata Schema: resourceTypeGeneral](https://datacite-metadata-schema.readthedocs.io/en/4/appendices/appendix-1/resourceTypeGeneral/)'
+    source:
       type: string
       enum:
-      - Audiovisual
-      - Award
-      - Book
-      - BookChapter
-      - Collection
-      - ComputationalNotebook
-      - ConferencePaper
-      - ConferenceProceeding
-      - DataPaper
-      - Dataset
-      - Dissertation
-      - Event
-      - Image
-      - Instrument
-      - InteractiveResource
-      - Journal
-      - JournalArticle
-      - Model
-      - OutputManagementPlan
-      - PeerReview
-      - PhysicalObject
-      - Poster
-      - Preprint
-      - Presentation
-      - Project
-      - Report
-      - Service
-      - Software
-      - Sound
-      - Standard
-      - StudyRegistration
-      - Text
-      - Workflow
+      - mds
+      - api
+      - fabricaForm
+      - fabrica
+      - ez
+    nameType:
+      type: string
+      enum:
+      - Personal
+      - Organizational
+    downloadCount:
+      description: Total downloads, pulled from Event Data.
+      readOnly: true
+      type: number
+    DataObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+    contributorType:
+      description: '[DataCite Metadata Schema: contributorType](https://datacite-metadata-schema.readthedocs.io/en/4/appendices/appendix-1/contributorType/)'
+      type: string
+      enum:
+      - ContactPerson
+      - DataCollector
+      - DataCurator
+      - DataManager
+      - Distributor
+      - Editor
+      - HostingInstitution
+      - Producer
+      - ProjectLeader
+      - ProjectManager
+      - ProjectMember
+      - RegistrationAgency
+      - RegistrationAuthority
+      - RelatedPerson
+      - Researcher
+      - ResearchGroup
+      - RightsHolder
+      - Sponsor
+      - Supervisor
+      - Translator
+      - WorkPackageLeader
       - Other
+    MetaCore:
+      type: object
+      properties:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
     certificate:
       type: string
       enum:
@@ -1484,89 +1491,15 @@ components:
       - DSA
       - RatSWD
       - WDS
-    relationType:
-      description: '[DataCite Metadata Schema: relationType](https://datacite-metadata-schema.readthedocs.io/en/4/appendices/appendix-1/relationType/)'
-      type: string
-      enum:
-      - IsCitedBy
-      - Cites
-      - IsSupplementTo
-      - IsSupplementedBy
-      - IsContinuedBy
-      - Continues
-      - IsDescribedBy
-      - Describes
-      - HasMetadata
-      - IsMetadataFor
-      - HasVersion
-      - IsVersionOf
-      - IsNewVersionOf
-      - IsPreviousVersionOf
-      - IsPartOf
-      - HasPart
-      - IsPublishedIn
-      - IsReferencedBy
-      - References
-      - IsDocumentedBy
-      - Documents
-      - IsCompiledBy
-      - Compiles
-      - IsVariantFormOf
-      - IsOriginalFormOf
-      - IsIdenticalTo
-      - IsReviewedBy
-      - Reviews
-      - IsDerivedFrom
-      - IsSourceOf
-      - IsRequiredBy
-      - Requires
-      - IsObsoletedBy
-      - Obsoletes
-      - IsCollectedBy
-      - Collects
-      - IsTranslationOf
-      - HasTranslation
-      - Other
-    partCount:
-      description: Total number of parts, pulled from Event Data.
-      readOnly: true
-      type: number
-    DoiPropertiesOther:
+    MetaObject:
       type: object
       properties:
-        url:
-          description: The landing page URL of the DOI.
+        id:
           type: string
-        contentUrl:
-          description: An array of content URLs associated with the DOI.
-          type: array
-          items:
-            type: string
-        metadataVersion:
-          description: The version of the stored DataCite metadata, incremented once per update.
-          readOnly: true
+        type:
+          type: string
+        count:
           type: number
-        schemaVersion:
-          description: The DataCite Metadata Schema version of the stored DOI metadata represented as a URL. When creating or updating a DOI, `schemaVersion` is not necessary unless modifying the DataCite Metadata Schema version.
-          type: string
-        source:
-          allOf:
-          - description: The system used to create the DOI.
-          - readOnly: true
-          - $ref: '#/components/schemas/source'
-        isActive:
-          description: '"true" if the DOI is in [Findable state](https://support.datacite.org/docs/doi-states#findable-doi-name). Otherwise, "false".'
-          readOnly: true
-          type: boolean
-        state:
-          allOf:
-          - description: The [state of the DOI](https://support.datacite.org/docs/doi-states).
-          - readOnly: true
-          - $ref: '#/components/schemas/state'
-        reason:
-          description: Legacy attribute for EZID compatibility.
-          readOnly: true
-          type: string
     DoiListItem:
       type: object
       properties:
@@ -1625,27 +1558,94 @@ components:
                   $ref: '#/components/schemas/DataObject'
       required:
       - type
-    subject:
-      type: object
-      properties:
-        subject:
-          type: string
-          example: Chemical engineering
-        subjectScheme:
-          type: string
-          example: Fields of Science and Technology (FOS)
-        schemeUri:
-          type: string
-          example: https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf
-        valueUri:
-          type: string
-        lang:
-          type: string
-        classificationCode:
-          type: string
-          example: '2.4'
     partOfCount:
       description: Total number of parents, pulled from Event Data.
+      readOnly: true
+      type: number
+    partCount:
+      description: Total number of parts, pulled from Event Data.
+      readOnly: true
+      type: number
+    relatedIdentifierType:
+      description: '[DataCite Metadata Schema: relatedIdentifierType](https://datacite-metadata-schema.readthedocs.io/en/4/appendices/appendix-1/relatedIdentifierType/)'
+      type: string
+      enum:
+      - ARK
+      - arXiv
+      - bibcode
+      - CSTR
+      - DOI
+      - EAN13
+      - EISSN
+      - Handle
+      - IGSN
+      - ISBN
+      - ISSN
+      - ISTC
+      - LISSN
+      - LSID
+      - PMID
+      - PURL
+      - RAiD
+      - RRID
+      - SWHID
+      - UPC
+      - URL
+      - URN
+      - w3id
+    DoiPropertiesOther:
+      type: object
+      properties:
+        url:
+          description: The landing page URL of the DOI.
+          type: string
+        contentUrl:
+          description: An array of content URLs associated with the DOI.
+          type: array
+          items:
+            type: string
+        metadataVersion:
+          description: The version of the stored DataCite metadata, incremented once per update.
+          readOnly: true
+          type: number
+        schemaVersion:
+          description: The DataCite Metadata Schema version of the stored DOI metadata represented as a URL. When creating or updating a DOI, `schemaVersion` is not necessary unless modifying the DataCite Metadata Schema version.
+          type: string
+        source:
+          allOf:
+          - description: The system used to create the DOI.
+          - readOnly: true
+          - $ref: '#/components/schemas/source'
+        isActive:
+          description: '"true" if the DOI is in [Findable state](https://support.datacite.org/docs/doi-states#findable-doi-name). Otherwise, "false".'
+          readOnly: true
+          type: boolean
+        state:
+          allOf:
+          - description: The [state of the DOI](https://support.datacite.org/docs/doi-states).
+          - readOnly: true
+          - $ref: '#/components/schemas/state'
+        reason:
+          description: Legacy attribute for EZID compatibility.
+          readOnly: true
+          type: string
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
+    DataArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataObject'
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+        next:
+          type: string
+    versionOfCount:
+      description: Total number to which this DOI is a version, pulled from Event Data.
       readOnly: true
       type: number
   parameters:
@@ -1657,6 +1657,26 @@ components:
         minimum: 0
         maximum: 1000
       description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
+    clientIdParam:
+      name: client-id
+      in: query
+      description: Filter by a specific DataCite client (repository). Use commas to include multiple repositories.
+      schema:
+        type: string
+      example: datacite.blog
+    providerIdParam:
+      name: provider-id
+      in: query
+      description: Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers.
+      schema:
+        type: string
+      example: cern
     consortiumIdParam:
       name: consortium-id
       in: query
@@ -1664,6 +1684,13 @@ components:
       schema:
         type: string
       example: ardc
+    affiliationParam:
+      name: affiliation
+      in: query
+      description: Set `affiliation=true` to see additional affiliation information such as the affiliation identifier.
+      schema:
+        type: boolean
+        example: true
     pageCursorParam:
       name: page[cursor]
       in: query
@@ -1677,33 +1704,6 @@ components:
       schema:
         type: boolean
         example: true
-    affiliationParam:
-      name: affiliation
-      in: query
-      description: Set `affiliation=true` to see additional affiliation information such as the affiliation identifier.
-      schema:
-        type: boolean
-        example: true
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
-    providerIdParam:
-      name: provider-id
-      in: query
-      description: Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers.
-      schema:
-        type: string
-      example: cern
-    clientIdParam:
-      name: client-id
-      in: query
-      description: Filter by a specific DataCite client (repository). Use commas to include multiple repositories.
-      schema:
-        type: string
-      example: datacite.blog
   securitySchemes:
     BasicAuth:
       type: http

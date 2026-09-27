@@ -39,6 +39,9 @@ accessModel:
   generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/datacite.png
+x-docs-platform: readme
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-09-25
 tags:
 - DOI
 - Persistent Identifiers
@@ -47,6 +50,7 @@ tags:
 - Open Science
 - Linked Data
 - DataCite
+- OAI-PMH
 url: https://raw.githubusercontent.com/api-evangelist/datacite/refs/heads/main/apis.yml
 created: '2026-06-12'
 modified: '2026-06-12'
@@ -89,7 +93,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/apis
 - aid: datacite:datacite-activities-api
-  name: DataCite activities API
+  name: DataCite Activities API
   description: Activities
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -114,7 +118,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-client-prefixes-api
-  name: DataCite client-prefixes API
+  name: DataCite Client Prefixes API
   description: Client Prefixes
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -137,7 +141,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-clients-api
-  name: DataCite clients API
+  name: DataCite Clients API
   description: Clients
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -162,7 +166,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-events-api
-  name: DataCite events API
+  name: DataCite Events API
   description: Events
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -187,7 +191,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-heartbeat-api
-  name: DataCite heartbeat API
+  name: DataCite Heartbeat API
   description: Heartbeat
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -212,7 +216,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-prefixes-api
-  name: DataCite prefixes API
+  name: DataCite Prefixes API
   description: Prefixes
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -237,7 +241,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-provider-prefixes-api
-  name: DataCite provider-prefixes API
+  name: DataCite Provider Prefixes API
   description: Provider Prefixes
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -260,7 +264,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-providers-api
-  name: DataCite providers API
+  name: DataCite Providers API
   description: Providers
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -285,7 +289,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-publishers-api
-  name: DataCite publishers API
+  name: DataCite Publishers API
   description: The publishers API from DataCite — 2 operation(s) for publishers.
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -310,7 +314,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-report-types-api
-  name: DataCite report_types API
+  name: DataCite Report Types API
   description: The report_types API from DataCite — 1 operation(s) for report_types.
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -335,7 +339,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-reports-api
-  name: DataCite reports API
+  name: DataCite Reports API
   description: Reports
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -360,7 +364,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-repositories-api
-  name: DataCite repositories API
+  name: DataCite Repositories API
   description: The repositories API from DataCite — 2 operation(s) for repositories.
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org
@@ -385,7 +389,7 @@ apis:
   - type: Documentation
     url: https://support.datacite.org/docs/usage-reports-api-guide
 - aid: datacite:datacite-status-api
-  name: DataCite status API
+  name: DataCite Status API
   description: The status API from DataCite — 1 operation(s) for status.
   humanURL: https://support.datacite.org/docs/api
   baseURL: https://api.datacite.org

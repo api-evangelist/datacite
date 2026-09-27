@@ -378,6 +378,34 @@ components:
             hasPassword:
               description: Returned only when authenticated with associated credentials.
               type: boolean
+    repositoryType:
+      type: string
+      enum:
+      - disciplinary
+      - governmental
+      - institutional
+      - multidisciplinary
+      - project-related
+      - other
+    subject:
+      type: object
+      properties:
+        subject:
+          type: string
+          example: Chemical engineering
+        subjectScheme:
+          type: string
+          example: Fields of Science and Technology (FOS)
+        schemeUri:
+          type: string
+          example: https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf
+        valueUri:
+          type: string
+        lang:
+          type: string
+        classificationCode:
+          type: string
+          example: '2.4'
     software:
       type: string
       enum:
@@ -406,6 +434,13 @@ components:
       - Ubiquity
       - Other
       - Unknown
+    client-type:
+      type: string
+      enum:
+      - repository
+      - periodical
+      - igsnCatalog
+      - raidRegistry
     certificate:
       type: string
       enum:
@@ -416,41 +451,6 @@ components:
       - DSA
       - RatSWD
       - WDS
-    client-type:
-      type: string
-      enum:
-      - repository
-      - periodical
-      - igsnCatalog
-      - raidRegistry
-    subject:
-      type: object
-      properties:
-        subject:
-          type: string
-          example: Chemical engineering
-        subjectScheme:
-          type: string
-          example: Fields of Science and Technology (FOS)
-        schemeUri:
-          type: string
-          example: https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf
-        valueUri:
-          type: string
-        lang:
-          type: string
-        classificationCode:
-          type: string
-          example: '2.4'
-    repositoryType:
-      type: string
-      enum:
-      - disciplinary
-      - governmental
-      - institutional
-      - multidisciplinary
-      - project-related
-      - other
   securitySchemes:
     BasicAuth:
       type: http

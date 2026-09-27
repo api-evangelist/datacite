@@ -186,13 +186,29 @@ components:
       - consortium
       - member_only
       - developer
-    Links:
+    ProviderContact:
+      type: object
+      description: Returned only when authenticated with associated credentials.
+      properties:
+        email:
+          type: string
+        familyName:
+          type: string
+        givenName:
+          type: string
+    DataObject:
       type: object
       properties:
-        self:
+        id:
           type: string
-        next:
+        type:
           type: string
+    region:
+      type: string
+      enum:
+      - AMER
+      - APAC
+      - EMEA
     organization-type:
       type: string
       enum:
@@ -206,16 +222,17 @@ components:
       - internationalOrganization
       - other
       - null
-    ProviderContact:
-      type: object
-      description: Returned only when authenticated with associated credentials.
-      properties:
-        email:
-          type: string
-        familyName:
-          type: string
-        givenName:
-          type: string
+    focus-area:
+      type: string
+      enum:
+      - naturalSciences
+      - engineeringAndTechnology
+      - medicalAndHealthSciences
+      - agriculturalSciences
+      - socialSciences
+      - humanities
+      - general
+      - null
     TotalsObject:
       type: object
       properties:
@@ -248,6 +265,26 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MetaObject'
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
+    MetaCore:
+      type: object
+      properties:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
+    DataArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataObject'
     Provider:
       type: object
       properties:
@@ -362,46 +399,12 @@ components:
       required:
       - id
       - attributes - name - symbol
-    DataArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataObject'
-    MetaCore:
-      type: object
-      properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
-    focus-area:
-      type: string
-      enum:
-      - naturalSciences
-      - engineeringAndTechnology
-      - medicalAndHealthSciences
-      - agriculturalSciences
-      - socialSciences
-      - humanities
-      - general
-      - null
     state:
       type: string
       enum:
       - findable
       - registered
       - draft
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
     MetaObject:
       type: object
       properties:
@@ -411,16 +414,13 @@ components:
           type: string
         count:
           type: number
-    region:
-      type: string
-      enum:
-      - AMER
-      - APAC
-      - EMEA
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+        next:
+          type: string
   parameters:
     pageSizeParam:
       name: page[size]
