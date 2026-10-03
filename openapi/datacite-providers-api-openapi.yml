@@ -178,61 +178,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    member-type:
-      type: string
-      enum:
-      - consortium_organization
-      - direct_member
-      - consortium
-      - member_only
-      - developer
-    ProviderContact:
-      type: object
-      description: Returned only when authenticated with associated credentials.
-      properties:
-        email:
-          type: string
-        familyName:
-          type: string
-        givenName:
-          type: string
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-    region:
-      type: string
-      enum:
-      - AMER
-      - APAC
-      - EMEA
-    organization-type:
-      type: string
-      enum:
-      - academicInstitution
-      - governmentAgency
-      - nationalInstitution
-      - publisher
-      - professionalSociety
-      - researchInstitution
-      - serviceProvider
-      - internationalOrganization
-      - other
-      - null
-    focus-area:
-      type: string
-      enum:
-      - naturalSciences
-      - engineeringAndTechnology
-      - medicalAndHealthSciences
-      - agriculturalSciences
-      - socialSciences
-      - humanities
-      - general
-      - null
     TotalsObject:
       type: object
       properties:
@@ -265,22 +210,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MetaObject'
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
-    MetaCore:
-      type: object
-      properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
     DataArray:
       type: array
       items:
@@ -399,12 +328,6 @@ components:
       required:
       - id
       - attributes - name - symbol
-    state:
-      type: string
-      enum:
-      - findable
-      - registered
-      - draft
     MetaObject:
       type: object
       properties:
@@ -414,6 +337,55 @@ components:
           type: string
         count:
           type: number
+    organization-type:
+      type: string
+      enum:
+      - academicInstitution
+      - governmentAgency
+      - nationalInstitution
+      - publisher
+      - professionalSociety
+      - researchInstitution
+      - serviceProvider
+      - internationalOrganization
+      - other
+      - null
+    member-type:
+      type: string
+      enum:
+      - consortium_organization
+      - direct_member
+      - consortium
+      - member_only
+      - developer
+    MetaCore:
+      type: object
+      properties:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
+    ProviderContact:
+      type: object
+      description: Returned only when authenticated with associated credentials.
+      properties:
+        email:
+          type: string
+        familyName:
+          type: string
+        givenName:
+          type: string
+    region:
+      type: string
+      enum:
+      - AMER
+      - APAC
+      - EMEA
     Links:
       type: object
       properties:
@@ -421,6 +393,34 @@ components:
           type: string
         next:
           type: string
+    focus-area:
+      type: string
+      enum:
+      - naturalSciences
+      - engineeringAndTechnology
+      - medicalAndHealthSciences
+      - agriculturalSciences
+      - socialSciences
+      - humanities
+      - general
+      - null
+    DataObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+    state:
+      type: string
+      enum:
+      - findable
+      - registered
+      - draft
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
   parameters:
     pageSizeParam:
       name: page[size]

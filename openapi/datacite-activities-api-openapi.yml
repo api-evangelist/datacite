@@ -156,18 +156,6 @@ components:
         type: string
       description: Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor).
   schemas:
-    MetaCore:
-      type: object
-      properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
     Activity:
       type: object
       description: Represents an activity for an event within DataCite systems.
@@ -196,6 +184,18 @@ components:
               type: number
             changes:
               type: object
+    MetaCore:
+      type: object
+      properties:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
     Links:
       type: object
       properties:

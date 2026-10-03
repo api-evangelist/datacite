@@ -86,7 +86,38 @@ paths:
       operationId: getClientPrefixes
       x-operation-id-source: derived
 components:
+  parameters:
+    pageSizeParam:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000
+      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
+    clientIdParam:
+      name: client-id
+      in: query
+      description: Filter by a specific DataCite client (repository). Use commas to include multiple repositories.
+      schema:
+        type: string
+      example: datacite.blog
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
   schemas:
+    MetaObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        count:
+          type: number
     ClientPrefix:
       type: object
       properties:
@@ -130,13 +161,6 @@ components:
                   $ref: '#/components/schemas/DataObject'
       required:
       - id
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
     MetaCore:
       type: object
       properties:
@@ -149,19 +173,6 @@ components:
         page:
           description: Current page of the results.
           type: number
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
-    MetaObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-        count:
-          type: number
     Links:
       type: object
       properties:
@@ -169,28 +180,17 @@ components:
           type: string
         next:
           type: string
-  parameters:
-    pageSizeParam:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 0
-        maximum: 1000
-      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
-    clientIdParam:
-      name: client-id
-      in: query
-      description: Filter by a specific DataCite client (repository). Use commas to include multiple repositories.
-      schema:
-        type: string
-      example: datacite.blog
+    DataObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
   securitySchemes:
     BasicAuth:
       type: http

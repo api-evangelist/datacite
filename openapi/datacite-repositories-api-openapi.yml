@@ -294,6 +294,25 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    subject:
+      type: object
+      properties:
+        subject:
+          type: string
+          example: Chemical engineering
+        subjectScheme:
+          type: string
+          example: Fields of Science and Technology (FOS)
+        schemeUri:
+          type: string
+          example: https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf
+        valueUri:
+          type: string
+        lang:
+          type: string
+        classificationCode:
+          type: string
+          example: '2.4'
     RepositoryResponse:
       type: object
       properties:
@@ -378,34 +397,23 @@ components:
             hasPassword:
               description: Returned only when authenticated with associated credentials.
               type: boolean
-    repositoryType:
+    certificate:
       type: string
       enum:
-      - disciplinary
-      - governmental
-      - institutional
-      - multidisciplinary
-      - project-related
-      - other
-    subject:
-      type: object
-      properties:
-        subject:
-          type: string
-          example: Chemical engineering
-        subjectScheme:
-          type: string
-          example: Fields of Science and Technology (FOS)
-        schemeUri:
-          type: string
-          example: https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf
-        valueUri:
-          type: string
-        lang:
-          type: string
-        classificationCode:
-          type: string
-          example: '2.4'
+      - CLARIN
+      - CoreTrustSeal
+      - DIN 31644
+      - DINI
+      - DSA
+      - RatSWD
+      - WDS
+    client-type:
+      type: string
+      enum:
+      - repository
+      - periodical
+      - igsnCatalog
+      - raidRegistry
     software:
       type: string
       enum:
@@ -434,23 +442,15 @@ components:
       - Ubiquity
       - Other
       - Unknown
-    client-type:
+    repositoryType:
       type: string
       enum:
-      - repository
-      - periodical
-      - igsnCatalog
-      - raidRegistry
-    certificate:
-      type: string
-      enum:
-      - CLARIN
-      - CoreTrustSeal
-      - DIN 31644
-      - DINI
-      - DSA
-      - RatSWD
-      - WDS
+      - disciplinary
+      - governmental
+      - institutional
+      - multidisciplinary
+      - project-related
+      - other
   securitySchemes:
     BasicAuth:
       type: http

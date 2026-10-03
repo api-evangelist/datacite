@@ -176,66 +176,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    repositoryType:
-      type: string
-      enum:
-      - disciplinary
-      - governmental
-      - institutional
-      - multidisciplinary
-      - project-related
-      - other
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-    software:
-      type: string
-      enum:
-      - Cayuse
-      - CKAN
-      - Dataverse
-      - dLibra
-      - DSpace
-      - EPrints
-      - Ex Libris Esploro
-      - Fedora
-      - Invenio
-      - Islandora
-      - MyCoRe
-      - Nesstar
-      - Omega-PSIR
-      - Omeka S
-      - Open Journal Systems (OJS)
-      - OPUS
-      - Pubman
-      - Pure
-      - Redivis
-      - RSpace
-      - Samvera
-      - SESAR
-      - Ubiquity
-      - Other
-      - Unknown
-    MetaCore:
-      type: object
-      properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
     TotalsObject:
       type: object
       properties:
@@ -268,33 +208,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MetaObject'
-    client-type:
-      type: string
-      enum:
-      - repository
-      - periodical
-      - igsnCatalog
-      - raidRegistry
-    certificate:
-      type: string
-      enum:
-      - CLARIN
-      - CoreTrustSeal
-      - DIN 31644
-      - DINI
-      - DSA
-      - RatSWD
-      - WDS
     DataArray:
       type: array
       items:
         $ref: '#/components/schemas/DataObject'
-    state:
-      type: string
-      enum:
-      - findable
-      - registered
-      - draft
     MetaObject:
       type: object
       properties:
@@ -385,6 +302,63 @@ components:
       required:
       - id
       - attributes - name - symbol - contactEmail
+    certificate:
+      type: string
+      enum:
+      - CLARIN
+      - CoreTrustSeal
+      - DIN 31644
+      - DINI
+      - DSA
+      - RatSWD
+      - WDS
+    client-type:
+      type: string
+      enum:
+      - repository
+      - periodical
+      - igsnCatalog
+      - raidRegistry
+    software:
+      type: string
+      enum:
+      - Cayuse
+      - CKAN
+      - Dataverse
+      - dLibra
+      - DSpace
+      - EPrints
+      - Ex Libris Esploro
+      - Fedora
+      - Invenio
+      - Islandora
+      - MyCoRe
+      - Nesstar
+      - Omega-PSIR
+      - Omeka S
+      - Open Journal Systems (OJS)
+      - OPUS
+      - Pubman
+      - Pure
+      - Redivis
+      - RSpace
+      - Samvera
+      - SESAR
+      - Ubiquity
+      - Other
+      - Unknown
+    MetaCore:
+      type: object
+      properties:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
     Links:
       type: object
       properties:
@@ -392,7 +366,40 @@ components:
           type: string
         next:
           type: string
+    DataObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+    repositoryType:
+      type: string
+      enum:
+      - disciplinary
+      - governmental
+      - institutional
+      - multidisciplinary
+      - project-related
+      - other
+    state:
+      type: string
+      enum:
+      - findable
+      - registered
+      - draft
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
   parameters:
+    providerIdParam:
+      name: provider-id
+      in: query
+      description: Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers.
+      schema:
+        type: string
+      example: cern
     pageSizeParam:
       name: page[size]
       in: query
@@ -407,13 +414,6 @@ components:
       schema:
         type: integer
       description: Page number for [pagination](https://support.datacite.org/docs/pagination).
-    providerIdParam:
-      name: provider-id
-      in: query
-      description: Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers.
-      schema:
-        type: string
-      example: cern
   securitySchemes:
     BasicAuth:
       type: http

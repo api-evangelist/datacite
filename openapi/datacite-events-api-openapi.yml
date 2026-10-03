@@ -194,14 +194,28 @@ paths:
       operationId: getEventsById
       x-operation-id-source: derived
 components:
+  parameters:
+    pageSizeParam:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000
+      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
+    pageCursorParam:
+      name: page[cursor]
+      in: query
+      schema:
+        type: string
+      description: Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor).
   schemas:
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
     source-id:
       type: string
       enum:
@@ -216,10 +230,15 @@ components:
       - datacite-orcid-auto-update
       - datacite-url
       - crossref
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
+    MetaObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        count:
+          type: number
     relation-type-id:
       type: string
       enum:
@@ -273,15 +292,20 @@ components:
       - unique-dataset-investigations-machine
       - total-dataset-requests-machine
       - unique-dataset-requests-machine
-    MetaObject:
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+        next:
+          type: string
+    DataObject:
       type: object
       properties:
         id:
           type: string
         type:
           type: string
-        count:
-          type: number
     Event:
       type: object
       properties:
@@ -333,34 +357,10 @@ components:
       required:
       - id
       - attributes - subj-id - source-token - source-id
-    Links:
-      type: object
-      properties:
-        self:
-          type: string
-        next:
-          type: string
-  parameters:
-    pageSizeParam:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 0
-        maximum: 1000
-      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
-    pageCursorParam:
-      name: page[cursor]
-      in: query
-      schema:
-        type: string
-      description: Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor).
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
   securitySchemes:
     BasicAuth:
       type: http
