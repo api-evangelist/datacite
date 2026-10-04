@@ -86,28 +86,6 @@ paths:
       operationId: getClientPrefixes
       x-operation-id-source: derived
 components:
-  parameters:
-    pageSizeParam:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 0
-        maximum: 1000
-      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
-    clientIdParam:
-      name: client-id
-      in: query
-      description: Filter by a specific DataCite client (repository). Use commas to include multiple repositories.
-      schema:
-        type: string
-      example: datacite.blog
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
   schemas:
     MetaObject:
       type: object
@@ -117,6 +95,18 @@ components:
         type:
           type: string
         count:
+          type: number
+    MetaCore:
+      type: object
+      properties:
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
           type: number
     ClientPrefix:
       type: object
@@ -161,18 +151,6 @@ components:
                   $ref: '#/components/schemas/DataObject'
       required:
       - id
-    MetaCore:
-      type: object
-      properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
-          type: number
     Links:
       type: object
       properties:
@@ -180,6 +158,10 @@ components:
           type: string
         next:
           type: string
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
     DataObject:
       type: object
       properties:
@@ -187,10 +169,28 @@ components:
           type: string
         type:
           type: string
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
+  parameters:
+    pageSizeParam:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000
+      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
+    clientIdParam:
+      name: client-id
+      in: query
+      description: Filter by a specific DataCite client (repository). Use commas to include multiple repositories.
+      schema:
+        type: string
+      example: datacite.blog
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
   securitySchemes:
     BasicAuth:
       type: http

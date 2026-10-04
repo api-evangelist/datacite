@@ -192,6 +192,12 @@ paths:
       description: Production server
 components:
   parameters:
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
     pageSizeParam:
       name: page[size]
       in: query
@@ -200,12 +206,6 @@ components:
         minimum: 0
         maximum: 1000
       description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
   schemas:
     Report:
       type: object

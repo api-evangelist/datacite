@@ -294,25 +294,50 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    subject:
-      type: object
-      properties:
-        subject:
-          type: string
-          example: Chemical engineering
-        subjectScheme:
-          type: string
-          example: Fields of Science and Technology (FOS)
-        schemeUri:
-          type: string
-          example: https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf
-        valueUri:
-          type: string
-        lang:
-          type: string
-        classificationCode:
-          type: string
-          example: '2.4'
+    software:
+      type: string
+      enum:
+      - Cayuse
+      - CKAN
+      - Dataverse
+      - dLibra
+      - DSpace
+      - EPrints
+      - Ex Libris Esploro
+      - Fedora
+      - Invenio
+      - Islandora
+      - MyCoRe
+      - Nesstar
+      - Omega-PSIR
+      - Omeka S
+      - Open Journal Systems (OJS)
+      - OPUS
+      - Pubman
+      - Pure
+      - Redivis
+      - RSpace
+      - Samvera
+      - SESAR
+      - Ubiquity
+      - Other
+      - Unknown
+    repositoryType:
+      type: string
+      enum:
+      - disciplinary
+      - governmental
+      - institutional
+      - multidisciplinary
+      - project-related
+      - other
+    client-type:
+      type: string
+      enum:
+      - repository
+      - periodical
+      - igsnCatalog
+      - raidRegistry
     RepositoryResponse:
       type: object
       properties:
@@ -397,6 +422,25 @@ components:
             hasPassword:
               description: Returned only when authenticated with associated credentials.
               type: boolean
+    subject:
+      type: object
+      properties:
+        subject:
+          type: string
+          example: Chemical engineering
+        subjectScheme:
+          type: string
+          example: Fields of Science and Technology (FOS)
+        schemeUri:
+          type: string
+          example: https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf
+        valueUri:
+          type: string
+        lang:
+          type: string
+        classificationCode:
+          type: string
+          example: '2.4'
     certificate:
       type: string
       enum:
@@ -407,50 +451,6 @@ components:
       - DSA
       - RatSWD
       - WDS
-    client-type:
-      type: string
-      enum:
-      - repository
-      - periodical
-      - igsnCatalog
-      - raidRegistry
-    software:
-      type: string
-      enum:
-      - Cayuse
-      - CKAN
-      - Dataverse
-      - dLibra
-      - DSpace
-      - EPrints
-      - Ex Libris Esploro
-      - Fedora
-      - Invenio
-      - Islandora
-      - MyCoRe
-      - Nesstar
-      - Omega-PSIR
-      - Omeka S
-      - Open Journal Systems (OJS)
-      - OPUS
-      - Pubman
-      - Pure
-      - Redivis
-      - RSpace
-      - Samvera
-      - SESAR
-      - Ubiquity
-      - Other
-      - Unknown
-    repositoryType:
-      type: string
-      enum:
-      - disciplinary
-      - governmental
-      - institutional
-      - multidisciplinary
-      - project-related
-      - other
   securitySchemes:
     BasicAuth:
       type: http
