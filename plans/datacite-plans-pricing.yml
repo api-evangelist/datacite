@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-06-12 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-06-12'
 specification: API Commons Plans
 specificationVersion: '0.1'
 provider: DataCite
@@ -187,3 +192,45 @@ plans:
           amount: 32500
           currency: EUR
           period: annual
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Public Access (Unauthenticated)
+    access: free
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Identified Access
+    access: free
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Consortium Organization Member
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Institutional Direct Member
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Consortium Lead Member
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: High-Volume DOI Add-on
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
