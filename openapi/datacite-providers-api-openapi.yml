@@ -178,14 +178,36 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    member-type:
+    DataObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+    organization-type:
       type: string
       enum:
-      - consortium_organization
-      - direct_member
-      - consortium
-      - member_only
-      - developer
+      - academicInstitution
+      - governmentAgency
+      - nationalInstitution
+      - publisher
+      - professionalSociety
+      - researchInstitution
+      - serviceProvider
+      - internationalOrganization
+      - other
+      - null
+    ProviderContact:
+      type: object
+      description: Returned only when authenticated with associated credentials.
+      properties:
+        email:
+          type: string
+        familyName:
+          type: string
+        givenName:
+          type: string
     TotalsObject:
       type: object
       properties:
@@ -218,6 +240,34 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MetaObject'
+    MetaObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        count:
+          type: number
+    member-type:
+      type: string
+      enum:
+      - consortium_organization
+      - direct_member
+      - consortium
+      - member_only
+      - developer
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+        next:
+          type: string
+    DataArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataObject'
     Provider:
       type: object
       properties:
@@ -332,21 +382,27 @@ components:
       required:
       - id
       - attributes - name - symbol
-    state:
+    region:
       type: string
       enum:
-      - findable
-      - registered
-      - draft
-    MetaObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-        count:
-          type: number
+      - AMER
+      - APAC
+      - EMEA
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
+    focus-area:
+      type: string
+      enum:
+      - naturalSciences
+      - engineeringAndTechnology
+      - medicalAndHealthSciences
+      - agriculturalSciences
+      - socialSciences
+      - humanities
+      - general
+      - null
     MetaCore:
       type: object
       properties:
@@ -359,68 +415,12 @@ components:
         page:
           description: Current page of the results.
           type: number
-    DataArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataObject'
-    focus-area:
+    state:
       type: string
       enum:
-      - naturalSciences
-      - engineeringAndTechnology
-      - medicalAndHealthSciences
-      - agriculturalSciences
-      - socialSciences
-      - humanities
-      - general
-      - null
-    Links:
-      type: object
-      properties:
-        self:
-          type: string
-        next:
-          type: string
-    ProviderContact:
-      type: object
-      description: Returned only when authenticated with associated credentials.
-      properties:
-        email:
-          type: string
-        familyName:
-          type: string
-        givenName:
-          type: string
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
-    region:
-      type: string
-      enum:
-      - AMER
-      - APAC
-      - EMEA
-    organization-type:
-      type: string
-      enum:
-      - academicInstitution
-      - governmentAgency
-      - nationalInstitution
-      - publisher
-      - professionalSociety
-      - researchInstitution
-      - serviceProvider
-      - internationalOrganization
-      - other
-      - null
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
+      - findable
+      - registered
+      - draft
   parameters:
     consortiumIdParam:
       name: consortium-id
@@ -429,6 +429,12 @@ components:
       schema:
         type: string
       example: ardc
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
     pageSizeParam:
       name: page[size]
       in: query
@@ -437,12 +443,6 @@ components:
         minimum: 0
         maximum: 1000
       description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
   securitySchemes:
     BasicAuth:
       type: http

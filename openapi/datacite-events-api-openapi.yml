@@ -195,6 +195,78 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    DataObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+    source-id:
+      type: string
+      enum:
+      - datacite-usage
+      - datacite-related
+      - datacite-crossref
+      - datacite-kisti
+      - datacite-op
+      - datacite-medra
+      - datacite-istic
+      - datacite-funder
+      - datacite-orcid-auto-update
+      - datacite-url
+      - crossref
+    Event:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - events
+        attributes:
+          type: object
+          properties:
+            subj-id:
+              type: string
+            obj-id:
+              type: string
+            source-id:
+              $ref: '#/components/schemas/source-id'
+            relation-type-id:
+              $ref: '#/components/schemas/relation-type-id'
+            total:
+              type: number
+            message-action:
+              type: string
+              enum:
+              - create
+              - add
+            source-token:
+              type: string
+            license:
+              type: string
+            occured-at:
+              type: string
+            timestamp:
+              type: string
+            relationships:
+              type: object
+              properties:
+                subj:
+                  type: object
+                  properties:
+                    data:
+                      $ref: '#/components/schemas/DataObject'
+                obj:
+                  type: object
+                  properties:
+                    data:
+                      $ref: '#/components/schemas/DataObject'
+      required:
+      - id
+      - attributes - subj-id - source-token - source-id
     relation-type-id:
       type: string
       enum:
@@ -257,71 +329,6 @@ components:
           type: string
         count:
           type: number
-    Event:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - events
-        attributes:
-          type: object
-          properties:
-            subj-id:
-              type: string
-            obj-id:
-              type: string
-            source-id:
-              $ref: '#/components/schemas/source-id'
-            relation-type-id:
-              $ref: '#/components/schemas/relation-type-id'
-            total:
-              type: number
-            message-action:
-              type: string
-              enum:
-              - create
-              - add
-            source-token:
-              type: string
-            license:
-              type: string
-            occured-at:
-              type: string
-            timestamp:
-              type: string
-            relationships:
-              type: object
-              properties:
-                subj:
-                  type: object
-                  properties:
-                    data:
-                      $ref: '#/components/schemas/DataObject'
-                obj:
-                  type: object
-                  properties:
-                    data:
-                      $ref: '#/components/schemas/DataObject'
-      required:
-      - id
-      - attributes - subj-id - source-token - source-id
-    source-id:
-      type: string
-      enum:
-      - datacite-usage
-      - datacite-related
-      - datacite-crossref
-      - datacite-kisti
-      - datacite-op
-      - datacite-medra
-      - datacite-istic
-      - datacite-funder
-      - datacite-orcid-auto-update
-      - datacite-url
-      - crossref
     Links:
       type: object
       properties:
@@ -333,14 +340,13 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/MetaObject'
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
   parameters:
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
     pageCursorParam:
       name: page[cursor]
       in: query
@@ -355,12 +361,6 @@ components:
         minimum: 0
         maximum: 1000
       description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
   securitySchemes:
     BasicAuth:
       type: http

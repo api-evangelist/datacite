@@ -134,7 +134,35 @@ paths:
       operationId: getDoisByIdActivities
       x-operation-id-source: derived
 components:
+  parameters:
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
+    pageCursorParam:
+      name: page[cursor]
+      in: query
+      schema:
+        type: string
+      description: Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor).
+    pageSizeParam:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000
+      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
   schemas:
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+        next:
+          type: string
     Activity:
       type: object
       description: Represents an activity for an event within DataCite systems.
@@ -175,34 +203,6 @@ components:
         page:
           description: Current page of the results.
           type: number
-    Links:
-      type: object
-      properties:
-        self:
-          type: string
-        next:
-          type: string
-  parameters:
-    pageCursorParam:
-      name: page[cursor]
-      in: query
-      schema:
-        type: string
-      description: Use for [cursor-based pagination](https://support.datacite.org/docs/pagination#method-2-cursor).
-    pageSizeParam:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 0
-        maximum: 1000
-      description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
   securitySchemes:
     BasicAuth:
       type: http

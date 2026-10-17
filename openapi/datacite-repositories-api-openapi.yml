@@ -294,50 +294,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    software:
-      type: string
-      enum:
-      - Cayuse
-      - CKAN
-      - Dataverse
-      - dLibra
-      - DSpace
-      - EPrints
-      - Ex Libris Esploro
-      - Fedora
-      - Invenio
-      - Islandora
-      - MyCoRe
-      - Nesstar
-      - Omega-PSIR
-      - Omeka S
-      - Open Journal Systems (OJS)
-      - OPUS
-      - Pubman
-      - Pure
-      - Redivis
-      - RSpace
-      - Samvera
-      - SESAR
-      - Ubiquity
-      - Other
-      - Unknown
-    repositoryType:
-      type: string
-      enum:
-      - disciplinary
-      - governmental
-      - institutional
-      - multidisciplinary
-      - project-related
-      - other
-    client-type:
-      type: string
-      enum:
-      - repository
-      - periodical
-      - igsnCatalog
-      - raidRegistry
     RepositoryResponse:
       type: object
       properties:
@@ -422,6 +378,32 @@ components:
             hasPassword:
               description: Returned only when authenticated with associated credentials.
               type: boolean
+    client-type:
+      type: string
+      enum:
+      - repository
+      - periodical
+      - igsnCatalog
+      - raidRegistry
+    repositoryType:
+      type: string
+      enum:
+      - disciplinary
+      - governmental
+      - institutional
+      - multidisciplinary
+      - project-related
+      - other
+    certificate:
+      type: string
+      enum:
+      - CLARIN
+      - CoreTrustSeal
+      - DIN 31644
+      - DINI
+      - DSA
+      - RatSWD
+      - WDS
     subject:
       type: object
       properties:
@@ -441,16 +423,34 @@ components:
         classificationCode:
           type: string
           example: '2.4'
-    certificate:
+    software:
       type: string
       enum:
-      - CLARIN
-      - CoreTrustSeal
-      - DIN 31644
-      - DINI
-      - DSA
-      - RatSWD
-      - WDS
+      - Cayuse
+      - CKAN
+      - Dataverse
+      - dLibra
+      - DSpace
+      - EPrints
+      - Ex Libris Esploro
+      - Fedora
+      - Invenio
+      - Islandora
+      - MyCoRe
+      - Nesstar
+      - Omega-PSIR
+      - Omeka S
+      - Open Journal Systems (OJS)
+      - OPUS
+      - Pubman
+      - Pure
+      - Redivis
+      - RSpace
+      - Samvera
+      - SESAR
+      - Ubiquity
+      - Other
+      - Unknown
   securitySchemes:
     BasicAuth:
       type: http

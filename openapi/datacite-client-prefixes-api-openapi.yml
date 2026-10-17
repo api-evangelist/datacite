@@ -87,6 +87,13 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    DataObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
     MetaObject:
       type: object
       properties:
@@ -95,18 +102,6 @@ components:
         type:
           type: string
         count:
-          type: number
-    MetaCore:
-      type: object
-      properties:
-        total:
-          description: Total results count.
-          type: number
-        totalPages:
-          description: Total pages count.
-          type: number
-        page:
-          description: Current page of the results.
           type: number
     ClientPrefix:
       type: object
@@ -162,14 +157,32 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/MetaObject'
-    DataObject:
+    MetaCore:
       type: object
       properties:
-        id:
-          type: string
-        type:
-          type: string
+        total:
+          description: Total results count.
+          type: number
+        totalPages:
+          description: Total pages count.
+          type: number
+        page:
+          description: Current page of the results.
+          type: number
   parameters:
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
+    clientIdParam:
+      name: client-id
+      in: query
+      description: Filter by a specific DataCite client (repository). Use commas to include multiple repositories.
+      schema:
+        type: string
+      example: datacite.blog
     pageSizeParam:
       name: page[size]
       in: query
@@ -178,19 +191,6 @@ components:
         minimum: 0
         maximum: 1000
       description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
-    clientIdParam:
-      name: client-id
-      in: query
-      description: Filter by a specific DataCite client (repository). Use commas to include multiple repositories.
-      schema:
-        type: string
-      example: datacite.blog
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
   securitySchemes:
     BasicAuth:
       type: http

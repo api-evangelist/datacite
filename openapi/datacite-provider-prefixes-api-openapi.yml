@@ -91,6 +91,33 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    DataObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+    MetaObject:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        count:
+          type: number
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+        next:
+          type: string
+    DataArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataObject'
     ProviderPrefix:
       type: object
       properties:
@@ -134,15 +161,10 @@ components:
                   $ref: '#/components/schemas/DataArray'
       required:
       - id
-    MetaObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-        count:
-          type: number
+    MetaArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetaObject'
     MetaCore:
       type: object
       properties:
@@ -155,28 +177,6 @@ components:
         page:
           description: Current page of the results.
           type: number
-    DataArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataObject'
-    Links:
-      type: object
-      properties:
-        self:
-          type: string
-        next:
-          type: string
-    MetaArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetaObject'
-    DataObject:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
   parameters:
     consortiumIdParam:
       name: consortium-id
@@ -185,6 +185,19 @@ components:
       schema:
         type: string
       example: ardc
+    pageNumberParam:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
+    providerIdParam:
+      name: provider-id
+      in: query
+      description: Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers.
+      schema:
+        type: string
+      example: cern
     pageSizeParam:
       name: page[size]
       in: query
@@ -193,19 +206,6 @@ components:
         minimum: 0
         maximum: 1000
       description: Page size between 0 and 1,000 for [pagination](https://support.datacite.org/docs/pagination).
-    providerIdParam:
-      name: provider-id
-      in: query
-      description: Filter by a specific DataCite provider (Direct Member or Consortium Organization). Use commas to include multiple providers.
-      schema:
-        type: string
-      example: cern
-    pageNumberParam:
-      name: page[number]
-      in: query
-      schema:
-        type: integer
-      description: Page number for [pagination](https://support.datacite.org/docs/pagination).
   securitySchemes:
     BasicAuth:
       type: http
